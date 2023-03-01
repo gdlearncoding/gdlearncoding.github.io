@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideDownBigOut"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideDownBigOut"}}};
   </script>
 
   <meta name="description" content="计网的大纲">
@@ -166,6 +166,9 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/gdlearncoding" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main class="main">
@@ -202,6 +205,7 @@
         </h1>
 
         <div class="post-meta">
+        
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
@@ -222,6 +226,25 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>4.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>4 分钟</span>
+            </span>
             <div class="post-description">计网的大纲</div>
 
         </div>
@@ -233,7 +256,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="授课老师"><a href="#授课老师" class="headerlink" title="授课老师"></a>授课老师</h1><p>张冬梅	<a href="mailto:&#x7a;&#104;&#x61;&#110;&#x67;&#100;&#109;&#64;&#x62;&#x75;&#112;&#116;&#x2e;&#101;&#x64;&#117;&#46;&#x63;&#x6e;">&#x7a;&#104;&#x61;&#110;&#x67;&#100;&#109;&#64;&#x62;&#x75;&#112;&#116;&#x2e;&#101;&#x64;&#117;&#46;&#x63;&#x6e;</a></p>
+        <h1 id="授课老师"><a href="#授课老师" class="headerlink" title="授课老师"></a>授课老师</h1><p>张冬梅	<a href="mailto:&#122;&#x68;&#x61;&#110;&#x67;&#100;&#x6d;&#x40;&#98;&#117;&#112;&#116;&#x2e;&#101;&#x64;&#117;&#46;&#99;&#110;">&#122;&#x68;&#x61;&#110;&#x67;&#100;&#x6d;&#x40;&#98;&#117;&#112;&#116;&#x2e;&#101;&#x64;&#117;&#46;&#99;&#110;</a></p>
 <p>平时实验35 期中5 期末60</p>
 <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>重点在network software和reference models </p>
 <h1 id="what-is-a-Computer-network"><a href="#what-is-a-Computer-network" class="headerlink" title="what  is a Computer network"></a>what  is a Computer network</h1><p>a group of &#x3D;&#x3D;separate&#x3D;&#x3D; but &#x3D;&#x3D;interconnected&#x3D;&#x3D; computers.</p>
@@ -470,6 +493,25 @@
     
     
 
+     
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>programmergd
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2023/02/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC%E4%B8%80%E7%AB%A0/" title="计算机网络第一章">http://example.com/2023/02/28/计算机网络第一章/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
       <footer class="post-footer">
 
         
@@ -540,7 +582,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%88%E8%AF%BE%E8%80%81%E5%B8%88"><span class="nav-text">授课老师</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#what-is-a-Computer-network"><span class="nav-text">what  is a Computer network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9Fdistributed-systems"><span class="nav-text">分布式系统distributed systems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%BA%94%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E9%81%93%E7%94%A8%E7%9A%84%E6%98%AF%E5%88%AB%E4%BA%BA%E7%9A%84%E7%94%B5%E8%84%91%EF%BC%88%E6%98%AF%E4%B8%80%E7%B1%BB%E6%A6%82%E5%BF%B5%EF%BC%89"><span class="nav-text">相应的计算机网络知道用的是别人的电脑（是一类概念）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%94%E7%94%A8Business-application"><span class="nav-text">计算机应用Business application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%AF%E7%B3%BB%E7%BB%9F%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-text">端系统之间的通信方式方式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x3D-x3D-Client-Server-x3D-x3D-Model"><span class="nav-text">&#x3D;&#x3D;Client-Server&#x3D;&#x3D; Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x3D-x3D-P2P-x3D-x3D-%E6%A8%A1%E5%BC%8F%EF%BC%8C%E4%BA%92%E8%81%94%E7%BD%91%E7%B2%BE%E7%A5%9E%E2%80%94%E2%80%94%E5%B9%B3%E7%AD%89QQ%EF%BC%8CWeChat"><span class="nav-text">&#x3D;&#x3D;P2P&#x3D;&#x3D;模式，互联网精神——平等QQ，WeChat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF%E8%B4%A8%E9%87%8F%E8%A1%A1%E9%87%8F%E6%8C%87%E6%A0%87-x3D-x3D-Qos-x3D-x3D-%EF%BC%88Quality-of-Service%EF%BC%89%E3%80%81"><span class="nav-text">传递信息质量衡量指标&#x3D;&#x3D;Qos&#x3D;&#x3D;（Quality of Service）、</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E5%9C%A8%E4%BD%BF%E7%94%A8%E7%9A%84%E6%97%B6%E5%80%99%E5%9C%A8%E7%A7%BB%E5%8A%A8mobile"><span class="nav-text">终端在使用的时候在移动mobile</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%A1%AC%E4%BB%B6"><span class="nav-text">计算机网络硬件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#infrastructure-networ%E8%BF%90%E8%90%A5%E5%95%86%E7%BB%84%E5%BB%BA%E7%9A%84-vs-Ad-hoc-network%E8%87%AA%E7%BB%84%E7%BD%91%E5%91%BC%E5%8F%AB%E6%9C%BA"><span class="nav-text">infrastructure networ运营商组建的  vs  Ad hoc network自组网呼叫机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-text">传输的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Transmission-technology%E4%BC%A0%E8%BE%93%E6%96%B9%E5%BC%8F%E5%88%86"><span class="nav-text">Transmission technology传输方式分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E8%B7%9D%E7%A6%BB%E5%88%86Network-scale"><span class="nav-text">按距离分Network scale</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Position-in-the-interconnected-networks%E6%8C%89%E9%80%BB%E8%BE%91%E4%BD%8D%E7%BD%AE%E5%88%86"><span class="nav-text">Position in the interconnected networks按逻辑位置分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ISP%EF%BC%88internet-Service-Provider-%EF%BC%89%E4%BA%92%E8%81%94%E7%BD%91%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E5%95%86"><span class="nav-text">ISP（internet Service Provider ）互联网服务提供商</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Network-Software"><span class="nav-text">Network Software</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocol-Hierarchies-%E5%8D%8F%E8%AE%AE%E5%B1%82%E6%AC%A1%E6%9E%B6%E6%9E%84"><span class="nav-text">Protocol Hierarchies (协议层次架构)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-Issues-for-the-Layers-%E5%B1%82%E7%9A%84%E8%AE%BE%E8%AE%A1%E9%97%AE%E9%A2%98"><span class="nav-text">Design Issues for the Layers(层的设计问题)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Connection-oriented-vs-Connectionless"><span class="nav-text">Connection-oriented vs.Connectionless</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E8%BF%9E%E6%8E%A5%E7%9A%84"><span class="nav-text">面向连接的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E6%97%A0%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="nav-text">与无连接的对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%9D%A0%E4%B8%8E%E5%90%A6%E5%8F%AA%E4%B8%8EACK%E6%9C%89%E5%85%B3Reliable-x2F-unreliable"><span class="nav-text">可靠与否只与ACK有关Reliable&#x2F;unreliable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service-Primitives-%E6%9C%8D%E5%8A%A1%E5%8E%9F%E8%AF%AD"><span class="nav-text">Service Primitives(服务原语)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-relationship-of-Services-to-Protocols"><span class="nav-text">The relationship of Services to Protocols</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%92%8C%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-text">服务和协议的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Referemce-Models"><span class="nav-text">Referemce Models</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#x3D-x3D-The-OSI-reference-model-x3D-x3D-%E5%BF%85%E8%80%83%E9%A2%98"><span class="nav-text">&#x3D;&#x3D;The OSI reference model&#x3D;&#x3D;必考题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Physical-layer-%E7%89%A9%E7%90%86%E5%B1%82"><span class="nav-text">Physical layer(物理层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-link-layer-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF"><span class="nav-text">Data link layer(数据链路)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-layer-%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="nav-text">Network layer(网络层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transport-Layer-%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="nav-text">Transport Layer(传输层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session-Layer-%E4%BC%9A%E8%AF%9D%E5%B1%82"><span class="nav-text">Session Layer(会话层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Presentation-Layer-%E8%A1%A8%E7%A4%BA%E5%B1%82"><span class="nav-text">Presentation Layer(表示层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Application-Layer-%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-text">Application Layer(应用层)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-TCP-x2F-IP-Reference-Model"><span class="nav-text">The TCP&#x2F;IP Reference Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Internet-Layer-%E7%BD%91%E9%99%85%E5%B1%82"><span class="nav-text">The Internet Layer(网际层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Transport-Layer"><span class="nav-text">The Transport Layer:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP"><span class="nav-text">TCP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UDP"><span class="nav-text">UDP</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VS"><span class="nav-text">VS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Key"><span class="nav-text">Key</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%88%E8%AF%BE%E8%80%81%E5%B8%88"><span class="nav-number">1.</span> <span class="nav-text">授课老师</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#what-is-a-Computer-network"><span class="nav-number">3.</span> <span class="nav-text">what  is a Computer network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9Fdistributed-systems"><span class="nav-number">3.0.1.</span> <span class="nav-text">分布式系统distributed systems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%BA%94%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E9%81%93%E7%94%A8%E7%9A%84%E6%98%AF%E5%88%AB%E4%BA%BA%E7%9A%84%E7%94%B5%E8%84%91%EF%BC%88%E6%98%AF%E4%B8%80%E7%B1%BB%E6%A6%82%E5%BF%B5%EF%BC%89"><span class="nav-number">3.0.2.</span> <span class="nav-text">相应的计算机网络知道用的是别人的电脑（是一类概念）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%94%E7%94%A8Business-application"><span class="nav-number">3.1.</span> <span class="nav-text">计算机应用Business application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%AF%E7%B3%BB%E7%BB%9F%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-number">3.1.1.</span> <span class="nav-text">端系统之间的通信方式方式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x3D-x3D-Client-Server-x3D-x3D-Model"><span class="nav-number">3.1.2.</span> <span class="nav-text">&#x3D;&#x3D;Client-Server&#x3D;&#x3D; Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x3D-x3D-P2P-x3D-x3D-%E6%A8%A1%E5%BC%8F%EF%BC%8C%E4%BA%92%E8%81%94%E7%BD%91%E7%B2%BE%E7%A5%9E%E2%80%94%E2%80%94%E5%B9%B3%E7%AD%89QQ%EF%BC%8CWeChat"><span class="nav-number">3.1.3.</span> <span class="nav-text">&#x3D;&#x3D;P2P&#x3D;&#x3D;模式，互联网精神——平等QQ，WeChat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF%E8%B4%A8%E9%87%8F%E8%A1%A1%E9%87%8F%E6%8C%87%E6%A0%87-x3D-x3D-Qos-x3D-x3D-%EF%BC%88Quality-of-Service%EF%BC%89%E3%80%81"><span class="nav-number">3.1.4.</span> <span class="nav-text">传递信息质量衡量指标&#x3D;&#x3D;Qos&#x3D;&#x3D;（Quality of Service）、</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E5%9C%A8%E4%BD%BF%E7%94%A8%E7%9A%84%E6%97%B6%E5%80%99%E5%9C%A8%E7%A7%BB%E5%8A%A8mobile"><span class="nav-number">3.1.5.</span> <span class="nav-text">终端在使用的时候在移动mobile</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%A1%AC%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">计算机网络硬件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#infrastructure-networ%E8%BF%90%E8%90%A5%E5%95%86%E7%BB%84%E5%BB%BA%E7%9A%84-vs-Ad-hoc-network%E8%87%AA%E7%BB%84%E7%BD%91%E5%91%BC%E5%8F%AB%E6%9C%BA"><span class="nav-number">4.0.1.</span> <span class="nav-text">infrastructure networ运营商组建的  vs  Ad hoc network自组网呼叫机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">4.1.</span> <span class="nav-text">传输的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Transmission-technology%E4%BC%A0%E8%BE%93%E6%96%B9%E5%BC%8F%E5%88%86"><span class="nav-number">4.1.1.</span> <span class="nav-text">Transmission technology传输方式分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E8%B7%9D%E7%A6%BB%E5%88%86Network-scale"><span class="nav-number">4.1.2.</span> <span class="nav-text">按距离分Network scale</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Position-in-the-interconnected-networks%E6%8C%89%E9%80%BB%E8%BE%91%E4%BD%8D%E7%BD%AE%E5%88%86"><span class="nav-number">4.1.3.</span> <span class="nav-text">Position in the interconnected networks按逻辑位置分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ISP%EF%BC%88internet-Service-Provider-%EF%BC%89%E4%BA%92%E8%81%94%E7%BD%91%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E5%95%86"><span class="nav-number">4.1.4.</span> <span class="nav-text">ISP（internet Service Provider ）互联网服务提供商</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Network-Software"><span class="nav-number">5.</span> <span class="nav-text">Network Software</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocol-Hierarchies-%E5%8D%8F%E8%AE%AE%E5%B1%82%E6%AC%A1%E6%9E%B6%E6%9E%84"><span class="nav-number">5.1.</span> <span class="nav-text">Protocol Hierarchies (协议层次架构)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-Issues-for-the-Layers-%E5%B1%82%E7%9A%84%E8%AE%BE%E8%AE%A1%E9%97%AE%E9%A2%98"><span class="nav-number">5.2.</span> <span class="nav-text">Design Issues for the Layers(层的设计问题)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Connection-oriented-vs-Connectionless"><span class="nav-number">5.3.</span> <span class="nav-text">Connection-oriented vs.Connectionless</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E8%BF%9E%E6%8E%A5%E7%9A%84"><span class="nav-number">5.3.1.</span> <span class="nav-text">面向连接的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E6%97%A0%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="nav-number">5.3.2.</span> <span class="nav-text">与无连接的对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%9D%A0%E4%B8%8E%E5%90%A6%E5%8F%AA%E4%B8%8EACK%E6%9C%89%E5%85%B3Reliable-x2F-unreliable"><span class="nav-number">5.3.3.</span> <span class="nav-text">可靠与否只与ACK有关Reliable&#x2F;unreliable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service-Primitives-%E6%9C%8D%E5%8A%A1%E5%8E%9F%E8%AF%AD"><span class="nav-number">5.4.</span> <span class="nav-text">Service Primitives(服务原语)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-relationship-of-Services-to-Protocols"><span class="nav-number">5.5.</span> <span class="nav-text">The relationship of Services to Protocols</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%92%8C%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">5.6.</span> <span class="nav-text">服务和协议的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Referemce-Models"><span class="nav-number">6.</span> <span class="nav-text">Referemce Models</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#x3D-x3D-The-OSI-reference-model-x3D-x3D-%E5%BF%85%E8%80%83%E9%A2%98"><span class="nav-number">6.1.</span> <span class="nav-text">&#x3D;&#x3D;The OSI reference model&#x3D;&#x3D;必考题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Physical-layer-%E7%89%A9%E7%90%86%E5%B1%82"><span class="nav-number">6.1.1.</span> <span class="nav-text">Physical layer(物理层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-link-layer-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF"><span class="nav-number">6.1.2.</span> <span class="nav-text">Data link layer(数据链路)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-layer-%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="nav-number">6.1.3.</span> <span class="nav-text">Network layer(网络层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transport-Layer-%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="nav-number">6.1.4.</span> <span class="nav-text">Transport Layer(传输层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session-Layer-%E4%BC%9A%E8%AF%9D%E5%B1%82"><span class="nav-number">6.1.5.</span> <span class="nav-text">Session Layer(会话层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Presentation-Layer-%E8%A1%A8%E7%A4%BA%E5%B1%82"><span class="nav-number">6.1.6.</span> <span class="nav-text">Presentation Layer(表示层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Application-Layer-%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-number">6.1.7.</span> <span class="nav-text">Application Layer(应用层)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-TCP-x2F-IP-Reference-Model"><span class="nav-number">6.2.</span> <span class="nav-text">The TCP&#x2F;IP Reference Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Internet-Layer-%E7%BD%91%E9%99%85%E5%B1%82"><span class="nav-number">6.2.1.</span> <span class="nav-text">The Internet Layer(网际层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Transport-Layer"><span class="nav-number">6.2.2.</span> <span class="nav-text">The Transport Layer:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP"><span class="nav-number">6.2.2.1.</span> <span class="nav-text">TCP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UDP"><span class="nav-number">6.2.2.2.</span> <span class="nav-text">UDP</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VS"><span class="nav-number">6.3.</span> <span class="nav-text">VS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Key"><span class="nav-number">7.</span> <span class="nav-text">Key</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -578,6 +620,19 @@
   </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.tangdouer.cn/" title="https:&#x2F;&#x2F;www.tangdouer.cn&#x2F;" rel="noopener" target="_blank">糖豆</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://kanata369.github.io/" title="https:&#x2F;&#x2F;kanata369.github.io&#x2F;" rel="noopener" target="_blank">游ye</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -603,11 +658,76 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">programmergd</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">5k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共2.5k字</span>
+</div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -634,6 +754,8 @@
 
 
 <script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
 
 
 
