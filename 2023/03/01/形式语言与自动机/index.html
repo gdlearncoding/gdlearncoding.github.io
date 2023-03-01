@@ -20,15 +20,25 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":200,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="果冻">
-<meta property="og:url" content="http://example.com/archives/2023/index.html">
+  <meta name="description" content="在学了,在学了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="形式语言与自动机(绪论)">
+<meta property="og:url" content="http://example.com/2023/03/01/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/index.html">
 <meta property="og:site_name" content="果冻">
+<meta property="og:description" content="在学了,在学了">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA.assets/image-20230223213320803.png">
+<meta property="og:image" content="http://example.com/2023/03/01/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA.assets/image-20230223213059445.png">
+<meta property="og:image" content="http://example.com/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA.assets/image-20230223213602396.png">
+<meta property="og:image" content="http://example.com/2023/03/01/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA.assets/image-20230223214235875.png">
+<meta property="og:image" content="http://example.com/2023/03/01/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA.assets/image-20230223212421911.png">
+<meta property="article:published_time" content="2023-03-01T11:08:22.153Z">
+<meta property="article:modified_time" content="2023-03-01T11:46:16.929Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA.assets/image-20230223213320803.png">
 
-<link rel="canonical" href="http://example.com/archives/2023/">
+<link rel="canonical" href="http://example.com/2023/03/01/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/">
 
 
 <script id="page-configurations">
@@ -36,12 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | 果冻</title>
+  <title>形式语言与自动机(绪论) | 果冻</title>
   
 
 
@@ -158,170 +168,157 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 7 篇日志。 继续努力。</span>
-      </div>
+  <div>
+    
+    	
+    
+</div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/01/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="programmergd">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="果冻">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          形式语言与自动机(绪论)
+        </h1>
+
+        <div class="post-meta">
+        
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-03-01 19:08:22 / 修改时间：19:46:16" itemprop="dateCreated datePublished" datetime="2023-03-01T19:08:22+08:00">2023-03-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">形式语言与自动机</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>390</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+            <div class="post-description">在学了,在学了</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
-    </div>
+        <h1 id="前置基本内容"><a href="#前置基本内容" class="headerlink" title="前置基本内容"></a>前置基本内容</h1><blockquote>
+<p>集合的基数(势)#A或|A|:有限集合A中不同元素的个数.</p>
+<p><img src="/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA.assets/image-20230223213320803.png" alt="image-20230223213320803"></p>
+<p>偶数集和整数集也是等势的</p>
+<p>幂集2^A^或ρ(A):A的所有子集组成的集合</p>
+<p><img src="%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA.assets/image-20230223213059445.png" alt="image-20230223213059445" style="zoom: 80%;" /><img src="/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA.assets/image-20230223213602396.png" alt="image-20230223213602396"><img src="%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA.assets/image-20230223214235875.png" alt="image-20230223214235875" style="zoom:80%;" /></p>
+</blockquote>
+<h1 id="形式语言与自动机概述及应用（绪论）"><a href="#形式语言与自动机概述及应用（绪论）" class="headerlink" title="形式语言与自动机概述及应用（绪论）"></a>形式语言与自动机概述及应用（绪论）</h1><h2 id="形式语言定义"><a href="#形式语言定义" class="headerlink" title="形式语言定义"></a>形式语言定义</h2><ul>
+<li>形式语言：形式化描述字母表上的字符串的集合（有一定的描述范围，是一种通用语言）</li>
+<li>字母表：字符的有限集合</li>
+<li>字符串：字母表中的字符构成的有限序列</li>
+<li>自然语言：平时说话的语言<br>eg：若T为C语言所用的全部符号的集合，则<em>正确的C程序</em>就是T上的语言</li>
+</ul>
+<h2 id="形式语言应用"><a href="#形式语言应用" class="headerlink" title="形式语言应用"></a>形式语言应用</h2><p>编译（最初的应用）、可计算理论、定理自动证明、程序转换、模式识别等</p>
+<h2 id="自动机定义"><a href="#自动机定义" class="headerlink" title="自动机定义"></a>自动机定义</h2><ul>
+<li>具有离散输入输出的数学模型</li>
+<li>状态：一个标识，能区分自动机在不同时刻的状态</li>
+<li>本质：很久状态、输入（激励）和规则决定下一个状态（状态迁移）</li>
+<li>分类：有限、下推、图灵机</li>
+</ul>
+<h2 id="形式语言与自动机的关系"><a href="#形式语言与自动机的关系" class="headerlink" title="形式语言与自动机的关系"></a>形式语言与自动机的关系</h2><p>前者为字符串（文法），后者字符串的识别系统。二者密切相关。</p>
+<img src="%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA.assets/image-20230223212421911.png" alt="image-20230223212421911" style="zoom:50%;" />
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-03-01T19:15:08+08:00"
-              content="2023-03-01">
-          03-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/03/01/%E6%96%87%E4%BB%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" itemprop="url">
-            <span itemprop="name">文件输入输出</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-03-01T19:12:24+08:00"
-              content="2023-03-01">
-          03-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/03/01/%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" itemprop="url">
-            <span itemprop="name">处理器系统结构</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-03-01T19:12:24+08:00"
-              content="2023-03-01">
-          03-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/03/01/%E5%82%A8%E5%AD%98%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" itemprop="url">
-            <span itemprop="name">储存器层次结构</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-03-01T19:08:22+08:00"
-              content="2023-03-01">
-          03-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/03/01/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/" itemprop="url">
-            <span itemprop="name">形式语言与自动机(绪论)</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-03-01T16:25:13+08:00"
-              content="2023-03-01">
-          03-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/03/01/BlogBugReflect/" itemprop="url">
-            <span itemprop="name">搭建Blog时的Bug</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-02-28T23:16:44+08:00"
-              content="2023-02-28">
-          02-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/02/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC%E4%B8%80%E7%AB%A0/" itemprop="url">
-            <span itemprop="name">计算机网络第一章</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-02-28T19:32:09+08:00"
-              content="2023-02-28">
-          02-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/02/28/Hello%20Blog/" itemprop="url">
-            <span itemprop="name">Hello Blog!</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+<p>一定类型的自动机和某种类型的文法具有等价性。</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+     
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>programmergd
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2023/03/01/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/" title="形式语言与自动机(绪论)">http://example.com/2023/03/01/形式语言与自动机/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/01/BlogBugReflect/" rel="prev" title="搭建Blog时的Bug">
+      <i class="fa fa-chevron-left"></i> 搭建Blog时的Bug
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/01/%E5%82%A8%E5%AD%98%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" rel="next" title="储存器层次结构">
+      储存器层次结构 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -374,6 +371,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="nav-text">前置基本内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E6%A6%82%E8%BF%B0%E5%8F%8A%E5%BA%94%E7%94%A8%EF%BC%88%E7%BB%AA%E8%AE%BA%EF%BC%89"><span class="nav-text">形式语言与自动机概述及应用（绪论）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%AE%9A%E4%B9%89"><span class="nav-text">形式语言定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%BA%94%E7%94%A8"><span class="nav-text">形式语言应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%AE%9A%E4%B9%89"><span class="nav-text">自动机定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-text">形式语言与自动机的关系</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
