@@ -28,8 +28,13 @@
 <meta property="og:description" content="主攻,已经到第三章了">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="c:/Users/Echo/AppData/Roaming/Typora/typora-user-images/image-20230302223602377.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303031524204.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303031711375.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303031555980.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303031606252.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303031612221.png">
 <meta property="article:published_time" content="2023-03-02T02:08:38.625Z">
-<meta property="article:modified_time" content="2023-03-02T14:41:53.715Z">
+<meta property="article:modified_time" content="2023-03-03T09:33:14.371Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="c:/Users/Echo/AppData/Roaming/Typora/typora-user-images/image-20230302223602377.png">
@@ -198,10 +203,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-03-02 10:08:38 / 修改时间：22:41:53" itemprop="dateCreated datePublished" datetime="2023-03-02T10:08:38+08:00">2023-03-02</time>
+              <time title="创建时间：2023-03-02 10:08:38" itemprop="dateCreated datePublished" datetime="2023-03-02T10:08:38+08:00">2023-03-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-03 17:33:14" itemprop="dateModified" datetime="2023-03-03T17:33:14+08:00">2023-03-03</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -224,13 +235,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>4.3k</span>
+              <span>6.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>4 分钟</span>
+              <span>6 分钟</span>
             </span>
             <div class="post-description">主攻,已经到第三章了</div>
 
@@ -261,12 +272,10 @@
 </li>
 </ul>
 <h4 id="字符和字符串字面值"><a href="#字符和字符串字面值" class="headerlink" title="字符和字符串字面值"></a>字符和字符串字面值</h4><ul>
-<li><p>单引号引起来的一个字符称为char型字面值,双引号括起来的&#x3D;&#x3D;零个或多个字符&#x3D;&#x3D;则构成字符串型字面值</p>
-</li>
-<li><p>转义序列:不可打印或有特殊含义(单引号等)</p>
-</li>
-<li><p>指定字面值的类型:添加前缀或后缀</p>
-</li>
+<li>单引号引起来的一个字符称为char型字面值,双引号括起来的&#x3D;&#x3D;零个或多个字符&#x3D;&#x3D;则构成字符串型字面值</li>
+<li>双引号引起来的后面定有‘\0’</li>
+<li>转义序列:不可打印或有特殊含义(单引号等)</li>
+<li>指定字面值的类型:添加前缀或后缀</li>
 </ul>
 <h4 id="布尔字面值和指针字面值"><a href="#布尔字面值和指针字面值" class="headerlink" title="布尔字面值和指针字面值"></a>布尔字面值和指针字面值</h4><ul>
 <li>true和false</li>
@@ -365,9 +374,10 @@
 <p>另外两个指令则分别检查某个指定的预处理变量是否已经定义：#ifdef 当且仅当变量已定义时为真，#ifndef 当且仅当变量未定义时为真。</p>
 <p>一旦检查结果为真，则执行后续操作直至遇到#endif指令为止。</p>
 <p><strong>预处理变量无视C++语言中关于作用于的限制</strong></p>
-<h1 id="字符串-向量和数组"><a href="#字符串-向量和数组" class="headerlink" title="字符串,向量和数组"></a>字符串,向量和数组</h1><h2 id="命名空间的using声明"><a href="#命名空间的using声明" class="headerlink" title="命名空间的using声明"></a>命名空间的using声明</h2><p>std::cin表示从标准输入中读取内容。此处使用作用域操作符(：：)的含义是：编译器应从操作符左侧名字所示的作用域中寻找右侧那个名字。因此，std::cin的意思就是要使用命名空间std中的名字cin。</p>
-<p>using namespace::name</p>
-<p>头文件不应包含using声明</p>
+<h1 id="字符串-向量和数组"><a href="#字符串-向量和数组" class="headerlink" title="字符串,向量和数组"></a>字符串,向量和数组</h1><h2 id="命名空间的using声明"><a href="#命名空间的using声明" class="headerlink" title="命名空间的using声明"></a>命名空间的using声明</h2><p>std::cin表示从标准输入中读取内容。此处使用作用域操作符(::)的含义是：编译器应从操作符左侧名字所示的作用域中寻找右侧那个名字。因此，std::cin的意思就是要使用命名空间std中的名字cin。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span>::name;</span><br></pre></td></tr></table></figure>
+
+<p>头文件不应包含using声明,容易出错</p>
 <h2 id="标准库类型string"><a href="#标准库类型string" class="headerlink" title="标准库类型string"></a>标准库类型string</h2><p>标准库类型string表示可变长的字符序列</p>
 <p>使用string类型必须首先包含string头文件。作为标准库的一部分，string定义在命名空间std中。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> std:string;</span><br></pre></td></tr></table></figure>
@@ -378,8 +388,57 @@
 <li>使用&#x3D;,拷贝初始化</li>
 <li>括号,直接初始化</li>
 </ul>
-<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><p><img src="C:/Users/Echo/AppData/Roaming/Typora/typora-user-images/image-20230302223602377.png" alt="image-20230302223602377"></p>
-<p>第七十七</p>
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><h4 id="基操"><a href="#基操" class="headerlink" title="基操"></a>基操</h4><p><img src="C:/Users/Echo/AppData/Roaming/Typora/typora-user-images/image-20230302223602377.png" alt="image-20230302223602377"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cin&gt;&gt; s;<span class="comment">//将string对象读入s，遇到空白停止</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> i = line.<span class="built_in">size</span>();<span class="comment">//size用法，返回string::size_type类型的值，无符号值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(line.<span class="built_in">empty</span>());<span class="comment">//empty用法 </span></span><br></pre></td></tr></table></figure>
+<p>执行读取操作时，会自动忽略开头的空白（空格，换行符，制表符等），遇到下一个空白停止</p>
+<p>触发getline函数返回的那个换行符实际上被丢弃掉了，得到的string对象中并不包含该换行符</p>
+<p>一些处理字符的函数（使用头文件cctype）：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303031524204.png" alt="image-20230303152420079"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303031711375.png" alt="image-20230303171147310"></p>
+<h4 id="for"><a href="#for" class="headerlink" title="for"></a>for</h4><p>使用for语句处理每个字符：</p>
+<p>for (declaration : expression)<br>    statement</p>
+<p>其中，expression部分是一个对象，用于表示一个序列。declaration部分负责定义一个变量，该变量将被用于访问序列中的基础元素。每次迭代，declaration部分的变量会被初始化为expression部分的下一个元素值。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">string <span class="title">str</span><span class="params">(<span class="string">&quot;some string&quot;</span>)</span></span>;</span><br><span class="line"><span class="comment">//每行,输出str中的一个字符。</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> c:str) <span class="comment">//对于str中的每个字符</span></span><br><span class="line">cout &lt;c &lt;endl;<span class="comment">//输出当前字符，后面紧跟一个换行符</span></span><br></pre></td></tr></table></figure>
+
+<p>如果要改变其中的字符:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">string <span class="title">s</span><span class="params">(<span class="string">&quot;Hello World!!!&quot;</span>)</span></span>;</span><br><span class="line"><span class="comment">//转换成大写形式。</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;c : s)</span><br><span class="line"><span class="comment">//对于s中的每个字符（注意：c是引用）</span></span><br><span class="line">c = <span class="built_in">toupper</span> (c);</span><br><span class="line"><span class="comment">//c是一个引用，因此赋值语句将改变s中字符的值</span></span><br><span class="line">cout &lt;&lt; s &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
+<p>使用的下标是无符号类型,注意类型转换出错</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string::size_type;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="标准库类型vector"><a href="#标准库类型vector" class="headerlink" title="标准库类型vector"></a>标准库类型vector</h2><p>表示对象的集合，其中所有对象的类型都相同。集合中的每个对象都有一个与之对应的索引，索引用于访问对象。“容纳着”其他对象，也常被称作容器(container)。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> std::vector;</span><br></pre></td></tr></table></figure>
+
+<p>模板本身不是类或函数，可以看作为编译器生成类或函数编写的一份说明。</p>
+<p>实例化(instantiation):编译器根据模板创建类或函数的过程.当使用模板时，需要指出编译器应把类或函数实例化成何种类型。</p>
+<h3 id="定义和初始化"><a href="#定义和初始化" class="headerlink" title="定义和初始化"></a>定义和初始化</h3><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303031555980.png" alt="image-20230303155540919"></p>
+<p>可以先默认初始化不加值,之后逐一添加,可能会更高效</p>
+<p>列表初始化只能用{},不能用()</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt;<span class="built_in">v1</span>(<span class="number">10</span>);<span class="comment">//v1有10个元素，每个的值都是0</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt;<span class="built_in">v2</span>(<span class="number">10</span>);<span class="comment">//v2有1个元素，该元素的值是10</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt;<span class="built_in">v3</span>(<span class="number">10</span>,<span class="number">1</span>);<span class="comment">//v3有10个元素，每个的值都是1</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt;<span class="built_in">v4</span>(<span class="number">10</span>,<span class="number">1</span>&#125;;<span class="comment">//v4有2个元素，值分别是10和1</span></span><br></pre></td></tr></table></figure>
+
+<p>()是用来构造的,{}列表初始化对象的</p>
+<p>编译器的无奈之举:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303031606252.png" alt="image-20230303160616199"></p>
+<h3 id="添加元素push-back"><a href="#添加元素push-back" class="headerlink" title="添加元素push_back"></a>添加元素push_back</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//从标准输入中读取单词，将其作为vector对象的元素存储</span></span><br><span class="line">string word;</span><br><span class="line">vector&lt;string&gt;text;<span class="comment">//空vector对象</span></span><br><span class="line"><span class="keyword">while</span> (cin &gt;&gt; word)&#123;</span><br><span class="line">text.<span class="function">push <span class="title">back</span> <span class="params">(word)</span></span>; <span class="comment">//把word添加到text后面</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x3D;&#x3D;范围for语句体内不应改变其所遍历序列的大小。&#x3D;&#x3D;</p>
+<h3 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h3><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303031612221.png" alt="image-20230303161240165"></p>
+<p>要使用size_type,需首先指定它是由哪种类型定义的。vector对象的类型总是包含着元素的类型</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt;::size type<span class="comment">//正确</span></span><br><span class="line">vector::size type	<span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
+
+<p>不能使用下标添加元素,应该使用.push_back(要存的值)</p>
+<p>只能对明确已存在的元素执行下标操作</p>
+<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><p>都有begin和end(指向尾元素的下一个位置)</p>
+<p>如果容器为空,begin和end都是同一个位置</p>
+<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt;::iterator it;<span class="comment">//it能读写vector&lt;int&gt;的元素</span></span><br><span class="line">string::iterator it2;<span class="comment">//it2能读写string对象中的字符</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt;::const_iterator it3;<span class="comment">//it3只能读元素，不能写元素</span></span><br><span class="line">string:const_iterator it4;</span><br><span class="line"><span class="comment">//it4只能读字符，不能写字符</span></span><br></pre></td></tr></table></figure>
+
+<p>谨记，但凡是使用了迭代器的循环体，都不要向迭代器所属的容器添加元素。</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="标准库函数"><a href="#标准库函数" class="headerlink" title="标准库函数"></a>标准库函数</h3><p>begin和end返回指向数组头或尾的&#x3D;&#x3D;指针&#x3D;&#x3D;</p>
+<h3 id="使用数组初始化vector对象"><a href="#使用数组初始化vector对象" class="headerlink" title="使用数组初始化vector对象"></a>使用数组初始化vector对象</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="type">int</span> arr[]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;:</span><br><span class="line"><span class="comment">//ivec有6个元素，分别是int arr中对应元素的副本</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; <span class="built_in">ivec</span>(<span class="built_in">begin</span>(int_arr),<span class="built_in">end</span>(int_arr));</span><br><span class="line"></span><br><span class="line"><span class="comment">//拷贝三个元素：int arr[l]、int arr[2]、int arr[3]</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt;<span class="built_in">subVec</span>(<span class="type">int</span> arr <span class="number">1</span>,<span class="type">int</span> arr <span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h3><p>严格来说，C++语言中没有多维数组，通常所说的多维数组其实是数组的数组。</p>
 
     </div>
 
@@ -479,7 +538,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-text">变量和基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">基本内置类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%A9%BA%E7%B1%BB%E5%9E%8B"><span class="nav-text">算数类型和空类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E9%9D%A2%E5%80%BC%E5%B8%B8%E9%87%8F"><span class="nav-text">字面值常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B4%E5%9E%8B%E5%92%8C%E6%B5%AE%E7%82%B9%E5%9E%8B%E5%AD%97%E9%9D%A2%E5%80%BC"><span class="nav-text">整型和浮点型字面值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E9%9D%A2%E5%80%BC"><span class="nav-text">字符和字符串字面值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E5%AD%97%E9%9D%A2%E5%80%BC%E5%92%8C%E6%8C%87%E9%92%88%E5%AD%97%E9%9D%A2%E5%80%BC"><span class="nav-text">布尔字面值和指针字面值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%80%BC"><span class="nav-text">初始值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">列表初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">默认初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">内置类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AF%8F%E4%B8%AA%E7%B1%BB"><span class="nav-text">每个类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E5%92%8C%E5%AE%9A%E4%B9%89"><span class="nav-text">声明和定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E-%E4%BD%BF%E5%90%8D%E5%AD%97%E4%B8%BA%E7%A8%8B%E5%BA%8F%E6%89%80%E7%9F%A5"><span class="nav-text">声明:使名字为程序所知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-%E8%B4%9F%E8%B4%A3%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%90%8D%E5%AD%97%E6%9C%89%E5%85%B3%E7%9A%84%E5%AE%9E%E4%BD%93"><span class="nav-text">定义:负责创建与名字有关的实体</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text">作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text">嵌套的作用域</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="nav-text">复合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-text">指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E4%BF%AE%E9%A5%B0%E7%AC%A6%E4%B8%8D%E8%BF%87%E6%98%AF%E5%A3%B0%E6%98%8E%E7%AC%A6%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86"><span class="nav-text">类型修饰符不过是声明符的一部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const-%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="nav-text">const 限定符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8Cconst"><span class="nav-text">指针和const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B6%E5%B1%82const"><span class="nav-text">顶层const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constexpr%E5%92%8C%E5%B8%B8%E9%87%8F%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">constexpr和常量表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E7%B1%BB%E5%9E%8B"><span class="nav-text">处理类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"><span class="nav-text">类型别名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typedef"><span class="nav-text">typedef</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%AB%E5%90%8D%E5%A3%B0%E6%98%8E-using"><span class="nav-text">别名声明 using</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#auto%E7%B1%BB%E5%9E%8B%E8%AF%B4%E6%98%8E%E7%AC%A6"><span class="nav-text">auto类型说明符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#decltype%E7%B1%BB%E5%9E%8B%E6%8C%87%E7%A4%BA%E7%AC%A6"><span class="nav-text">decltype类型指示符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">自定义数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#struct"><span class="nav-text">struct</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-text">编写头文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84"><span class="nav-text">字符串,向量和数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84using%E5%A3%B0%E6%98%8E"><span class="nav-text">命名空间的using声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bstring"><span class="nav-text">标准库类型string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">定义与初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C"><span class="nav-text">操作</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-text">变量和基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">基本内置类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%A9%BA%E7%B1%BB%E5%9E%8B"><span class="nav-text">算数类型和空类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E9%9D%A2%E5%80%BC%E5%B8%B8%E9%87%8F"><span class="nav-text">字面值常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B4%E5%9E%8B%E5%92%8C%E6%B5%AE%E7%82%B9%E5%9E%8B%E5%AD%97%E9%9D%A2%E5%80%BC"><span class="nav-text">整型和浮点型字面值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E9%9D%A2%E5%80%BC"><span class="nav-text">字符和字符串字面值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E5%AD%97%E9%9D%A2%E5%80%BC%E5%92%8C%E6%8C%87%E9%92%88%E5%AD%97%E9%9D%A2%E5%80%BC"><span class="nav-text">布尔字面值和指针字面值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%80%BC"><span class="nav-text">初始值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">列表初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">默认初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">内置类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AF%8F%E4%B8%AA%E7%B1%BB"><span class="nav-text">每个类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E5%92%8C%E5%AE%9A%E4%B9%89"><span class="nav-text">声明和定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E-%E4%BD%BF%E5%90%8D%E5%AD%97%E4%B8%BA%E7%A8%8B%E5%BA%8F%E6%89%80%E7%9F%A5"><span class="nav-text">声明:使名字为程序所知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-%E8%B4%9F%E8%B4%A3%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%90%8D%E5%AD%97%E6%9C%89%E5%85%B3%E7%9A%84%E5%AE%9E%E4%BD%93"><span class="nav-text">定义:负责创建与名字有关的实体</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text">作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text">嵌套的作用域</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="nav-text">复合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-text">指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E4%BF%AE%E9%A5%B0%E7%AC%A6%E4%B8%8D%E8%BF%87%E6%98%AF%E5%A3%B0%E6%98%8E%E7%AC%A6%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86"><span class="nav-text">类型修饰符不过是声明符的一部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const-%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="nav-text">const 限定符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8Cconst"><span class="nav-text">指针和const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B6%E5%B1%82const"><span class="nav-text">顶层const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constexpr%E5%92%8C%E5%B8%B8%E9%87%8F%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">constexpr和常量表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E7%B1%BB%E5%9E%8B"><span class="nav-text">处理类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"><span class="nav-text">类型别名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typedef"><span class="nav-text">typedef</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%AB%E5%90%8D%E5%A3%B0%E6%98%8E-using"><span class="nav-text">别名声明 using</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#auto%E7%B1%BB%E5%9E%8B%E8%AF%B4%E6%98%8E%E7%AC%A6"><span class="nav-text">auto类型说明符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#decltype%E7%B1%BB%E5%9E%8B%E6%8C%87%E7%A4%BA%E7%AC%A6"><span class="nav-text">decltype类型指示符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">自定义数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#struct"><span class="nav-text">struct</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-text">编写头文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84"><span class="nav-text">字符串,向量和数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84using%E5%A3%B0%E6%98%8E"><span class="nav-text">命名空间的using声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bstring"><span class="nav-text">标准库类型string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">定义与初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C"><span class="nav-text">操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%93%8D"><span class="nav-text">基操</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for"><span class="nav-text">for</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bvector"><span class="nav-text">标准库类型vector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">定义和初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0push-back"><span class="nav-text">添加元素push_back</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C"><span class="nav-text">其他操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text">迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-text">类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E5%87%BD%E6%95%B0"><span class="nav-text">标准库函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96vector%E5%AF%B9%E8%B1%A1"><span class="nav-text">使用数组初始化vector对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-text">多维数组</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -495,7 +554,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -559,19 +618,19 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">19k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">17 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.5k字</span>
+  <span class="post-count">博客全站共11.8k字</span>
 </div>
 
 
