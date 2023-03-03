@@ -20,19 +20,24 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta name="description" content="啊啊啊,我好憨">
+  <meta name="description" content="巩固一些C的知识,C Primer Plus文件输入输出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建Blog时的Bug">
-<meta property="og:url" content="http://example.com/2023/03/01/BlogBugReflect/index.html">
+<meta property="og:title" content="C文件输入输出">
+<meta property="og:url" content="http://example.com/2023/03/01/CPP%E6%96%87%E4%BB%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/index.html">
 <meta property="og:site_name" content="果冻">
-<meta property="og:description" content="啊啊啊,我好憨">
+<meta property="og:description" content="巩固一些C的知识,C Primer Plus文件输入输出">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-01T08:25:13.226Z">
-<meta property="article:modified_time" content="2023-03-01T09:22:34.822Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230301220536466.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230301220730027.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230301220749765.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230301220808354.png">
+<meta property="article:published_time" content="2023-03-01T11:15:08.226Z">
+<meta property="article:modified_time" content="2023-03-03T14:39:12.143Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230301220536466.png">
 
-<link rel="canonical" href="http://example.com/2023/03/01/BlogBugReflect/">
+<link rel="canonical" href="http://example.com/2023/03/01/CPP%E6%96%87%E4%BB%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/">
 
 
 <script id="page-configurations">
@@ -45,7 +50,7 @@
   };
 </script>
 
-  <title>搭建Blog时的Bug | 果冻</title>
+  <title>C文件输入输出 | 果冻</title>
   
 
 
@@ -173,7 +178,7 @@
     
 </div>
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/01/BlogBugReflect/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/01/CPP%E6%96%87%E4%BB%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -186,7 +191,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          搭建Blog时的Bug
+          C文件输入输出
         </h1>
 
         <div class="post-meta">
@@ -196,17 +201,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-03-01 16:25:13 / 修改时间：17:22:34" itemprop="dateCreated datePublished" datetime="2023-03-01T16:25:13+08:00">2023-03-01</time>
+              <time title="创建时间：2023-03-01 19:15:08" itemprop="dateCreated datePublished" datetime="2023-03-01T19:15:08+08:00">2023-03-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-03 22:39:12" itemprop="dateModified" datetime="2023-03-03T22:39:12+08:00">2023-03-03</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                  <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
                 </span>
             </span>
 
@@ -222,7 +233,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>1.3k</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -230,7 +241,7 @@
               </span>
               <span>1 分钟</span>
             </span>
-            <div class="post-description">啊啊啊,我好憨</div>
+            <div class="post-description">巩固一些C的知识,C Primer Plus文件输入输出</div>
 
         </div>
       </header>
@@ -241,37 +252,42 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>搭建博客时候一定要耐心,特别注意以下四点:</p>
-<ol>
-<li>文件的准确位置.比如看清楚是主题配置文件,还是站点配置文件.</li>
-<li>局部更改,做好备份.如同写代码一样,做完一个模块进行测试,别崩了之后不知道从哪里改了.</li>
-<li>带脑子工作.不要做CV工程师,复制的时候想想这点是用来干什么的,文档写的很清楚,程序出bug了先自己分析一下,再去百度,再去问别人.</li>
-<li>记得给帮助过你的人点个赞.</li>
-</ol>
-<h1 id="吃一堑长一智"><a href="#吃一堑长一智" class="headerlink" title="吃一堑长一智"></a>吃一堑长一智</h1><h2 id="没备份"><a href="#没备份" class="headerlink" title="没备份"></a>没备份</h2><p>做到一半觉得自己行了,就开始大刀阔斧的搭建,结果出bug了,开始debug.</p>
-<p>一个小时后…</p>
-<p>重头再来…</p>
-<p>二十分钟后恢复原先进度.</p>
-<h2 id="侧边栏闪现消失"><a href="#侧边栏闪现消失" class="headerlink" title="侧边栏闪现消失"></a>侧边栏闪现消失</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h3><p>使用Gimin模板,左下带头像的主题块空白,切换到目录是也是空白</p>
-<h3 id="尝试1"><a href="#尝试1" class="headerlink" title="尝试1:"></a>尝试1:</h3><p>​	一开始我觉得应该是头像图片太大了(用了一个10M的壁纸),可能导致这部分模块崩溃.</p>
-<p>​	更改图片.没变化.失败.</p>
-<h3 id="尝试2"><a href="#尝试2" class="headerlink" title="尝试2:"></a>尝试2:</h3><p>​	可能是下面的链接或者某些格式不对.</p>
-<p>​	按照别人的模板一个一个对照,没毛病.失败</p>
-<h3 id="尝试3"><a href="#尝试3" class="headerlink" title="尝试3:"></a>尝试3:</h3><p>​	我发现那些空白的竟让能点!还能进入对应链接!有没有一种可能,那些东西一直都在,只是透明度为100%(我之前改了背景,所以改变了全局的透明度).</p>
-<p>​	从新找到之前改透明度的地方,随便改但没有用.失败</p>
-<h3 id="尝试4"><a href="#尝试4" class="headerlink" title="尝试4:"></a>尝试4:</h3><p>​	也可能是颜色问题,白色的字和白的背景重叠了</p>
-<p>​	改颜色,没毛病.失败.</p>
-<h3 id="尝试5"><a href="#尝试5" class="headerlink" title="尝试5:"></a>尝试5:</h3><p>​	在本地运行的时候是出现然后立马向下划走(网上访问会有延迟,可能就直接看不见了),有没有可能是动画问题,我也不清楚改了多少.styl文档.</p>
-<p>​	更改了theme&#x2F;next&#x2F;source&#x2F;cee&#x2F;_schemes&#x2F;Pisces&#x2F;_sidebar.styl中的 opacity: 0;,改成了1.出现了!但没完全出现,这次是0.4s那个样子.但再调大也没有用了</p>
-<p>​	事后分析:opacity不透明度,改成1(也就是100%),再加上是淡出效果所以就相当于所有淡出时间都在全部显示,直至消失是直接消失,相当于延长了显示时间.</p>
-<h3 id="尝试6"><a href="#尝试6" class="headerlink" title="尝试6:"></a>尝试6:</h3><p>​	经过观察,我发现出现的顺序是左下,左上,正文.而正文出现的时候左下就消失了,然后…</p>
-<p>​	!!!正文出现的时候左下就消失了?!这是尝试5延长了左下出现时间时才出现的现象,之前由于时间短一直看不出来.</p>
-<p>​	那么,真相只有一个:动画效果出问题了</p>
-<p>​	我把动画关了,然后…留下了幸福的泪水</p>
-<p>​	在经过最后的分析,可能是在之前更改主题配置文件的相关motion模块时更改了相关的配置文件(或者没装相关的软件),导致最后的sidebar: slideDownBigOut相关的运行出现了问题,可能导致左下角被认定成了一个过渡动画,所以图像和字体在很短时间出现然后消失,但具体的链接还在原来的位置,能够点击到.最后我决定注释掉sidebar语句,保留其他的动画效果.</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>​	哪怕我没有解决掉这个问题,解决问题的过程也并不能被算作浪费时间.在这段时间里,我有面对问题的烦躁,有找到线索的欣喜,有一次次失败的无奈,也有最后的坦然.</p>
-<p>​	这次,我用了六次尝试解决了这个Bug.愿在以后困难重重的日子里,每个人都能有第七次尝试的信念!</p>
-<p>​	谨以此文,纪念我2023年3月1日下午与bug斗争的5个小时.</p>
+        <h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><h2 id="文件概述"><a href="#文件概述" class="headerlink" title="文件概述"></a>文件概述</h2><p>​	C把文件看做一些列的连续的字节,每个字节都能被单独的读取</p>
+<p>C的两种文件模式&#x3D;&#x3D;文本模式&#x3D;&#x3D;{可以访问每个字节）和&#x3D;&#x3D;二进制模式&#x3D;&#x3D;（把行末尾或文件末尾映射为C模式）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230301220536466.png" alt="image-20230301220536466"></p>
+<p>stdio.h头文件把3个文件指针与3个标准文件相关联即stdin,stdout,stderr</p>
+<h3 id="不同的文件："><a href="#不同的文件：" class="headerlink" title="不同的文件："></a>不同的文件：</h3><ul>
+<li>文本文件：文件使用二进制编码的字符（ASCII或其他）表示文本，类似于字符串</li>
+<li>二进制文件：使用二进制值代表机器语言代码或数值数据，如图片音乐</li>
+</ul>
+<p>​	存储：所有的文件内容都以二进制形式存储，也就是在磁盘上是一串01010</p>
+<h3 id="I-x2F-O"><a href="#I-x2F-O" class="headerlink" title="I&#x2F;O"></a>I&#x2F;O</h3><p>底层I&#x2F;O:使用操作系统提供的基本I&#x2F;O服务</p>
+<p>标准高级I&#x2F;O:使用C库的标准包的stdio.h头文件定义(C标准只支持这个)</p>
+<h4 id="标准I-x2F-O好处"><a href="#标准I-x2F-O好处" class="headerlink" title="标准I&#x2F;O好处:"></a>标准I&#x2F;O好处:</h4><ul>
+<li>可移植</li>
+<li>有很多函数简化问题</li>
+<li>输入输出都是缓冲的</li>
+</ul>
+<h3 id="在每一行开头处检测到-Z时-会返回EOF值-一般为-1"><a href="#在每一行开头处检测到-Z时-会返回EOF值-一般为-1" class="headerlink" title="在每一行开头处检测到^Z时,会返回EOF值,一般为-1"></a>在每一行开头处检测到^Z时,会返回EOF值,一般为-1</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="type">char</span>;					<span class="comment">//由于返回值是-1,使用char类型可能会出错</span></span><br><span class="line">FILE* fp =open(<span class="string">&quot;readin.txt&quot;</span>,<span class="string">&quot;r&quot;</span>);</span><br><span class="line"><span class="keyword">while</span>((ch=getc(fp))!=EOF)&#123;	<span class="comment">//检测是否读到末尾</span></span><br><span class="line">    something...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="相关函数"><a href="#相关函数" class="headerlink" title="相关函数"></a>相关函数</h2><h3 id="getc-FILE-InStream-putc-char-FILE-InOutStream"><a href="#getc-FILE-InStream-putc-char-FILE-InOutStream" class="headerlink" title="getc(FILE* InStream),putc(char, FILE* InOutStream)"></a>getc(FILE* InStream),putc(char, FILE* InOutStream)</h3><p>getchar(),putchar都是由上面定义的</p>
+<h3 id="fprintf-fp-“-s-n”-char"><a href="#fprintf-fp-“-s-n”-char" class="headerlink" title="fprintf(fp, “%s\n”, char*)"></a>fprintf(fp, “%s\n”, char*)</h3><h3 id="fscanf-fp-“-s”-char"><a href="#fscanf-fp-“-s”-char" class="headerlink" title="fscanf(fp, “%s”, char*)"></a>fscanf(fp, “%s”, char*)</h3><p>注意文件指针的位置和getc区分开</p>
+<h3 id="fgets-buf-STLEN-fp"><a href="#fgets-buf-STLEN-fp" class="headerlink" title="fgets(buf, STLEN, fp)"></a>fgets(buf, STLEN, fp)</h3><p>buf是char类型数组的名称，STLEN是字符串的大小，fp是指向FILE的指针</p>
+<p>fgets()函数读取输入直到第 1 个换行符的后面，或读到文件结尾，或者读取STLEN-1 个字符</p>
+<p>fgets()函数在遇到EOF时将返回NULL值,如果未遇到EOF则之前返回传给它的地址</p>
+<h3 id="fputs-buf-fp"><a href="#fputs-buf-fp" class="headerlink" title="fputs(buf, fp)"></a>fputs(buf, fp)</h3><p>fputs()函数接受两个参数：第1个是字符串的地址；第2个是文件指针。</p>
+<p>fputs()在打印字符串时&#x3D;&#x3D;不会&#x3D;&#x3D;在其末尾添加换行符</p>
+<p>由于fgets()保留了换行符，fputs()就不会再添加换行符，好配合!</p>
+<h3 id="fopen-FILE-”r”-fclose-FILE"><a href="#fopen-FILE-”r”-fclose-FILE" class="headerlink" title="fopen(FILE*,”r”) fclose(FILE)"></a>fopen(FILE*,”r”) fclose(FILE)</h3><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230301220730027.png" alt="image-20230301220730027"></p>
+<p>fclose必要时会刷新缓冲区,但如果磁盘已满等错误可能会导致fclose失败</p>
+<h3 id="exit"><a href="#exit" class="headerlink" title="exit()"></a>exit()</h3><p>关闭所有打开的文件并结束程序,即使递归遇到一个exit也会终止程序</p>
+<h3 id="fseek-fp-0L-SEEK-SET-x2F-x2F-定位至文件开始处"><a href="#fseek-fp-0L-SEEK-SET-x2F-x2F-定位至文件开始处" class="headerlink" title="fseek(fp, 0L, SEEK_SET); &#x2F;&#x2F; 定位至文件开始处"></a>fseek(fp, 0L, SEEK_SET); &#x2F;&#x2F; 定位至文件开始处</h3><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230301220749765.png" alt="image-20230301220749765"></p>
+<p>L后缀表明其值是long类型,所以第二个参数作为偏移量可正可负可零</p>
+<p>如果一切正常，fseek()的返回值为0；如果出现错误（如试图移动的距离超出文件的范围），其返回值为-1。</p>
+<h3 id="ftell-fp"><a href="#ftell-fp" class="headerlink" title="ftell(fp)"></a>ftell(fp)</h3><p>ftell()函数的返回类型是long，返回的是当前的位置.文件的第1个字节到文件开始处的距离是0，以此类推。ANSI C规定，该定义适用于二进制模式打开的文件，以文件模式打开文件的情况不同。</p>
+<h3 id="int-fflush-FILE-fp"><a href="#int-fflush-FILE-fp" class="headerlink" title="int fflush(FILE *fp)"></a>int fflush(FILE *fp)</h3><p>刷新缓冲区</p>
+<h3 id="fread-和-fwrite"><a href="#fread-和-fwrite" class="headerlink" title="fread()和 fwrite()"></a>fread()和 fwrite()</h3><p>fread()和 fwrite函数用于以二进制形式处理数据</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230301220808354.png" alt="image-20230301220808354"></p>
 
     </div>
 
@@ -289,7 +305,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2023/03/01/BlogBugReflect/" title="搭建Blog时的Bug">http://example.com/2023/03/01/BlogBugReflect/</a>
+    <a href="http://example.com/2023/03/01/CPP%E6%96%87%E4%BB%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" title="C文件输入输出">http://example.com/2023/03/01/CPP文件输入输出/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -306,12 +322,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/02/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC%E4%B8%80%E7%AB%A0/" rel="prev" title="Introduction">
-      <i class="fa fa-chevron-left"></i> Introduction
+    <a href="/2023/03/01/CSAPP%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" rel="prev" title="处理器系统结构">
+      <i class="fa fa-chevron-left"></i> 处理器系统结构
     </a></div>
       <div class="post-nav-item">
-    <a href="/2023/03/01/CSAPP%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" rel="next" title="处理器系统结构">
-      处理器系统结构 <i class="fa fa-chevron-right"></i>
+    <a href="/2023/03/01/CSAPP%E5%82%A8%E5%AD%98%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" rel="next" title="储存器层次结构">
+      储存器层次结构 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -371,7 +387,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%83%E4%B8%80%E5%A0%91%E9%95%BF%E4%B8%80%E6%99%BA"><span class="nav-text">吃一堑长一智</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B2%A1%E5%A4%87%E4%BB%BD"><span class="nav-text">没备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E9%97%AA%E7%8E%B0%E6%B6%88%E5%A4%B1"><span class="nav-text">侧边栏闪现消失</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-text">问题描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%951"><span class="nav-text">尝试1:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%952"><span class="nav-text">尝试2:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%953"><span class="nav-text">尝试3:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%954"><span class="nav-text">尝试4:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%955"><span class="nav-text">尝试5:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%956"><span class="nav-text">尝试6:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6"><span class="nav-text">文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%A6%82%E8%BF%B0"><span class="nav-text">文件概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="nav-text">不同的文件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-x2F-O"><span class="nav-text">I&#x2F;O</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E5%87%86I-x2F-O%E5%A5%BD%E5%A4%84"><span class="nav-text">标准I&#x2F;O好处:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%AF%8F%E4%B8%80%E8%A1%8C%E5%BC%80%E5%A4%B4%E5%A4%84%E6%A3%80%E6%B5%8B%E5%88%B0-Z%E6%97%B6-%E4%BC%9A%E8%BF%94%E5%9B%9EEOF%E5%80%BC-%E4%B8%80%E8%88%AC%E4%B8%BA-1"><span class="nav-text">在每一行开头处检测到^Z时,会返回EOF值,一般为-1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="nav-text">相关函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#getc-FILE-InStream-putc-char-FILE-InOutStream"><span class="nav-text">getc(FILE* InStream),putc(char, FILE* InOutStream)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fprintf-fp-%E2%80%9C-s-n%E2%80%9D-char"><span class="nav-text">fprintf(fp, “%s\n”, char*)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fscanf-fp-%E2%80%9C-s%E2%80%9D-char"><span class="nav-text">fscanf(fp, “%s”, char*)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fgets-buf-STLEN-fp"><span class="nav-text">fgets(buf, STLEN, fp)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fputs-buf-fp"><span class="nav-text">fputs(buf, fp)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fopen-FILE-%E2%80%9Dr%E2%80%9D-fclose-FILE"><span class="nav-text">fopen(FILE*,”r”) fclose(FILE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exit"><span class="nav-text">exit()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fseek-fp-0L-SEEK-SET-x2F-x2F-%E5%AE%9A%E4%BD%8D%E8%87%B3%E6%96%87%E4%BB%B6%E5%BC%80%E5%A7%8B%E5%A4%84"><span class="nav-text">fseek(fp, 0L, SEEK_SET); &#x2F;&#x2F; 定位至文件开始处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ftell-fp"><span class="nav-text">ftell(fp)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#int-fflush-FILE-fp"><span class="nav-text">int fflush(FILE *fp)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fread-%E5%92%8C-fwrite"><span class="nav-text">fread()和 fwrite()</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

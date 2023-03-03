@@ -20,23 +20,26 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta name="description" content="以CSAPP为主">
+  <meta name="description" content="形式语言与自动机第一章前置基本内容以及绪论">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机组成原理第一章">
-<meta property="og:url" content="http://example.com/2023/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:title" content="自动机绪论">
+<meta property="og:url" content="http://example.com/2023/03/03/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC1%E7%AB%A0%E5%89%8D%E7%BD%AE%E5%86%85%E5%AE%B9/index.html">
 <meta property="og:site_name" content="果冻">
-<meta property="og:description" content="以CSAPP为主">
+<meta property="og:description" content="形式语言与自动机第一章前置基本内容以及绪论">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237182.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237898.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237298.png">
-<meta property="article:published_time" content="2023-03-01T14:40:18.266Z">
-<meta property="article:modified_time" content="2023-03-01T14:40:10.795Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213059445.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/%E9%9B%86%E5%90%88.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213320803.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213602396.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213705940.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230301221257527.png">
+<meta property="article:published_time" content="2023-03-03T14:32:53.396Z">
+<meta property="article:modified_time" content="2023-03-03T14:32:53.397Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237182.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213059445.png">
 
-<link rel="canonical" href="http://example.com/2023/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+<link rel="canonical" href="http://example.com/2023/03/03/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC1%E7%AB%A0%E5%89%8D%E7%BD%AE%E5%86%85%E5%AE%B9/">
 
 
 <script id="page-configurations">
@@ -49,7 +52,7 @@
   };
 </script>
 
-  <title>计算机组成原理第一章 | 果冻</title>
+  <title>自动机绪论 | 果冻</title>
   
 
 
@@ -177,7 +180,7 @@
     
 </div>
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/03/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC1%E7%AB%A0%E5%89%8D%E7%BD%AE%E5%86%85%E5%AE%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -190,7 +193,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          计算机组成原理第一章
+          自动机绪论
         </h1>
 
         <div class="post-meta">
@@ -200,9 +203,8 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-03-01 22:40:18 / 修改时间：22:40:10" itemprop="dateCreated datePublished" datetime="2023-03-01T22:40:18+08:00">2023-03-01</time>
+              <time title="创建时间：2023-03-03 22:32:53" itemprop="dateCreated datePublished" datetime="2023-03-03T22:32:53+08:00">2023-03-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -210,7 +212,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机组成原理</span></a>
+                  <a href="/categories/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">形式语言与自动机</span></a>
                 </span>
             </span>
 
@@ -226,7 +228,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>1.1k</span>
+              <span>390</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -234,7 +236,7 @@
               </span>
               <span>1 分钟</span>
             </span>
-            <div class="post-description">以CSAPP为主</div>
+            <div class="post-description">形式语言与自动机第一章前置基本内容以及绪论</div>
 
         </div>
       </header>
@@ -245,42 +247,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="授课老师"><a href="#授课老师" class="headerlink" title="授课老师"></a>授课老师</h2><p>裴颂伟 计算机体系结构中心 <a href="mailto:&#x70;&#101;&#105;&#115;&#x6f;&#110;&#x67;&#119;&#x65;&#x69;&#x40;&#98;&#117;&#x70;&#x74;&#46;&#x65;&#100;&#x75;&#46;&#x63;&#110;">&#x70;&#101;&#105;&#115;&#x6f;&#110;&#x67;&#119;&#x65;&#x69;&#x40;&#98;&#117;&#x70;&#x74;&#46;&#x65;&#100;&#x75;&#46;&#x63;&#110;</a> 手机：15810262768，办公室：教三1014 硬件方面</p>
-<ul>
-<li><p>前年竞赛+毕设学生季禹城？二战清华学硕</p>
-</li>
-<li><p>研究方向：问题：1）存储墙（cpu功率高但存储器效率低）</p>
-<p>　　　　　　　　2）计算机功耗强</p>
-<p>  　　　　　　　　解决办法：存的计算（直接在存储器里计算）RRAM阻变存储器（掉电也不消失）</p>
-</li>
+        <h1 id="前置基本内容"><a href="#前置基本内容" class="headerlink" title="前置基本内容"></a>前置基本内容</h1><blockquote>
+<p>集合的基数(势)#A或|A|:有限集合A中不同元素的个数.</p>
+<p>偶数集和整数集也是等势的</p>
+<p>幂集2^A^或ρ(A):A的所有子集组成的集合</p>
+<img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213059445.png" alt="image-20230223213059445" style="zoom:50%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/%E9%9B%86%E5%90%88.png" alt="集合" style="zoom:50%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213320803.png" alt="image-20230223213320803" style="zoom:50%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213602396.png" alt="image-20230223213602396" style="zoom:50%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213705940.png" alt="image-20230223213705940" style="zoom:50%;" />
+</blockquote>
+<h1 id="形式语言与自动机概述及应用（绪论）"><a href="#形式语言与自动机概述及应用（绪论）" class="headerlink" title="形式语言与自动机概述及应用（绪论）"></a>形式语言与自动机概述及应用（绪论）</h1><h2 id="形式语言定义"><a href="#形式语言定义" class="headerlink" title="形式语言定义"></a>形式语言定义</h2><ul>
+<li>形式语言：形式化描述字母表上的字符串的集合（有一定的描述范围，是一种通用语言）</li>
+<li>字母表：字符的有限集合</li>
+<li>字符串：字母表中的字符构成的有限序列</li>
+<li>自然语言：平时说话的语言<br>eg：若T为C语言所用的全部符号的集合，则<em>正确的C程序</em>就是T上的语言</li>
 </ul>
-<h2 id="课程安排"><a href="#课程安排" class="headerlink" title="课程安排"></a>课程安排</h2><p>　　成绩：期中10(开闭卷未定) 平时10 实验20 期末60 实验16h 课程48h</p>
-<p>　　推荐教材：计算机原理与设计（Verilog HDL版）李亚民</p>
-<h1 id="第一章计算机系统概论"><a href="#第一章计算机系统概论" class="headerlink" title="第一章计算机系统概论"></a>第一章计算机系统概论</h1><h2 id="计算机分类"><a href="#计算机分类" class="headerlink" title="计算机分类"></a>计算机分类</h2><h3 id="电子数字计算机"><a href="#电子数字计算机" class="headerlink" title="电子数字计算机"></a>电子数字计算机</h3><p>按位运算,并且不连续跳动,又名电子计算机,电脑.</p>
-<h3 id="电子模拟计算机"><a href="#电子模拟计算机" class="headerlink" title="电子模拟计算机"></a>电子模拟计算机</h3><p>模拟也就是相似,数值用连续量表示,运算过程也是连续的.危险流浪者号用的就是模拟电路哦~</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237182.png" alt="image-20230301223718115"></p>
-<h3 id="数字计算机分类"><a href="#数字计算机分类" class="headerlink" title="数字计算机分类"></a>数字计算机分类</h3><p>　　　　专用计算机　　		通用计算机</p>
-<p>　　　　最有效经济快速　　适应性很大</p>
-<p>　　<img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237898.png" alt="image-20230301223734843"></p>
-<h2 id="计算机发展史"><a href="#计算机发展史" class="headerlink" title="计算机发展史"></a>计算机发展史</h2><h3 id="第一代：真空管"><a href="#第一代：真空管" class="headerlink" title="第一代：真空管"></a>第一代：真空管</h3><p>　　冯诺依曼结构 　“存储程序”思想：运数据到主存，自动进行程序，按地址自动执行指令　　存储器为中心（每个数据都要经过存储器）</p>
-<h3 id="第二代：晶体管"><a href="#第二代：晶体管" class="headerlink" title="第二代：晶体管"></a>第二代：晶体管</h3><h3 id="第三代：SSI、MSI。-中小规模集成电路计算机"><a href="#第三代：SSI、MSI。-中小规模集成电路计算机" class="headerlink" title="第三代：SSI、MSI。　中小规模集成电路计算机"></a>第三代：SSI、MSI。　中小规模集成电路计算机</h3><p>　　　　从此代开始,与集成电路相关,逻辑元件与主存储器均由集成电路（IC）实现。</p>
-<p>　　　　引入总线结构</p>
-<p>　　　　IBM引入兼容机有相同或者相似的指令集，操作系统　　“向后（落后的）兼容”</p>
-<h3 id="第四代：LSI、VLSI：（超）大规模集成电路"><a href="#第四代：LSI、VLSI：（超）大规模集成电路" class="headerlink" title="第四代：LSI、VLSI：（超）大规模集成电路"></a>第四代：LSI、VLSI：（超）大规模集成电路</h3><h3 id="第五代-巨大规模集成电路计算机"><a href="#第五代-巨大规模集成电路计算机" class="headerlink" title="第五代:巨大规模集成电路计算机"></a>第五代:巨大规模集成电路计算机</h3><h2 id="半导体存储器的发展"><a href="#半导体存储器的发展" class="headerlink" title="半导体存储器的发展"></a>半导体存储器的发展</h2><p>摩尔定律：每12个月晶体管数目翻一翻，-》18个月,进入后摩尔时代</p>
-<h2 id="微处理器的发展"><a href="#微处理器的发展" class="headerlink" title="微处理器的发展"></a>微处理器的发展</h2><p>　　1B byte&#x3D; 8b bit</p>
-<h2 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h2><h3 id="CPI"><a href="#CPI" class="headerlink" title="CPI"></a>CPI</h3><p>Cycles Per Instruction 每个指令要多少时钟 &#x3D; CPU时钟周期数</p>
-<p>可以用来衡量以下效果</p>
-<ul>
-<li><p>ISA 简单指令集和复杂指令集（x86）</p>
-</li>
-<li><p>器件的实现（implementation of that architecture）</p>
-</li>
-<li><p>　项目（compiler，algorithm）</p>
-</li>
+<h2 id="形式语言应用"><a href="#形式语言应用" class="headerlink" title="形式语言应用"></a>形式语言应用</h2><p>编译（最初的应用）、可计算理论、定理自动证明、程序转换、模式识别等</p>
+<h2 id="自动机定义"><a href="#自动机定义" class="headerlink" title="自动机定义"></a>自动机定义</h2><ul>
+<li>具有离散输入输出的数学模型</li>
+<li>状态：一个标识，能区分自动机在不同时刻的状态</li>
+<li>本质：很久状态、输入（激励）和规则决定下一个状态（状态迁移）</li>
+<li>分类：有限、下推、图灵机</li>
 </ul>
-<h3 id="IPC：。。。"><a href="#IPC：。。。" class="headerlink" title="IPC：。。。"></a>IPC：。。。</h3><h3 id="CPU执行时间-x3D-CPU时钟周期数-时钟周期数"><a href="#CPU执行时间-x3D-CPU时钟周期数-时钟周期数" class="headerlink" title="CPU执行时间&#x3D;CPU时钟周期数*时钟周期数"></a>CPU执行时间&#x3D;CPU时钟周期数*时钟周期数</h3><p>&#x3D;CPU时钟周期数%时钟频率</p>
-<p>&#x3D;指令条数<em>CPI</em>时钟周期数</p>
-<h3 id="CPU时钟周期数：指令条数-CPI"><a href="#CPU时钟周期数：指令条数-CPI" class="headerlink" title="CPU时钟周期数：指令条数*CPI"></a>CPU时钟周期数：指令条数*CPI</h3><h3 id="MIPS：单位时间内的执行指令数-x3D-指令条数-（程序执行时间-10-6）M是百万"><a href="#MIPS：单位时间内的执行指令数-x3D-指令条数-（程序执行时间-10-6）M是百万" class="headerlink" title="MIPS：单位时间内的执行指令数&#x3D;指令条数%（程序执行时间*10^6）M是百万"></a>MIPS：单位时间内的执行指令数&#x3D;指令条数%（程序执行时间*10^6）M是百万</h3><h3 id="MFLOPS：每秒百万次浮点操作次数-x3D-浮点操作次数-（程序执行时间-10-6）"><a href="#MFLOPS：每秒百万次浮点操作次数-x3D-浮点操作次数-（程序执行时间-10-6）" class="headerlink" title="MFLOPS：每秒百万次浮点操作次数&#x3D;浮点操作次数%（程序执行时间*10^6）"></a>MFLOPS：每秒百万次浮点操作次数&#x3D;浮点操作次数%（程序执行时间*10^6）</h3><h2 id="计算机硬件"><a href="#计算机硬件" class="headerlink" title="计算机硬件"></a>计算机硬件</h2><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237298.png" alt="image-20230301223759240"></p>
+<h2 id="形式语言与自动机的关系"><a href="#形式语言与自动机的关系" class="headerlink" title="形式语言与自动机的关系"></a>形式语言与自动机的关系</h2><p>前者为字符串（文法），后者字符串的识别系统。二者密切相关。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230301221257527.png" alt="image-20230301221257527"></p>
+<p>一定类型的自动机和某种类型的文法具有等价性。</p>
 
     </div>
 
@@ -298,7 +294,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2023/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" title="计算机组成原理第一章">http://example.com/2023/03/01/计算机组成原理/</a>
+    <a href="http://example.com/2023/03/03/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC1%E7%AB%A0%E5%89%8D%E7%BD%AE%E5%86%85%E5%AE%B9/" title="自动机绪论">http://example.com/2023/03/03/形式语言与自动机第1章前置内容/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -315,13 +311,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/03/01/%E5%82%A8%E5%AD%98%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" rel="prev" title="储存器层次结构">
-      <i class="fa fa-chevron-left"></i> 储存器层次结构
+    <a href="/2023/03/03/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC2%E7%AB%A0%E6%96%87%E6%B3%95%E4%B8%8E%E8%AF%AD%E8%A8%80/" rel="prev" title="语言与文法">
+      <i class="fa fa-chevron-left"></i> 语言与文法
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/03/02/C++/" rel="next" title="C++ Primer">
-      C++ Primer <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -380,7 +373,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%88%E8%AF%BE%E8%80%81%E5%B8%88"><span class="nav-text">授课老师</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BE%E7%A8%8B%E5%AE%89%E6%8E%92"><span class="nav-text">课程安排</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA"><span class="nav-text">第一章计算机系统概论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%88%86%E7%B1%BB"><span class="nav-text">计算机分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E6%95%B0%E5%AD%97%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-text">电子数字计算机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E6%A8%A1%E6%8B%9F%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-text">电子模拟计算机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%88%86%E7%B1%BB"><span class="nav-text">数字计算机分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%91%E5%B1%95%E5%8F%B2"><span class="nav-text">计算机发展史</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%BB%A3%EF%BC%9A%E7%9C%9F%E7%A9%BA%E7%AE%A1"><span class="nav-text">第一代：真空管</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E4%BB%A3%EF%BC%9A%E6%99%B6%E4%BD%93%E7%AE%A1"><span class="nav-text">第二代：晶体管</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E4%BB%A3%EF%BC%9ASSI%E3%80%81MSI%E3%80%82-%E4%B8%AD%E5%B0%8F%E8%A7%84%E6%A8%A1%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-text">第三代：SSI、MSI。　中小规模集成电路计算机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E4%BB%A3%EF%BC%9ALSI%E3%80%81VLSI%EF%BC%9A%EF%BC%88%E8%B6%85%EF%BC%89%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF"><span class="nav-text">第四代：LSI、VLSI：（超）大规模集成电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E4%BB%A3-%E5%B7%A8%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-text">第五代:巨大规模集成电路计算机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%8F%91%E5%B1%95"><span class="nav-text">半导体存储器的发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%8F%91%E5%B1%95"><span class="nav-text">微处理器的发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-text">性能指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CPI"><span class="nav-text">CPI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IPC%EF%BC%9A%E3%80%82%E3%80%82%E3%80%82"><span class="nav-text">IPC：。。。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4-x3D-CPU%E6%97%B6%E9%92%9F%E5%91%A8%E6%9C%9F%E6%95%B0-%E6%97%B6%E9%92%9F%E5%91%A8%E6%9C%9F%E6%95%B0"><span class="nav-text">CPU执行时间&#x3D;CPU时钟周期数*时钟周期数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU%E6%97%B6%E9%92%9F%E5%91%A8%E6%9C%9F%E6%95%B0%EF%BC%9A%E6%8C%87%E4%BB%A4%E6%9D%A1%E6%95%B0-CPI"><span class="nav-text">CPU时钟周期数：指令条数*CPI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MIPS%EF%BC%9A%E5%8D%95%E4%BD%8D%E6%97%B6%E9%97%B4%E5%86%85%E7%9A%84%E6%89%A7%E8%A1%8C%E6%8C%87%E4%BB%A4%E6%95%B0-x3D-%E6%8C%87%E4%BB%A4%E6%9D%A1%E6%95%B0-%EF%BC%88%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4-10-6%EF%BC%89M%E6%98%AF%E7%99%BE%E4%B8%87"><span class="nav-text">MIPS：单位时间内的执行指令数&#x3D;指令条数%（程序执行时间*10^6）M是百万</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MFLOPS%EF%BC%9A%E6%AF%8F%E7%A7%92%E7%99%BE%E4%B8%87%E6%AC%A1%E6%B5%AE%E7%82%B9%E6%93%8D%E4%BD%9C%E6%AC%A1%E6%95%B0-x3D-%E6%B5%AE%E7%82%B9%E6%93%8D%E4%BD%9C%E6%AC%A1%E6%95%B0-%EF%BC%88%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4-10-6%EF%BC%89"><span class="nav-text">MFLOPS：每秒百万次浮点操作次数&#x3D;浮点操作次数%（程序执行时间*10^6）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6"><span class="nav-text">计算机硬件</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="nav-text">前置基本内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E6%A6%82%E8%BF%B0%E5%8F%8A%E5%BA%94%E7%94%A8%EF%BC%88%E7%BB%AA%E8%AE%BA%EF%BC%89"><span class="nav-text">形式语言与自动机概述及应用（绪论）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%AE%9A%E4%B9%89"><span class="nav-text">形式语言定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%BA%94%E7%94%A8"><span class="nav-text">形式语言应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%AE%9A%E4%B9%89"><span class="nav-text">自动机定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-text">形式语言与自动机的关系</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -396,7 +389,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -460,19 +453,19 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">19k</span>
+    <span title="站点总字数">21k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">19 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://webvpn.bupt.edu.cn/" class="theme-link" rel="noopener" target="_blank">BUPT</a> 强力驱动
   </div>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共11.8k字</span>
+  <span class="post-count">博客全站共12.6k字</span>
 </div>
 
 

@@ -20,19 +20,13 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta name="description" content="在学了,在学了">
+  <meta name="description" content="形式语言与自动机的第二章语言与文法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="形式语言与自动机">
-<meta property="og:url" content="http://example.com/2023/03/01/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/index.html">
+<meta property="og:title" content="语言与文法">
+<meta property="og:url" content="http://example.com/2023/03/03/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC2%E7%AB%A0%E6%96%87%E6%B3%95%E4%B8%8E%E8%AF%AD%E8%A8%80/index.html">
 <meta property="og:site_name" content="果冻">
-<meta property="og:description" content="在学了,在学了">
+<meta property="og:description" content="形式语言与自动机的第二章语言与文法">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213059445.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/%E9%9B%86%E5%90%88.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213320803.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213602396.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213705940.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230301221257527.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303021011202.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303021020667.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303021026337.png">
@@ -44,13 +38,13 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303021040837.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303021046963.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303021113632.png">
-<meta property="article:published_time" content="2023-03-01T11:08:22.153Z">
-<meta property="article:modified_time" content="2023-03-02T11:53:36.856Z">
+<meta property="article:published_time" content="2023-03-03T14:28:40.185Z">
+<meta property="article:modified_time" content="2023-03-03T14:31:54.836Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213059445.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303021011202.png">
 
-<link rel="canonical" href="http://example.com/2023/03/01/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/">
+<link rel="canonical" href="http://example.com/2023/03/03/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC2%E7%AB%A0%E6%96%87%E6%B3%95%E4%B8%8E%E8%AF%AD%E8%A8%80/">
 
 
 <script id="page-configurations">
@@ -63,7 +57,7 @@
   };
 </script>
 
-  <title>形式语言与自动机 | 果冻</title>
+  <title>语言与文法 | 果冻</title>
   
 
 
@@ -191,7 +185,7 @@
     
 </div>
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/01/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/03/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC2%E7%AB%A0%E6%96%87%E6%B3%95%E4%B8%8E%E8%AF%AD%E8%A8%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -204,7 +198,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          形式语言与自动机
+          语言与文法
         </h1>
 
         <div class="post-meta">
@@ -214,16 +208,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2023-03-01 19:08:22" itemprop="dateCreated datePublished" datetime="2023-03-01T19:08:22+08:00">2023-03-01</time>
+              <time title="创建时间：2023-03-03 22:28:40 / 修改时间：22:31:54" itemprop="dateCreated datePublished" datetime="2023-03-03T22:28:40+08:00">2023-03-03</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-02 19:53:36" itemprop="dateModified" datetime="2023-03-02T19:53:36+08:00">2023-03-02</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -246,15 +234,15 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>2k</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
-            <div class="post-description">在学了,在学了</div>
+            <div class="post-description">形式语言与自动机的第二章语言与文法</div>
 
         </div>
       </header>
@@ -265,37 +253,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="前置基本内容"><a href="#前置基本内容" class="headerlink" title="前置基本内容"></a>前置基本内容</h1><blockquote>
-<p>集合的基数(势)#A或|A|:有限集合A中不同元素的个数.</p>
-<p>偶数集和整数集也是等势的</p>
-<p>幂集2^A^或ρ(A):A的所有子集组成的集合</p>
-<img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213059445.png" alt="image-20230223213059445" style="zoom:50%;" />
-
-<img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/%E9%9B%86%E5%90%88.png" alt="集合" style="zoom:50%;" />
-
-<img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213320803.png" alt="image-20230223213320803" style="zoom:50%;" />
-
-<img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213602396.png" alt="image-20230223213602396" style="zoom:50%;" />
-
-<img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230223213705940.png" alt="image-20230223213705940" style="zoom:50%;" />
-</blockquote>
-<h1 id="形式语言与自动机概述及应用（绪论）"><a href="#形式语言与自动机概述及应用（绪论）" class="headerlink" title="形式语言与自动机概述及应用（绪论）"></a>形式语言与自动机概述及应用（绪论）</h1><h2 id="形式语言定义"><a href="#形式语言定义" class="headerlink" title="形式语言定义"></a>形式语言定义</h2><ul>
-<li>形式语言：形式化描述字母表上的字符串的集合（有一定的描述范围，是一种通用语言）</li>
-<li>字母表：字符的有限集合</li>
-<li>字符串：字母表中的字符构成的有限序列</li>
-<li>自然语言：平时说话的语言<br>eg：若T为C语言所用的全部符号的集合，则<em>正确的C程序</em>就是T上的语言</li>
-</ul>
-<h2 id="形式语言应用"><a href="#形式语言应用" class="headerlink" title="形式语言应用"></a>形式语言应用</h2><p>编译（最初的应用）、可计算理论、定理自动证明、程序转换、模式识别等</p>
-<h2 id="自动机定义"><a href="#自动机定义" class="headerlink" title="自动机定义"></a>自动机定义</h2><ul>
-<li>具有离散输入输出的数学模型</li>
-<li>状态：一个标识，能区分自动机在不同时刻的状态</li>
-<li>本质：很久状态、输入（激励）和规则决定下一个状态（状态迁移）</li>
-<li>分类：有限、下推、图灵机</li>
-</ul>
-<h2 id="形式语言与自动机的关系"><a href="#形式语言与自动机的关系" class="headerlink" title="形式语言与自动机的关系"></a>形式语言与自动机的关系</h2><p>前者为字符串（文法），后者字符串的识别系统。二者密切相关。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/image-20230301221257527.png" alt="image-20230301221257527"></p>
-<p>一定类型的自动机和某种类型的文法具有等价性。</p>
-<h1 id="语言与文法"><a href="#语言与文法" class="headerlink" title="语言与文法"></a>语言与文法</h1><blockquote>
+        <h1 id="语言与文法"><a href="#语言与文法" class="headerlink" title="语言与文法"></a>语言与文法</h1><blockquote>
 <p>字符串:T中字符构成的一个有限序列，或称为字<br>空串：E表示，不包含任何字符<br>字符串长度，|X|，其中字符个数</p>
 </blockquote>
 <h2 id="字母表运算"><a href="#字母表运算" class="headerlink" title="字母表运算"></a>字母表运算</h2><h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><p>Ex&#x3D;xE&#x3D;x</p>
@@ -413,7 +371,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2023/03/01/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/" title="形式语言与自动机">http://example.com/2023/03/01/形式语言与自动机/</a>
+    <a href="http://example.com/2023/03/03/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC2%E7%AB%A0%E6%96%87%E6%B3%95%E4%B8%8E%E8%AF%AD%E8%A8%80/" title="语言与文法">http://example.com/2023/03/03/形式语言与自动机第2章文法与语言/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -430,12 +388,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/03/01/BlogBugReflect/" rel="prev" title="搭建Blog时的Bug">
-      <i class="fa fa-chevron-left"></i> 搭建Blog时的Bug
+    <a href="/2023/03/03/C++%E7%AC%AC3%E7%AB%A0%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84%E5%90%91%E9%87%8F/" rel="prev" title="字符串,向量和数组">
+      <i class="fa fa-chevron-left"></i> 字符串,向量和数组
     </a></div>
       <div class="post-nav-item">
-    <a href="/2023/03/01/%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" rel="next" title="处理器系统结构">
-      处理器系统结构 <i class="fa fa-chevron-right"></i>
+    <a href="/2023/03/03/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC1%E7%AB%A0%E5%89%8D%E7%BD%AE%E5%86%85%E5%AE%B9/" rel="next" title="自动机绪论">
+      自动机绪论 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -495,7 +453,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="nav-text">前置基本内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E6%A6%82%E8%BF%B0%E5%8F%8A%E5%BA%94%E7%94%A8%EF%BC%88%E7%BB%AA%E8%AE%BA%EF%BC%89"><span class="nav-text">形式语言与自动机概述及应用（绪论）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%AE%9A%E4%B9%89"><span class="nav-text">形式语言定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%BA%94%E7%94%A8"><span class="nav-text">形式语言应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%AE%9A%E4%B9%89"><span class="nav-text">自动机定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-text">形式语言与自动机的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%AD%E8%A8%80%E4%B8%8E%E6%96%87%E6%B3%95"><span class="nav-text">语言与文法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E6%AF%8D%E8%A1%A8%E8%BF%90%E7%AE%97"><span class="nav-text">字母表运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5"><span class="nav-text">连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E5%90%8E%E7%BC%80%E5%8F%8A%E5%AD%90%E4%B8%B2%EF%BC%9A"><span class="nav-text">前后缀及子串：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%86%E7%94%A8"><span class="nav-text">逆用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%82%E8%BF%90%E7%AE%97"><span class="nav-text">幂运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E8%A8%80"><span class="nav-text">语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%B3%95"><span class="nav-text">文法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E6%A1%86%E6%9E%B6"><span class="nav-text">前置框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E8%AF%AD%E8%A8%80"><span class="nav-text">元语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chomsky%E6%96%87%E6%B3%95%E4%BD%93%E7%B3%BB"><span class="nav-text">Chomsky文法体系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Chomsky%E6%96%87%E6%B3%95%E4%BD%93%E7%B3%BB%E5%88%86%E7%B1%BB"><span class="nav-text">Chomsky文法体系分类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%B3%95%E5%BD%A2%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="nav-text">文法形式定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E5%AF%BC%E4%B8%8E%E5%8F%A5%E5%9E%8B"><span class="nav-text">推导与句型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E6%8E%A8%E5%AF%BC"><span class="nav-text">直接推导</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E5%AF%BC%E5%BA%8F%E5%88%97"><span class="nav-text">推导序列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%A5%E5%9E%8B%E5%92%8C%E5%8F%A5%E5%AD%90"><span class="nav-text">句型和句子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E6%B3%95%E4%BA%A7%E7%94%9F%E7%9A%84%E8%AF%AD%E8%A8%80"><span class="nav-text">文法产生的语言</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0%E9%A2%98"><span class="nav-text">练习题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E5%90%8E%E7%BC%80%E5%AD%90%E4%B8%B2%E5%88%A4%E6%96%AD-%E7%A7%AF"><span class="nav-text">前缀后缀子串判断,积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%A7%E7%94%9F%E7%9A%84%E8%AF%AD%E8%A8%80"><span class="nav-text">写生成式产生的语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B1%E6%96%87%E6%B3%95%E4%BA%A7%E7%94%9F%E8%AF%AD%E8%A8%80"><span class="nav-text">由文法产生语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B1%E8%AF%AD%E8%A8%80%E5%86%99%E5%87%BA%E6%96%87%E6%B3%95"><span class="nav-text">由语言写出文法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%96%87%E6%B3%95%E7%B1%BB%E5%9E%8B"><span class="nav-text">判断文法类型</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%AD%E8%A8%80%E4%B8%8E%E6%96%87%E6%B3%95"><span class="nav-text">语言与文法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E6%AF%8D%E8%A1%A8%E8%BF%90%E7%AE%97"><span class="nav-text">字母表运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5"><span class="nav-text">连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E5%90%8E%E7%BC%80%E5%8F%8A%E5%AD%90%E4%B8%B2%EF%BC%9A"><span class="nav-text">前后缀及子串：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%86%E7%94%A8"><span class="nav-text">逆用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%82%E8%BF%90%E7%AE%97"><span class="nav-text">幂运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E8%A8%80"><span class="nav-text">语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%B3%95"><span class="nav-text">文法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E6%A1%86%E6%9E%B6"><span class="nav-text">前置框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E8%AF%AD%E8%A8%80"><span class="nav-text">元语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chomsky%E6%96%87%E6%B3%95%E4%BD%93%E7%B3%BB"><span class="nav-text">Chomsky文法体系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Chomsky%E6%96%87%E6%B3%95%E4%BD%93%E7%B3%BB%E5%88%86%E7%B1%BB"><span class="nav-text">Chomsky文法体系分类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%B3%95%E5%BD%A2%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="nav-text">文法形式定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E5%AF%BC%E4%B8%8E%E5%8F%A5%E5%9E%8B"><span class="nav-text">推导与句型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E6%8E%A8%E5%AF%BC"><span class="nav-text">直接推导</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E5%AF%BC%E5%BA%8F%E5%88%97"><span class="nav-text">推导序列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%A5%E5%9E%8B%E5%92%8C%E5%8F%A5%E5%AD%90"><span class="nav-text">句型和句子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E6%B3%95%E4%BA%A7%E7%94%9F%E7%9A%84%E8%AF%AD%E8%A8%80"><span class="nav-text">文法产生的语言</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0%E9%A2%98"><span class="nav-text">练习题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E5%90%8E%E7%BC%80%E5%AD%90%E4%B8%B2%E5%88%A4%E6%96%AD-%E7%A7%AF"><span class="nav-text">前缀后缀子串判断,积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%A7%E7%94%9F%E7%9A%84%E8%AF%AD%E8%A8%80"><span class="nav-text">写生成式产生的语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B1%E6%96%87%E6%B3%95%E4%BA%A7%E7%94%9F%E8%AF%AD%E8%A8%80"><span class="nav-text">由文法产生语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B1%E8%AF%AD%E8%A8%80%E5%86%99%E5%87%BA%E6%96%87%E6%B3%95"><span class="nav-text">由语言写出文法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%96%87%E6%B3%95%E7%B1%BB%E5%9E%8B"><span class="nav-text">判断文法类型</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -511,7 +469,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -575,19 +533,19 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">19k</span>
+    <span title="站点总字数">21k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">19 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://webvpn.bupt.edu.cn/" class="theme-link" rel="noopener" target="_blank">BUPT</a> 强力驱动
   </div>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共11.8k字</span>
+  <span class="post-count">博客全站共12.6k字</span>
 </div>
 
 
