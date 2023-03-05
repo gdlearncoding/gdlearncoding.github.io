@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta name="description" content="啊啊啊,我好憨">
+  <meta name="description" content="C++ Primer第六章函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建Blog时的Bug">
-<meta property="og:url" content="http://example.com/2023/03/01/BlogBugReflect/index.html">
+<meta property="og:title" content="函数">
+<meta property="og:url" content="http://example.com/2023/03/04/C++%E7%AC%AC6%E7%AB%A0%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="果冻">
-<meta property="og:description" content="啊啊啊,我好憨">
+<meta property="og:description" content="C++ Primer第六章函数">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-01T08:25:13.226Z">
-<meta property="article:modified_time" content="2023-03-01T09:22:34.822Z">
+<meta property="article:published_time" content="2023-03-04T01:17:51.489Z">
+<meta property="article:modified_time" content="2023-03-04T05:41:49.625Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2023/03/01/BlogBugReflect/">
+<link rel="canonical" href="http://example.com/2023/03/04/C++%E7%AC%AC6%E7%AB%A0%E5%87%BD%E6%95%B0/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>搭建Blog时的Bug | 果冻</title>
+  <title>函数 | 果冻</title>
   
 
 
@@ -173,7 +173,7 @@
     
 </div>
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/01/BlogBugReflect/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/04/C++%E7%AC%AC6%E7%AB%A0%E5%87%BD%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -186,7 +186,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          搭建Blog时的Bug
+          函数
         </h1>
 
         <div class="post-meta">
@@ -198,7 +198,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-03-01 16:25:13 / 修改时间：17:22:34" itemprop="dateCreated datePublished" datetime="2023-03-01T16:25:13+08:00">2023-03-01</time>
+              <time title="创建时间：2023-03-04 09:17:51 / 修改时间：13:41:49" itemprop="dateCreated datePublished" datetime="2023-03-04T09:17:51+08:00">2023-03-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -206,7 +206,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                  <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
                 </span>
             </span>
 
@@ -222,7 +222,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>1.3k</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -230,7 +230,7 @@
               </span>
               <span>1 分钟</span>
             </span>
-            <div class="post-description">啊啊啊,我好憨</div>
+            <div class="post-description">C++ Primer第六章函数</div>
 
         </div>
       </header>
@@ -241,37 +241,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>搭建博客时候一定要耐心,特别注意以下四点:</p>
-<ol>
-<li>文件的准确位置.比如看清楚是主题配置文件,还是站点配置文件.</li>
-<li>局部更改,做好备份.如同写代码一样,做完一个模块进行测试,别崩了之后不知道从哪里改了.</li>
-<li>带脑子工作.不要做CV工程师,复制的时候想想这点是用来干什么的,文档写的很清楚,程序出bug了先自己分析一下,再去百度,再去问别人.</li>
-<li>记得给帮助过你的人点个赞.</li>
-</ol>
-<h1 id="吃一堑长一智"><a href="#吃一堑长一智" class="headerlink" title="吃一堑长一智"></a>吃一堑长一智</h1><h2 id="没备份"><a href="#没备份" class="headerlink" title="没备份"></a>没备份</h2><p>做到一半觉得自己行了,就开始大刀阔斧的搭建,结果出bug了,开始debug.</p>
-<p>一个小时后…</p>
-<p>重头再来…</p>
-<p>二十分钟后恢复原先进度.</p>
-<h2 id="侧边栏闪现消失"><a href="#侧边栏闪现消失" class="headerlink" title="侧边栏闪现消失"></a>侧边栏闪现消失</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h3><p>使用Gimin模板,左下带头像的主题块空白,切换到目录是也是空白</p>
-<h3 id="尝试1"><a href="#尝试1" class="headerlink" title="尝试1:"></a>尝试1:</h3><p>​	一开始我觉得应该是头像图片太大了(用了一个10M的壁纸),可能导致这部分模块崩溃.</p>
-<p>​	更改图片.没变化.失败.</p>
-<h3 id="尝试2"><a href="#尝试2" class="headerlink" title="尝试2:"></a>尝试2:</h3><p>​	可能是下面的链接或者某些格式不对.</p>
-<p>​	按照别人的模板一个一个对照,没毛病.失败</p>
-<h3 id="尝试3"><a href="#尝试3" class="headerlink" title="尝试3:"></a>尝试3:</h3><p>​	我发现那些空白的竟让能点!还能进入对应链接!有没有一种可能,那些东西一直都在,只是透明度为100%(我之前改了背景,所以改变了全局的透明度).</p>
-<p>​	从新找到之前改透明度的地方,随便改但没有用.失败</p>
-<h3 id="尝试4"><a href="#尝试4" class="headerlink" title="尝试4:"></a>尝试4:</h3><p>​	也可能是颜色问题,白色的字和白的背景重叠了</p>
-<p>​	改颜色,没毛病.失败.</p>
-<h3 id="尝试5"><a href="#尝试5" class="headerlink" title="尝试5:"></a>尝试5:</h3><p>​	在本地运行的时候是出现然后立马向下划走(网上访问会有延迟,可能就直接看不见了),有没有可能是动画问题,我也不清楚改了多少.styl文档.</p>
-<p>​	更改了theme&#x2F;next&#x2F;source&#x2F;cee&#x2F;_schemes&#x2F;Pisces&#x2F;_sidebar.styl中的 opacity: 0;,改成了1.出现了!但没完全出现,这次是0.4s那个样子.但再调大也没有用了</p>
-<p>​	事后分析:opacity不透明度,改成1(也就是100%),再加上是淡出效果所以就相当于所有淡出时间都在全部显示,直至消失是直接消失,相当于延长了显示时间.</p>
-<h3 id="尝试6"><a href="#尝试6" class="headerlink" title="尝试6:"></a>尝试6:</h3><p>​	经过观察,我发现出现的顺序是左下,左上,正文.而正文出现的时候左下就消失了,然后…</p>
-<p>​	!!!正文出现的时候左下就消失了?!这是尝试5延长了左下出现时间时才出现的现象,之前由于时间短一直看不出来.</p>
-<p>​	那么,真相只有一个:动画效果出问题了</p>
-<p>​	我把动画关了,然后…留下了幸福的泪水</p>
-<p>​	在经过最后的分析,可能是在之前更改主题配置文件的相关motion模块时更改了相关的配置文件(或者没装相关的软件),导致最后的sidebar: slideDownBigOut相关的运行出现了问题,可能导致左下角被认定成了一个过渡动画,所以图像和字体在很短时间出现然后消失,但具体的链接还在原来的位置,能够点击到.最后我决定注释掉sidebar语句,保留其他的动画效果.</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>​	哪怕我没有解决掉这个问题,解决问题的过程也并不能被算作浪费时间.在这段时间里,我有面对问题的烦躁,有找到线索的欣喜,有一次次失败的无奈,也有最后的坦然.</p>
-<p>​	这次,我用了六次尝试解决了这个Bug.愿在以后困难重重的日子里,每个人都能有第七次尝试的信念!</p>
-<p>​	谨以此文,纪念我2023年3月1日下午与bug斗争的5个小时.</p>
+        <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="局部对象"><a href="#局部对象" class="headerlink" title="局部对象"></a>局部对象</h3><p>形参和函数体内部&#x3D;&#x3D;定义的变量&#x3D;&#x3D;统称为局部变量(local variable)</p>
+<h4 id="自动对象"><a href="#自动对象" class="headerlink" title="自动对象"></a>自动对象</h4><p>我们把只存在于块执行期间的对象称为自动对象</p>
+<p>形参是一种自动对象。函数开始时为形参申请存储空间，函数终止时,形参被销毁</p>
+<h4 id="局部静态对象"><a href="#局部静态对象" class="headerlink" title="局部静态对象"></a>局部静态对象</h4><p>static</p>
+<p>局部静态对象(local static object)在程序的执行路径第一次经过对象定义语句时初始化，并且直到程序终止才被销毁，在此期间即使对象所在的函数结束执行也不会对它有影响。</p>
+<h3 id="分离式编译"><a href="#分离式编译" class="headerlink" title="分离式编译"></a>分离式编译</h3><p>例子:假设fact函数的定义位于一个名为fact.cc的文件中，它的声明位于名为Chapter6.h的头文件中.另外，main函数在名为factMain.cc的文件中main函数将调用fact函数。</p>
+<p>要生成可执行文件(executable file)</p>
+<p>编译的过程如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ CC factMain.cc fact.cc # generates factMain.exe or a.out</span><br><span class="line">$ CC factMain.cc fact.cc -o main # generates main or main.exe</span><br></pre></td></tr></table></figure>
+
+<p>其中，CC是编译器的名字，$是系统提示符，#后面是命令行下的注释语句。</p>
+<p>如果我们修改了其中一个源文件，那么只需重新编译那个改动了的文件。大多数编译器提供了分离式编译每个文件的机制，这一过程通常会产生一个后缀名是.obj(Windows)或.o(UNIX)的文件，后缀名的含义是该文件包含对象代码(object code)。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ CC -c factMain.cc # generates factMain.o</span><br><span class="line">$ CC -c fact.cc # generates fact.o</span><br><span class="line">$ CC factMain.o fact.o # generates factMain.exe or a.out</span><br><span class="line">$ CC factMain.o fact.o -o main # generates main or main.exe</span><br></pre></td></tr></table></figure>
+
+<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><p>当形参是&#x3D;&#x3D;引用&#x3D;&#x3D;类型时，我们说它对应的实参被引用传递(passed by reference)或者函数被传引用调用(called by reference)。</p>
+<p>和其他引用一样，引用形参也是它绑定的对象的别名：也就是说，引用形参是它对应的实参的别名。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">reset</span><span class="params">(<span class="type">int</span> &amp;i)</span></span>&#123;<span class="comment">//i是传给reset函数的对象的另一个名字</span></span><br><span class="line"> <span class="type">int</span> i = <span class="number">0</span>;<span class="comment">//改变了i所引对象的值</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="type">int</span> j = <span class="number">1</span>;</span><br><span class="line"> <span class="built_in">reset</span>(j);<span class="comment">//j采用传引用方式，它的值被改变</span></span><br><span class="line"> cout &lt;&lt; <span class="string">&quot;j = &quot;</span>&lt;&lt; j &lt;&lt; endl; <span class="comment">//j = 0</span></span><br></pre></td></tr></table></figure>
+
+<p>当函数无须修改引用形参的值时最好使用常量引用。</p>
 
     </div>
 
@@ -289,7 +277,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2023/03/01/BlogBugReflect/" title="搭建Blog时的Bug">http://example.com/2023/03/01/BlogBugReflect/</a>
+    <a href="http://example.com/2023/03/04/C++%E7%AC%AC6%E7%AB%A0%E5%87%BD%E6%95%B0/" title="函数">http://example.com/2023/03/04/C++第6章函数/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -306,12 +294,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/02/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC%E4%B8%80%E7%AB%A0/" rel="prev" title="Introduction">
-      <i class="fa fa-chevron-left"></i> Introduction
+    <a href="/2023/03/04/C++%E7%AC%AC7%E7%AB%A0%E7%B1%BB/" rel="prev" title="类">
+      <i class="fa fa-chevron-left"></i> 类
     </a></div>
       <div class="post-nav-item">
-    <a href="/2023/03/01/CSAPP%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" rel="next" title="处理器系统结构">
-      处理器系统结构 <i class="fa fa-chevron-right"></i>
+    <a href="/2023/03/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%AC%AC2%E7%AB%A0%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -371,7 +359,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%83%E4%B8%80%E5%A0%91%E9%95%BF%E4%B8%80%E6%99%BA"><span class="nav-text">吃一堑长一智</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B2%A1%E5%A4%87%E4%BB%BD"><span class="nav-text">没备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E9%97%AA%E7%8E%B0%E6%B6%88%E5%A4%B1"><span class="nav-text">侧边栏闪现消失</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-text">问题描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%951"><span class="nav-text">尝试1:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%952"><span class="nav-text">尝试2:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%953"><span class="nav-text">尝试3:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%954"><span class="nav-text">尝试4:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%955"><span class="nav-text">尝试5:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%956"><span class="nav-text">尝试6:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80"><span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%AF%B9%E8%B1%A1"><span class="nav-text">局部对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%AF%B9%E8%B1%A1"><span class="nav-text">自动对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E9%9D%99%E6%80%81%E5%AF%B9%E8%B1%A1"><span class="nav-text">局部静态对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%A6%BB%E5%BC%8F%E7%BC%96%E8%AF%91"><span class="nav-text">分离式编译</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="nav-text">参数传递</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
