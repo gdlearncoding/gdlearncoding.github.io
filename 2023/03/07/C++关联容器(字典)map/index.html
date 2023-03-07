@@ -20,23 +20,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta name="description" content="以CSAPP为主,计算机组成原理第一章">
+  <meta name="description" content="map是STL的一个关联容器（字典）,是有序键（key）值（value）对容器.还需进一步学习添加key可以重复的关联容器multimap">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机算计组成概论">
-<meta property="og:url" content="http://example.com/2023/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%AC%AC1%E7%AB%A0%E6%A6%82%E8%AE%BA/index.html">
+<meta property="og:title" content="map">
+<meta property="og:url" content="http://example.com/2023/03/07/C++%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8(%E5%AD%97%E5%85%B8)map/index.html">
 <meta property="og:site_name" content="果冻">
-<meta property="og:description" content="以CSAPP为主,计算机组成原理第一章">
+<meta property="og:description" content="map是STL的一个关联容器（字典）,是有序键（key）值（value）对容器.还需进一步学习添加key可以重复的关联容器multimap">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237182.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237898.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237298.png">
-<meta property="article:published_time" content="2023-03-01T14:40:18.266Z">
-<meta property="article:modified_time" content="2023-03-03T14:35:24.511Z">
+<meta property="og:image" content="c:/Users/Echo/AppData/Roaming/Typora/typora-user-images/image-20230307230857149.png">
+<meta property="og:image" content="c:/Users/Echo/AppData/Roaming/Typora/typora-user-images/image-20230307231548475.png">
+<meta property="article:published_time" content="2023-03-07T15:01:05.022Z">
+<meta property="article:modified_time" content="2023-03-07T15:20:24.492Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237182.png">
+<meta name="twitter:image" content="c:/Users/Echo/AppData/Roaming/Typora/typora-user-images/image-20230307230857149.png">
 
-<link rel="canonical" href="http://example.com/2023/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%AC%AC1%E7%AB%A0%E6%A6%82%E8%AE%BA/">
+<link rel="canonical" href="http://example.com/2023/03/07/C++%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8(%E5%AD%97%E5%85%B8)map/">
 
 
 <script id="page-configurations">
@@ -49,7 +48,7 @@
   };
 </script>
 
-  <title>机算计组成概论 | 果冻</title>
+  <title>map | 果冻</title>
   
 
 
@@ -177,7 +176,7 @@
     
 </div>
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%AC%AC1%E7%AB%A0%E6%A6%82%E8%AE%BA/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/C++%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8(%E5%AD%97%E5%85%B8)map/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -190,7 +189,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          机算计组成概论
+          map
         </h1>
 
         <div class="post-meta">
@@ -200,23 +199,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2023-03-01 22:40:18" itemprop="dateCreated datePublished" datetime="2023-03-01T22:40:18+08:00">2023-03-01</time>
+              <time title="创建时间：2023-03-07 23:01:05 / 修改时间：23:20:24" itemprop="dateCreated datePublished" datetime="2023-03-07T23:01:05+08:00">2023-03-07</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-03 22:35:24" itemprop="dateModified" datetime="2023-03-03T22:35:24+08:00">2023-03-03</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机组成原理</span></a>
+                  <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
                 </span>
             </span>
 
@@ -232,15 +225,15 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>1.1k</span>
+              <span>2.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
-            <div class="post-description">以CSAPP为主,计算机组成原理第一章</div>
+            <div class="post-description">map是STL的一个关联容器（字典）,是有序键（key）值（value）对容器.还需进一步学习添加key可以重复的关联容器multimap</div>
 
         </div>
       </header>
@@ -251,43 +244,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="授课老师"><a href="#授课老师" class="headerlink" title="授课老师"></a>授课老师</h2><p>裴颂伟 计算机体系结构中心 <a href="mailto:&#x70;&#x65;&#x69;&#115;&#x6f;&#110;&#103;&#119;&#101;&#x69;&#x40;&#98;&#117;&#112;&#x74;&#x2e;&#101;&#100;&#117;&#46;&#x63;&#110;">&#x70;&#x65;&#x69;&#115;&#x6f;&#110;&#103;&#119;&#101;&#x69;&#x40;&#98;&#117;&#112;&#x74;&#x2e;&#101;&#100;&#117;&#46;&#x63;&#110;</a> 手机：15810262768，办公室：教三1014 硬件方面</p>
-<ul>
-<li><p>前年竞赛+毕设学生季禹城？二战清华学硕</p>
+        <h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><ul>
+<li><p>map在c++中翻译为映射是STL（中文标准模板库）的一个关联容器（字典）。是<strong>有序键（key）值（value）对容器</strong>。</p>
 </li>
-<li><p>研究方向：问题：1）存储墙（cpu功率高但存储器效率低）</p>
-<p>　　　　　　　　2）计算机功耗强</p>
-<pre><code>  　　　　　　　　解决办法：存的计算（直接在存储器里计算）RRAM阻变存储器（掉电也不消失）
-</code></pre>
+<li><p>map的每一个元素包括两部分key和value；map的键（key）是索引，不能重复，一个键对应着一个值；value为关键字的值，可以重复。</p>
 </li>
-</ul>
-<h2 id="课程安排"><a href="#课程安排" class="headerlink" title="课程安排"></a>课程安排</h2><p>　　成绩：期中10(开闭卷未定) 平时10 实验20 期末60 实验16h 课程48h</p>
-<p>　　推荐教材：计算机原理与设计（Verilog HDL版）李亚民</p>
-<h1 id="第一章计算机系统概论"><a href="#第一章计算机系统概论" class="headerlink" title="第一章计算机系统概论"></a>第一章计算机系统概论</h1><h2 id="计算机分类"><a href="#计算机分类" class="headerlink" title="计算机分类"></a>计算机分类</h2><h3 id="电子数字计算机"><a href="#电子数字计算机" class="headerlink" title="电子数字计算机"></a>电子数字计算机</h3><p>按位运算,并且不连续跳动,又名电子计算机,电脑.</p>
-<h3 id="电子模拟计算机"><a href="#电子模拟计算机" class="headerlink" title="电子模拟计算机"></a>电子模拟计算机</h3><p>模拟也就是相似,数值用连续量表示,运算过程也是连续的.危险流浪者号用的就是模拟电路哦~</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237182.png" alt="image-20230301223718115"></p>
-<h3 id="数字计算机分类"><a href="#数字计算机分类" class="headerlink" title="数字计算机分类"></a>数字计算机分类</h3><p>　　　　专用计算机　　		通用计算机</p>
-<p>　　　　最有效经济快速　　适应性很大</p>
-<p>　　<img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237898.png" alt="image-20230301223734843"></p>
-<h2 id="计算机发展史"><a href="#计算机发展史" class="headerlink" title="计算机发展史"></a>计算机发展史</h2><h3 id="第一代：真空管"><a href="#第一代：真空管" class="headerlink" title="第一代：真空管"></a>第一代：真空管</h3><p>　　冯诺依曼结构 　“存储程序”思想：运数据到主存，自动进行程序，按地址自动执行指令　　存储器为中心（每个数据都要经过存储器）</p>
-<h3 id="第二代：晶体管"><a href="#第二代：晶体管" class="headerlink" title="第二代：晶体管"></a>第二代：晶体管</h3><h3 id="第三代：SSI、MSI。-中小规模集成电路计算机"><a href="#第三代：SSI、MSI。-中小规模集成电路计算机" class="headerlink" title="第三代：SSI、MSI。　中小规模集成电路计算机"></a>第三代：SSI、MSI。　中小规模集成电路计算机</h3><p>　　　　从此代开始,与集成电路相关,逻辑元件与主存储器均由集成电路（IC）实现。</p>
-<p>　　　　引入总线结构</p>
-<p>　　　　IBM引入兼容机有相同或者相似的指令集，操作系统　　“向后（落后的）兼容”</p>
-<h3 id="第四代：LSI、VLSI：（超）大规模集成电路"><a href="#第四代：LSI、VLSI：（超）大规模集成电路" class="headerlink" title="第四代：LSI、VLSI：（超）大规模集成电路"></a>第四代：LSI、VLSI：（超）大规模集成电路</h3><h3 id="第五代-巨大规模集成电路计算机"><a href="#第五代-巨大规模集成电路计算机" class="headerlink" title="第五代:巨大规模集成电路计算机"></a>第五代:巨大规模集成电路计算机</h3><h2 id="半导体存储器的发展"><a href="#半导体存储器的发展" class="headerlink" title="半导体存储器的发展"></a>半导体存储器的发展</h2><p>摩尔定律：每12个月晶体管数目翻一翻，-》18个月,进入后摩尔时代</p>
-<h2 id="微处理器的发展"><a href="#微处理器的发展" class="headerlink" title="微处理器的发展"></a>微处理器的发展</h2><p>　　1B byte&#x3D; 8b bit</p>
-<h2 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h2><h3 id="CPI"><a href="#CPI" class="headerlink" title="CPI"></a>CPI</h3><p>Cycles Per Instruction 每个指令要多少时钟 &#x3D; CPU时钟周期数</p>
-<p>可以用来衡量以下效果</p>
-<ul>
-<li><p>ISA 简单指令集和复杂指令集（x86）</p>
+<li><p>key在插入后就不再可以改变，可以被删除（同时对应的value一起被删除）；</p>
 </li>
-<li><p>器件的实现（implementation of that architecture）</p>
+<li><p>key对应的value可以被访问和读写；</p>
 </li>
-<li><p>　项目（compiler，algorithm）</p>
+<li><p>map使用中括号[]操作符来获取key对应的value；</p>
+</li>
+<li><p>map的元素在插入的过程中会自动排序（使用小于号&lt;对元素按照key排序）。并且增删改查整体上都很快。</p>
 </li>
 </ul>
-<h3 id="IPC：。。。"><a href="#IPC：。。。" class="headerlink" title="IPC：。。。"></a>IPC：。。。</h3><h3 id="CPU执行时间-x3D-CPU时钟周期数-时钟周期数"><a href="#CPU执行时间-x3D-CPU时钟周期数-时钟周期数" class="headerlink" title="CPU执行时间&#x3D;CPU时钟周期数*时钟周期数"></a>CPU执行时间&#x3D;CPU时钟周期数*时钟周期数</h3><p>&#x3D;CPU时钟周期数%时钟频率</p>
-<p>&#x3D;指令条数<em>CPI</em>时钟周期数</p>
-<h3 id="CPU时钟周期数：指令条数-CPI"><a href="#CPU时钟周期数：指令条数-CPI" class="headerlink" title="CPU时钟周期数：指令条数*CPI"></a>CPU时钟周期数：指令条数*CPI</h3><h3 id="MIPS：单位时间内的执行指令数-x3D-指令条数-（程序执行时间-10-6）M是百万"><a href="#MIPS：单位时间内的执行指令数-x3D-指令条数-（程序执行时间-10-6）M是百万" class="headerlink" title="MIPS：单位时间内的执行指令数&#x3D;指令条数%（程序执行时间*10^6）M是百万"></a>MIPS：单位时间内的执行指令数&#x3D;指令条数%（程序执行时间*10^6）M是百万</h3><h3 id="MFLOPS：每秒百万次浮点操作次数-x3D-浮点操作次数-（程序执行时间-10-6）"><a href="#MFLOPS：每秒百万次浮点操作次数-x3D-浮点操作次数-（程序执行时间-10-6）" class="headerlink" title="MFLOPS：每秒百万次浮点操作次数&#x3D;浮点操作次数%（程序执行时间*10^6）"></a>MFLOPS：每秒百万次浮点操作次数&#x3D;浮点操作次数%（程序执行时间*10^6）</h3><h2 id="计算机硬件"><a href="#计算机硬件" class="headerlink" title="计算机硬件"></a>计算机硬件</h2><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303012237298.png" alt="image-20230301223759240"></p>
+<p>使用map必须包含头文件：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure>
+
+<h3 id="定义与初始化"><a href="#定义与初始化" class="headerlink" title="定义与初始化"></a>定义与初始化</h3><p>格式为map&lt;typename1，typename2&gt; universities，其中typename1为键的类型，typename2为值的类型。</p>
+<p>eg:定义一个key和value的类型都是整数的map，存放学生的学号和成绩：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; student_score&#123;</span><br><span class="line">        <span class="comment">//学号不可以有重复</span></span><br><span class="line">        <span class="comment">//学号可以不按顺序创建</span></span><br><span class="line">        <span class="comment">//学号在创建完成之后会在内部自动排好顺序</span></span><br><span class="line">        <span class="comment">//学号排序按照大小顺序，int类型的数据就按数值大小排序</span></span><br><span class="line">        &#123;<span class="number">003</span>, <span class="number">90</span>&#125;,</span><br><span class="line">        &#123;<span class="number">004</span>, <span class="number">88</span>&#125;,</span><br><span class="line">        &#123;<span class="number">001</span>, <span class="number">88</span>&#125;,<span class="comment">//分数可以有相同的分数</span></span><br><span class="line">        &#123;<span class="number">002</span>, <span class="number">78</span>&#125;,</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="map的元素与遍历"><a href="#map的元素与遍历" class="headerlink" title="map的元素与遍历"></a>map的元素与遍历</h3><p>map的元素是一个key和一个value共同构成的组合体，这个组合体是一个pair&lt;int,int&gt; 类型。</p>
+<p>pair&lt;int, int&gt; 类型有两个成员：first，second。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//先通过for循环遍历map，再用first和second访问元素的key和value。</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; student_score&#123;</span><br><span class="line">        &#123;<span class="number">003</span>, <span class="number">90</span>&#125;,</span><br><span class="line">        &#123;<span class="number">004</span>, <span class="number">88</span>&#125;,</span><br><span class="line">        &#123;<span class="number">001</span>, <span class="number">88</span>&#125;,</span><br><span class="line">        &#123;<span class="number">002</span>, <span class="number">78</span>&#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">//item变量来迭代student_score 的每一个元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> item : student_score)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//item是一个pair&lt;int, int&gt;类型</span></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;id=&quot;</span> &lt;&lt; item.first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; <span class="string">&quot; score=&quot;</span> &lt;&lt; item.second &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:/Users/Echo/AppData/Roaming/Typora/typora-user-images/image-20230307230857149.png" alt="image-20230307230857149"></p>
+<p><strong>如果</strong>某个元素<strong>不存在</strong>，<strong>则</strong>会<strong>创建</strong>这个元素，</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//初始化map</span></span><br><span class="line">    <span class="comment">//map会自动对插入的元素按照key大小进行排序</span></span><br><span class="line">    <span class="comment">//这里key是string类型，所以使用string的小于号来排序</span></span><br><span class="line">     <span class="comment">//string的小于号比较大小按照ASCII码的字母表排序</span></span><br><span class="line">    map&lt;string, string&gt; universities&#123;</span><br><span class="line">        &#123;<span class="string">&quot;UCB&quot;</span>, <span class="string">&quot;加州大学伯克利分校 University of  California - Berkeley&quot;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;CMU&quot;</span>, <span class="string">&quot;卡内基梅隆大学 Carnegie Mellon  University&quot;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;CC&quot;</span>, <span class="string">&quot;哥伦比亚大学 Columbia University  /Community College&quot;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;CU&quot;</span>, <span class="string">&quot;康奈尔大学 Cornell University&quot;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;UNC&quot;</span>, <span class="string">&quot;北卡罗来纳大学 University of North  Carolina - Chapel Hill&quot;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;UWM&quot;</span>, <span class="string">&quot;威斯康辛大学麦迪逊分校 University of  Wisconsin - Madison&quot;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;GWU&quot;</span>, <span class="string">&quot;乔治华盛顿大学 George Washington  University&quot;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;JHU&quot;</span>, <span class="string">&quot;约翰霍普金斯大学 Johns Hopkins  University&quot;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;MSU&quot;</span>, <span class="string">&quot;密歇根州立大学 Michigan State  University&quot;</span>&#125;,</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//运行时根据业务需要，插入一条记录</span></span><br><span class="line">    universities[<span class="string">&quot;Penn&quot;</span>] = <span class="string">&quot;宾夕法尼亚大学 University of  Pennsylvania&quot;</span>;<span class="comment">//没有,自动添加</span></span><br><span class="line">    universities.<span class="built_in">insert</span>(&#123;<span class="string">&quot;MIT&quot;</span>, <span class="string">&quot;麻省理工学院 Massachussets  Institute of Technology&quot;</span>&#125;);<span class="comment">//或者用insert</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//按照字母表顺序输出所有大学</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;All &quot;</span> &lt;&lt; universities.<span class="built_in">size</span>() &lt;&lt; <span class="string">&quot; universities:&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; item : universities)</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;key=&quot;</span> &lt;&lt; item.first &lt;&lt; <span class="string">&quot; , value= &quot;</span> &lt;&lt; item.second &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:/Users/Echo/AppData/Roaming/Typora/typora-user-images/image-20230307231548475.png" alt="image-20230307231548475"></p>
 
     </div>
 
@@ -305,7 +291,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2023/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%AC%AC1%E7%AB%A0%E6%A6%82%E8%AE%BA/" title="机算计组成概论">http://example.com/2023/03/01/计算机组成原理第1章概论/</a>
+    <a href="http://example.com/2023/03/07/C++%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8(%E5%AD%97%E5%85%B8)map/" title="map">http://example.com/2023/03/07/C++关联容器(字典)map/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -322,13 +308,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/03/01/CSAPP%E5%82%A8%E5%AD%98%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" rel="prev" title="储存器层次结构">
-      <i class="fa fa-chevron-left"></i> 储存器层次结构
+    <a href="/2023/03/07/C++%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0/" rel="prev" title="模板函数">
+      <i class="fa fa-chevron-left"></i> 模板函数
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/03/02/C++%E7%AC%AC2%E7%AB%A0%E5%8F%98%E9%87%8F/" rel="next" title="变量和基本类型">
-      变量和基本类型 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -387,7 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%88%E8%AF%BE%E8%80%81%E5%B8%88"><span class="nav-text">授课老师</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BE%E7%A8%8B%E5%AE%89%E6%8E%92"><span class="nav-text">课程安排</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA"><span class="nav-text">第一章计算机系统概论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%88%86%E7%B1%BB"><span class="nav-text">计算机分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E6%95%B0%E5%AD%97%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-text">电子数字计算机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E6%A8%A1%E6%8B%9F%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-text">电子模拟计算机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%88%86%E7%B1%BB"><span class="nav-text">数字计算机分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%91%E5%B1%95%E5%8F%B2"><span class="nav-text">计算机发展史</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%BB%A3%EF%BC%9A%E7%9C%9F%E7%A9%BA%E7%AE%A1"><span class="nav-text">第一代：真空管</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E4%BB%A3%EF%BC%9A%E6%99%B6%E4%BD%93%E7%AE%A1"><span class="nav-text">第二代：晶体管</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E4%BB%A3%EF%BC%9ASSI%E3%80%81MSI%E3%80%82-%E4%B8%AD%E5%B0%8F%E8%A7%84%E6%A8%A1%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-text">第三代：SSI、MSI。　中小规模集成电路计算机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E4%BB%A3%EF%BC%9ALSI%E3%80%81VLSI%EF%BC%9A%EF%BC%88%E8%B6%85%EF%BC%89%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF"><span class="nav-text">第四代：LSI、VLSI：（超）大规模集成电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E4%BB%A3-%E5%B7%A8%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-text">第五代:巨大规模集成电路计算机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%8F%91%E5%B1%95"><span class="nav-text">半导体存储器的发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%8F%91%E5%B1%95"><span class="nav-text">微处理器的发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-text">性能指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CPI"><span class="nav-text">CPI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IPC%EF%BC%9A%E3%80%82%E3%80%82%E3%80%82"><span class="nav-text">IPC：。。。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4-x3D-CPU%E6%97%B6%E9%92%9F%E5%91%A8%E6%9C%9F%E6%95%B0-%E6%97%B6%E9%92%9F%E5%91%A8%E6%9C%9F%E6%95%B0"><span class="nav-text">CPU执行时间&#x3D;CPU时钟周期数*时钟周期数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU%E6%97%B6%E9%92%9F%E5%91%A8%E6%9C%9F%E6%95%B0%EF%BC%9A%E6%8C%87%E4%BB%A4%E6%9D%A1%E6%95%B0-CPI"><span class="nav-text">CPU时钟周期数：指令条数*CPI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MIPS%EF%BC%9A%E5%8D%95%E4%BD%8D%E6%97%B6%E9%97%B4%E5%86%85%E7%9A%84%E6%89%A7%E8%A1%8C%E6%8C%87%E4%BB%A4%E6%95%B0-x3D-%E6%8C%87%E4%BB%A4%E6%9D%A1%E6%95%B0-%EF%BC%88%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4-10-6%EF%BC%89M%E6%98%AF%E7%99%BE%E4%B8%87"><span class="nav-text">MIPS：单位时间内的执行指令数&#x3D;指令条数%（程序执行时间*10^6）M是百万</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MFLOPS%EF%BC%9A%E6%AF%8F%E7%A7%92%E7%99%BE%E4%B8%87%E6%AC%A1%E6%B5%AE%E7%82%B9%E6%93%8D%E4%BD%9C%E6%AC%A1%E6%95%B0-x3D-%E6%B5%AE%E7%82%B9%E6%93%8D%E4%BD%9C%E6%AC%A1%E6%95%B0-%EF%BC%88%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4-10-6%EF%BC%89"><span class="nav-text">MFLOPS：每秒百万次浮点操作次数&#x3D;浮点操作次数%（程序执行时间*10^6）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6"><span class="nav-text">计算机硬件</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#map"><span class="nav-text">map</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">定义与初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map%E7%9A%84%E5%85%83%E7%B4%A0%E4%B8%8E%E9%81%8D%E5%8E%86"><span class="nav-text">map的元素与遍历</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
