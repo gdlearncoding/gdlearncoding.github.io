@@ -20,30 +20,28 @@
     var CONFIG = {"hostname":"gdgao.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta name="description" content="形式语言与自动机的第三章有限状态自动机与右线性文法第二部分,有E转换的NFA">
+  <meta name="description" content="形式语言与自动机的第三章有限状态自动机和与右线性文法第五部分,DFA极小化,泵浦引理,右线性语言的封闭性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="有E转换的NFA">
-<meta property="og:url" content="http://gdgao.top/2023/03/22/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA2/index.html">
+<meta property="og:title" content="DFA极小化,泵浦引理,右线性语言的封闭性">
+<meta property="og:url" content="http://gdgao.top/2023/04/08/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA5/index.html">
 <meta property="og:site_name" content="果冻">
-<meta property="og:description" content="形式语言与自动机的第三章有限状态自动机与右线性文法第二部分,有E转换的NFA">
+<meta property="og:description" content="形式语言与自动机的第三章有限状态自动机和与右线性文法第五部分,DFA极小化,泵浦引理,右线性语言的封闭性">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011542.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011544.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011545.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011546.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011547.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011548.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011015.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011549.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011550.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011551.png">
-<meta property="article:published_time" content="2023-03-22T14:56:58.568Z">
-<meta property="article:modified_time" content="2023-03-23T04:44:32.243Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080846047.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080849451.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080852787.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080853411.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080855605.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080857251.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080901587.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080906234.png">
+<meta property="article:published_time" content="2023-04-08T00:38:19.891Z">
+<meta property="article:modified_time" content="2023-04-08T01:12:15.329Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011542.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080846047.png">
 
-<link rel="canonical" href="http://gdgao.top/2023/03/22/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA2/">
+<link rel="canonical" href="http://gdgao.top/2023/04/08/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA5/">
 
 
 <script id="page-configurations">
@@ -56,7 +54,7 @@
   };
 </script>
 
-  <title>有E转换的NFA | 果冻</title>
+  <title>DFA极小化,泵浦引理,右线性语言的封闭性 | 果冻</title>
   
 
 
@@ -184,7 +182,7 @@
     
 </div>
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://gdgao.top/2023/03/22/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA2/">
+    <link itemprop="mainEntityOfPage" href="http://gdgao.top/2023/04/08/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -197,7 +195,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          有E转换的NFA
+          DFA极小化,泵浦引理,右线性语言的封闭性
         </h1>
 
         <div class="post-meta">
@@ -207,16 +205,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2023-03-22 22:56:58" itemprop="dateCreated datePublished" datetime="2023-03-22T22:56:58+08:00">2023-03-22</time>
+              <time title="创建时间：2023-04-08 08:38:19 / 修改时间：09:12:15" itemprop="dateCreated datePublished" datetime="2023-04-08T08:38:19+08:00">2023-04-08</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-23 12:44:32" itemprop="dateModified" datetime="2023-03-23T12:44:32+08:00">2023-03-23</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -239,7 +231,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>481</span>
+              <span>630</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -247,7 +239,7 @@
               </span>
               <span>1 分钟</span>
             </span>
-            <div class="post-description">形式语言与自动机的第三章有限状态自动机与右线性文法第二部分,有E转换的NFA</div>
+            <div class="post-description">形式语言与自动机的第三章有限状态自动机和与右线性文法第五部分,DFA极小化,泵浦引理,右线性语言的封闭性</div>
 
         </div>
       </header>
@@ -258,28 +250,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="有E转换的NFA"><a href="#有E转换的NFA" class="headerlink" title="有E转换的NFA"></a>有E转换的NFA</h2><p>T相比于NFA多了一个E;</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011542.png" alt="image-20230322230011863"></p>
-<p>当输入空串E(无输入) 时，也能引起状态的转移。</p>
-<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011544.png" alt="image-20230322230044829"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011545.png" alt="image-20230322230124188"></p>
-<h3 id="扩展转移函数适合于输入字符串"><a href="#扩展转移函数适合于输入字符串" class="headerlink" title="扩展转移函数适合于输入字符串"></a>扩展转移函数适合于输入字符串</h3><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011546.png" alt="image-20230322230225174"></p>
-<p>比较两个转移函数:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011547.png" alt="image-20230322230258788"></p>
-<h3 id="对应语言"><a href="#对应语言" class="headerlink" title="对应语言"></a>对应语言</h3><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011548.png" alt="image-20230322230333924"></p>
-<h3 id="转换为NFA"><a href="#转换为NFA" class="headerlink" title="转换为NFA"></a>转换为NFA</h3><p>Q,T,q0不变, $大改,F在<code>q0不能直接到终止状态时</code>保持不变</p>
-<p>靠以下两个式子迭代:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011015.png" alt="image-20230322231034732"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011549.png" alt="image-20230322230612807"></p>
-<p>思路:</p>
-<p>所有到A的路线都应该到达ECLOSE(A)的所有值</p>
-<h4 id="x3D-x3D-做题方法-x3D-x3D"><a href="#x3D-x3D-做题方法-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;做题方法&#x3D;&#x3D;"></a>&#x3D;&#x3D;做题方法&#x3D;&#x3D;</h4><p>A表示状态,a表示转移符号</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 先把所有的$`(<span class="built_in">A0</span>,E)=ECLOSE(<span class="built_in">A0</span>)=&#123;<span class="built_in">A1</span>,<span class="built_in">A2</span>&#125;列出来</span><br><span class="line"><span class="number">2</span>.$`(<span class="built_in">A0</span>,a)=ECLOSE($($`(<span class="built_in">A0</span>,E),a))</span><br><span class="line"><span class="number">3</span>.$`(<span class="built_in">A0</span>,E)使用<span class="number">1</span>.代换,之后&#123;<span class="built_in">A1</span>,<span class="built_in">A2</span>&#125;可能会有很多值</span><br><span class="line"><span class="number">4</span>.故ECLOSE($($`(<span class="built_in">A0</span>,E),a))=ECLOSE($(<span class="built_in">A1</span>,E)∪$(<span class="built_in">A2</span>,E))</span><br><span class="line"><span class="number">5</span>.所有∪起来的值又可以写成一个集合&#123;&#125;,再使用<span class="number">1</span>.后半个等式的闭包直接得出</span><br><span class="line"><span class="number">6</span>.循环所有的<span class="built_in">A0</span>和<span class="built_in">a0</span>,<span class="number">2</span>~<span class="number">5</span>步骤(建议先列表再画图)</span><br><span class="line"><span class="number">7</span>.ECLOSE(q0)∩F判断F1</span><br></pre></td></tr></table></figure>
-
-<p>例题:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011550.png" alt="image-20230323000257039"></p>
-<p>所以共有九个遍历(以下是两个例子):</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303230011551.png" alt="image-20230323000520553"></p>
+        <h2 id="DFA的极小化"><a href="#DFA的极小化" class="headerlink" title="DFA的极小化"></a>DFA的极小化</h2><p>对DFA  M的极小化是找出一个<code>状态数比M少</code>的DFA  M1，使满足 L(M) &#x3D; L(M1) </p>
+<hr>
+<p>基本概念:</p>
+<p>等价和可区分:</p>
+<p>两个状态经过相同的字符串到达相等的状态,则称之为等价</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080846047.png" alt="image-20230408084616960"></p>
+<p>不可达状态:<br>从初始状态无法到达的状态</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080849451.png" alt="image-20230408084947427"></p>
+<p>最小化:</p>
+<p>若DFA Ｍ<code>不存在互为等价状态及不可达状态</code>，则称DFA Ｍ是最小化的</p>
+<hr>
+<h3 id="最小化算法"><a href="#最小化算法" class="headerlink" title="最小化算法"></a>最小化算法</h3><p> 一个DFA Ｍ的最小化，是把Ｍ的状态集Ｑ构成一个<code>划分</code>。即: 任何两个子集的状态都是可区分的；同一子集中的任何两个状态都是等价的。之后，每个子集用一个状态代表，并取一个状态名。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080852787.png" alt="image-20230408085207757"></p>
+<p>一般可以把删除不可达状态放在第一步.</p>
+<p>每划分出一个状态,就必须重新重复步骤2.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080853411.png" alt="image-20230408085347367"></p>
+<h3 id="填表法"><a href="#填表法" class="headerlink" title="填表法"></a>填表法</h3><p>证明如下,可忽略</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080855605.png" alt="image-20230408085520571"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080857251.png" alt="image-20230408085735220"></p>
+<p>注意上图右下角蓝字,是步骤(注意表头)</p>
+<h2 id="Pumping-引理"><a href="#Pumping-引理" class="headerlink" title="Pumping 引理"></a>Pumping 引理</h2><p>正则语言应满足的一个<code>必要条件</code>,所以只能用来<code>判定</code>给定的语言<code>不是</code>正则集</p>
+<p>物理意义：当给定一个正则集和该集合上一个足够长的字符串时，在该字符串中能找到一个非空的子串，并使子串重复，从而组成新的字符串。该新串必在同一个正则集内。也就是<code>鸽巢原理</code>,任一长度不小于状态数目的字符串所标记的路径上，必然出现重复的状态.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080901587.png" alt="image-20230408090143564"></p>
+<p>对应w0是重复片段,w1w0肯定不超过不重复字符串总长度,若w1w0w2成立那么w1(w0^n)w2成立</p>
+<p>应用:用于证明某个语言 L 不是正规语言,不考:基于反证法</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080906234.png" alt="image-20230408090631197"></p>
+<h2 id="右线性语言的封闭性"><a href="#右线性语言的封闭性" class="headerlink" title="右线性语言的封闭性"></a>右线性语言的封闭性</h2><p>上节从文法产生的角度证明了右线性语言及其并，积，闭包是正则集；本节用有限自动机接受的语言来证明。不考.</p>
+<p>就是告诉你两个语言并,积,闭包,求反,交都是封闭的,可以使用</p>
 
     </div>
 
@@ -297,7 +295,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://gdgao.top/2023/03/22/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA2/" title="有E转换的NFA">http://gdgao.top/2023/03/22/形式语言与自动机第3章有限状态自动机2/</a>
+    <a href="http://gdgao.top/2023/04/08/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA5/" title="DFA极小化,泵浦引理,右线性语言的封闭性">http://gdgao.top/2023/04/08/形式语言与自动机第3章有限状态自动机5/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -314,13 +312,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/03/19/%E5%85%BB%E5%B0%8F%E8%8A%B1%E8%8A%B1/" rel="prev" title="小多肉~~">
-      <i class="fa fa-chevron-left"></i> 小多肉~~
+    <a href="/2023/04/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC3%E7%AB%A04/" rel="prev" title="数据链路层的流量控制和可靠传输">
+      <i class="fa fa-chevron-left"></i> 数据链路层的流量控制和可靠传输
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/03/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC3%E7%AB%A03/" rel="next" title="协议,停等和滑动窗口">
-      协议,停等和滑动窗口 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -379,7 +374,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89E%E8%BD%AC%E6%8D%A2%E7%9A%84NFA"><span class="nav-text">有E转换的NFA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E5%8C%85"><span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E8%BD%AC%E7%A7%BB%E5%87%BD%E6%95%B0%E9%80%82%E5%90%88%E4%BA%8E%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">扩展转移函数适合于输入字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%BA%94%E8%AF%AD%E8%A8%80"><span class="nav-text">对应语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2%E4%B8%BANFA"><span class="nav-text">转换为NFA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#x3D-x3D-%E5%81%9A%E9%A2%98%E6%96%B9%E6%B3%95-x3D-x3D"><span class="nav-text">&#x3D;&#x3D;做题方法&#x3D;&#x3D;</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DFA%E7%9A%84%E6%9E%81%E5%B0%8F%E5%8C%96"><span class="nav-text">DFA的极小化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E5%8C%96%E7%AE%97%E6%B3%95"><span class="nav-text">最小化算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%AB%E8%A1%A8%E6%B3%95"><span class="nav-text">填表法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pumping-%E5%BC%95%E7%90%86"><span class="nav-text">Pumping 引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%B3%E7%BA%BF%E6%80%A7%E8%AF%AD%E8%A8%80%E7%9A%84%E5%B0%81%E9%97%AD%E6%80%A7"><span class="nav-text">右线性语言的封闭性</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
