@@ -20,28 +20,15 @@
     var CONFIG = {"hostname":"gdgao.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta name="description" content="形式语言与自动机的第三章有限状态自动机和与右线性文法第五部分,DFA极小化,泵浦引理,右线性语言的封闭性">
-<meta property="og:type" content="article">
-<meta property="og:title" content="DFA极小化,泵浦引理,右线性语言的封闭性">
-<meta property="og:url" content="http://gdgao.top/2023/04/08/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA5/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="果冻">
+<meta property="og:url" content="http://gdgao.top/categories/%E5%85%B6%E4%BB%96/index.html">
 <meta property="og:site_name" content="果冻">
-<meta property="og:description" content="形式语言与自动机的第三章有限状态自动机和与右线性文法第五部分,DFA极小化,泵浦引理,右线性语言的封闭性">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080846047.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080849451.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080852787.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080853411.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080855605.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080857251.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080901587.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080906234.png">
-<meta property="article:published_time" content="2023-04-08T00:38:19.891Z">
-<meta property="article:modified_time" content="2023-04-08T01:12:15.329Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080846047.png">
 
-<link rel="canonical" href="http://gdgao.top/2023/04/08/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA5/">
+<link rel="canonical" href="http://gdgao.top/categories/%E5%85%B6%E4%BB%96/">
 
 
 <script id="page-configurations">
@@ -49,12 +36,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>DFA极小化,泵浦引理,右线性语言的封闭性 | 果冻</title>
+  <title>分类: 其他 | 果冻</title>
   
 
 
@@ -170,161 +157,51 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content category">
             
 
-    
   
   
-  <div>
-    
-    	
-    
-</div>
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://gdgao.top/2023/04/08/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="programmergd">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="果冻">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          DFA极小化,泵浦引理,右线性语言的封闭性
-        </h1>
-
-        <div class="post-meta">
-        
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-04-08 08:38:19 / 修改时间：09:12:15" itemprop="dateCreated datePublished" datetime="2023-04-08T08:38:19+08:00">2023-04-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">形式语言与自动机</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>630</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 分钟</span>
-            </span>
-            <div class="post-description">形式语言与自动机的第三章有限状态自动机和与右线性文法第五部分,DFA极小化,泵浦引理,右线性语言的封闭性</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">其他
+          <small>分类</small>
+        </h2>
+      </div>
 
       
-        <h2 id="DFA的极小化"><a href="#DFA的极小化" class="headerlink" title="DFA的极小化"></a>DFA的极小化</h2><p>对DFA  M的极小化是找出一个<code>状态数比M少</code>的DFA  M1，使满足 L(M) &#x3D; L(M1) </p>
-<hr>
-<p>基本概念:</p>
-<p>等价和可区分:</p>
-<p>两个状态经过相同的字符串到达相等的状态,则称之为等价</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080846047.png" alt="image-20230408084616960"></p>
-<p>不可达状态:<br>从初始状态无法到达的状态</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080849451.png" alt="image-20230408084947427"></p>
-<p>最小化:</p>
-<p>若DFA Ｍ<code>不存在互为等价状态及不可达状态</code>，则称DFA Ｍ是最小化的</p>
-<hr>
-<h3 id="最小化算法"><a href="#最小化算法" class="headerlink" title="最小化算法"></a>最小化算法</h3><p> 一个DFA Ｍ的最小化，是把Ｍ的状态集Ｑ构成一个<code>划分</code>。即: 任何两个子集的状态都是可区分的；同一子集中的任何两个状态都是等价的。之后，每个子集用一个状态代表，并取一个状态名。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080852787.png" alt="image-20230408085207757"></p>
-<p>一般可以把删除不可达状态放在第一步.</p>
-<p>每划分出一个状态,就必须重新重复步骤2.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080853411.png" alt="image-20230408085347367"></p>
-<h3 id="填表法"><a href="#填表法" class="headerlink" title="填表法"></a>填表法</h3><p>证明如下,可忽略</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080855605.png" alt="image-20230408085520571"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080857251.png" alt="image-20230408085735220"></p>
-<p>注意上图右下角蓝字,是步骤(注意表头)</p>
-<h2 id="Pumping-引理"><a href="#Pumping-引理" class="headerlink" title="Pumping 引理"></a>Pumping 引理</h2><p>正则语言应满足的一个<code>必要条件</code>,所以只能用来<code>判定</code>给定的语言<code>不是</code>正则集</p>
-<p>物理意义：当给定一个正则集和该集合上一个足够长的字符串时，在该字符串中能找到一个非空的子串，并使子串重复，从而组成新的字符串。该新串必在同一个正则集内。也就是<code>鸽巢原理</code>,任一长度不小于状态数目的字符串所标记的路径上，必然出现重复的状态.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080901587.png" alt="image-20230408090143564"></p>
-<p>对应w0是重复片段,w1w0肯定不超过不重复字符串总长度,若w1w0w2成立那么w1(w0^n)w2成立</p>
-<p>应用:用于证明某个语言 L 不是正规语言,不考:基于反证法</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202304080906234.png" alt="image-20230408090631197"></p>
-<h2 id="右线性语言的封闭性"><a href="#右线性语言的封闭性" class="headerlink" title="右线性语言的封闭性"></a>右线性语言的封闭性</h2><p>上节从文法产生的角度证明了右线性语言及其并，积，闭包是正则集；本节用有限自动机接受的语言来证明。不考.</p>
-<p>就是告诉你两个语言并,积,闭包,求反,交都是封闭的,可以使用</p>
-
+    <div class="collection-year">
+      <span class="collection-header">2023</span>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-     
-        
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-04-11T12:55:43+08:00"
+              content="2023-04-11">
+          04-11
+        </time>
+      </div>
 
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>programmergd
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="http://gdgao.top/2023/04/08/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA5/" title="DFA极小化,泵浦引理,右线性语言的封闭性">http://gdgao.top/2023/04/08/形式语言与自动机第3章有限状态自动机5/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-</div>
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/04/11/%E5%AF%BC%E8%88%AA/" itemprop="url">
+            <span itemprop="name">导航</span>
+          </a>
+      </div>
 
-
-      <footer class="post-footer">
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2023/04/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC3%E7%AB%A04/" rel="prev" title="数据链路层的流量控制和可靠传输">
-      <i class="fa fa-chevron-left"></i> 数据链路层的流量控制和可靠传输
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/04/11/%E5%AF%BC%E8%88%AA/" rel="next" title="导航">
-      导航 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+    </header>
   </article>
+
+    </div>
+  </div>
   
   
+  
+
   
 
 
@@ -377,7 +254,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DFA%E7%9A%84%E6%9E%81%E5%B0%8F%E5%8C%96"><span class="nav-text">DFA的极小化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E5%8C%96%E7%AE%97%E6%B3%95"><span class="nav-text">最小化算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%AB%E8%A1%A8%E6%B3%95"><span class="nav-text">填表法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pumping-%E5%BC%95%E7%90%86"><span class="nav-text">Pumping 引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%B3%E7%BA%BF%E6%80%A7%E8%AF%AD%E8%A8%80%E7%9A%84%E5%B0%81%E9%97%AD%E6%80%A7"><span class="nav-text">右线性语言的封闭性</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
