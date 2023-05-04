@@ -20,32 +20,48 @@
     var CONFIG = {"hostname":"gdgao.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta name="description" content="计算机组成原理第二章,包含进制转换,定点原码补码反码,加减乘除,浮点表示,运算">
+  <meta name="description" content="上下文无关文法与下推自动机，规约推导推导树，二义性，CFG化简，CNF，GNF生成。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="运算方法和运算器">
-<meta property="og:url" content="http://gdgao.top/2023/03/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%AC%AC2%E7%AB%A0%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA/index.html">
+<meta property="og:title" content="上下文无关文法与下推自动机">
+<meta property="og:url" content="http://gdgao.top/2023/05/04/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC4%E7%AB%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA/index.html">
 <meta property="og:site_name" content="果冻">
-<meta property="og:description" content="计算机组成原理第二章,包含进制转换,定点原码补码反码,加减乘除,浮点表示,运算">
+<meta property="og:description" content="上下文无关文法与下推自动机，规约推导推导树，二义性，CFG化简，CNF，GNF生成。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959845.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959846.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959847.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959848.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959849.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959850.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959851.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959852.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959853.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959854.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959855.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959856.png">
-<meta property="article:published_time" content="2023-03-05T01:39:50.587Z">
-<meta property="article:modified_time" content="2023-03-25T16:57:11.811Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157862.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157864.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157865.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157866.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157867.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157868.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157869.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157870.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157871.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157872.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157873.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157874.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157875.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157876.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157877.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157878.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157879.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157880.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157881.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157882.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157883.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157884.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157885.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157886.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157887.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157888.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157889.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157890.png">
+<meta property="article:published_time" content="2023-05-04T02:36:16.328Z">
+<meta property="article:modified_time" content="2023-05-04T03:57:43.407Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959845.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157862.png">
 
-<link rel="canonical" href="http://gdgao.top/2023/03/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%AC%AC2%E7%AB%A0%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA/">
+<link rel="canonical" href="http://gdgao.top/2023/05/04/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC4%E7%AB%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA/">
 
 
 <script id="page-configurations">
@@ -58,7 +74,7 @@
   };
 </script>
 
-  <title>运算方法和运算器 | 果冻</title>
+  <title>上下文无关文法与下推自动机 | 果冻</title>
   
 
 
@@ -186,7 +202,7 @@
     
 </div>
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://gdgao.top/2023/03/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%AC%AC2%E7%AB%A0%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA/">
+    <link itemprop="mainEntityOfPage" href="http://gdgao.top/2023/05/04/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC4%E7%AB%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -199,7 +215,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          运算方法和运算器
+          上下文无关文法与下推自动机
         </h1>
 
         <div class="post-meta">
@@ -209,23 +225,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2023-03-05 09:39:50" itemprop="dateCreated datePublished" datetime="2023-03-05T09:39:50+08:00">2023-03-05</time>
+              <time title="创建时间：2023-05-04 10:36:16 / 修改时间：11:57:43" itemprop="dateCreated datePublished" datetime="2023-05-04T10:36:16+08:00">2023-05-04</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-26 00:57:11" itemprop="dateModified" datetime="2023-03-26T00:57:11+08:00">2023-03-26</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机组成原理</span></a>
+                  <a href="/categories/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">形式语言与自动机</span></a>
                 </span>
             </span>
 
@@ -241,15 +251,15 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>1.8k</span>
+              <span>816</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
-            <div class="post-description">计算机组成原理第二章,包含进制转换,定点原码补码反码,加减乘除,浮点表示,运算</div>
+            <div class="post-description">上下文无关文法与下推自动机，规约推导推导树，二义性，CFG化简，CNF，GNF生成。</div>
 
         </div>
       </header>
@@ -260,139 +270,71 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="运算方法和运算器"><a href="#运算方法和运算器" class="headerlink" title="运算方法和运算器"></a>运算方法和运算器</h1><h2 id="数据与文字的表示"><a href="#数据与文字的表示" class="headerlink" title="数据与文字的表示"></a>数据与文字的表示</h2><p> 计算机中使用的数据可分成两大类:</p>
-<ul>
-<li><strong>符号数据</strong>:非数字符号的表示（ASCII、汉字、图形等）</li>
-<li><strong>数值数据</strong>:数字数据的表示方式（定点、浮点）</li>
-</ul>
-<h3 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h3><h4 id="10进制与R进制转换"><a href="#10进制与R进制转换" class="headerlink" title="10进制与R进制转换"></a>10进制与R进制转换</h4><ol>
-<li>整数部分：除r取余，r为进制基数</li>
-<li>小数部分：乘r取整</li>
-</ol>
-<h4 id="数据表示格式"><a href="#数据表示格式" class="headerlink" title="数据表示格式"></a>数据表示格式</h4><ul>
-<li>定点表示：小数点位置固定<ul>
-<li>所有数据的小数点位置固定不变</li>
-<li>理论上位置可以任意，但实际上将数据表示有两种<strong>方法</strong>（小数点位置固定-定点表示法）：</li>
-<li>纯小数：固定在<strong>数据最高位</strong>之前,不需要专门的存放位置</li>
-<li>纯整数：固定在<strong>数据最低位</strong>之后, 不需要专门的存放位置</li>
-</ul>
-</li>
-<li>定点缺点： 定点数表示数的范围受字长限制，表示数的范围有限;<ul>
-<li>定点表示的精度有限</li>
-<li>机器中，常用定点<strong>纯整数</strong>表示;</li>
-<li>不能够表示实数范围内的所有数</li>
-</ul>
-</li>
-<li>浮点表示：小数点位置不固定</li>
-<li>十进制数串:字符串,BCD(8421码)</li>
-<li>字符和字符串:ASCII(低7位用来编码(128),最高位为校验位)等</li>
-<li>汉字  输入编码、汉字内码、字模码分别是计算机用于输入、内部处理、输出三种不同用途的编码</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959845.png" alt="image-20230305134153170"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959846.png" alt="image-20230305134319970"></p>
-<ul>
-<li>校验码 异或,奇校验位:奇数个1,C &#x3D; 0;偶校验位:偶数个1,C &#x3D; 0</li>
-</ul>
-<p>将一个字X从部件A传送到部件B，采用偶校验</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959847.png" alt="image-20230305134711168"></p>
-<h3 id="数据的存储和排列顺序"><a href="#数据的存储和排列顺序" class="headerlink" title="数据的存储和排列顺序"></a>数据的存储和排列顺序</h3><ul>
-<li>对齐</li>
-<li>大小端</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959848.png" alt="image-20230305133949197"></p>
-<h3 id="数的机器码表示"><a href="#数的机器码表示" class="headerlink" title="数的机器码表示"></a>数的机器码表示</h3><p>真值:一般书写的数</p>
-<p>机器码:机器中表示的数, 要解决在计算机内部数的正、负符号和小数点运算问题。</p>
-<p>一共n+1位,xn为符号位</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>最高位(符号位)</th>
-<th>正数</th>
-<th>负数</th>
-<th>最小值</th>
-<th>最大值</th>
-<th>正负零</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>原码</td>
-<td>正数0负数1</td>
-<td>0绝对值二进制</td>
-<td>1 绝对值二进制</td>
-<td>全1,<strong>-(2^n - 1)</strong></td>
-<td>01111,<strong>2^n - 1</strong></td>
-<td><strong>-0&#x3D;1000  +0&#x3D;0000</strong></td>
-</tr>
-<tr>
-<td>补码</td>
-<td>&gt;&#x3D;0,0;&lt;0,1</td>
-<td>0绝对值二进制</td>
-<td>1 绝对值二进制<strong>取反</strong><code>+1</code></td>
-<td>10000,-2n</td>
-<td>01111,2n-1</td>
-<td><strong>-0&#x3D;0000  +0&#x3D;0000</strong></td>
-</tr>
-<tr>
-<td>反码</td>
-<td>正数0负数1</td>
-<td>0绝对值二进制</td>
-<td>1 绝对值二进制<strong>取反</strong></td>
-<td>10000,<strong>-(2^n - 1)</strong></td>
-<td>全0,<strong>2^n - 1</strong></td>
-<td><strong>-0&#x3D;1111  +0&#x3D;0000</strong></td>
-</tr>
-<tr>
-<td>移码</td>
-<td>&gt;&#x3D;0,1;&lt;0,0</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p><strong>对于一个<code>正数</code>来说：二进制原码、反码、补码是同一个，<code>完全相同</code></strong></p>
-<p><strong>对于一个<code>负数</code>来说:原码(<code>符号位为1</code>),反码（<code>符号位不变，其它位取反</code>）补码（<code>反码+1</code>）</strong></p>
-<h4 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h4><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959849.png" alt="image-20230305131454202"></p>
-<p>有正0和负0之分</p>
-<p>范围 1-2n~2n–1</p>
-<p>x&#x3D;+1001,则 [x]原&#x3D;01001</p>
-<p>x&#x3D;-1001,则[-x]原&#x3D;11001</p>
-<p>表示简单，易于同真值之间进行转换，实现乘除运算规则简单。</p>
-<p>进行加减运算十分麻烦</p>
-<h4 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h4><p>正数的表示与原、补码相同，负数的反码符号位为1，数值位是将原码的数值按位取反，就得到该数的反码表示</p>
-<p>电路容易实现，触发器的输出有正负之分</p>
-<p>对尾数求反，它跟补码的区别在于末位少加一个1  [x]补&#x3D;[x]反 + 1</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959850.png" alt="image-20230305132132418"></p>
-<h4 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h4><p>补码是在“模”和“同余”的概念下导出的,在模为12的情况下，-2的补码 就是10。一个负数用其补码代替，同样可以得到正确的运算结果。</p>
-<p>正数的补码就是正数的本身，负数的补码是原负数加上模</p>
-<p>高位表明正负,无正零和负零之分</p>
-<p>范围-2n~2n-1(定点整数）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959851.png" alt="image-20230305132232486"></p>
-<p>最大的优点就是<strong>将减法运算转换成加法运算</strong>:</p>
-<p>[X]补-[Y]补&#x3D; [X]补+[-Y]补</p>
-<p>正数：符号位为0，数值部分不变<br>负数：符号位为1，数值部分“各位取反，末位加1”</p>
-<h4 id="移码"><a href="#移码" class="headerlink" title="移码"></a>移码</h4><p>移码和补码尾数相同，符号位相反</p>
-<p>范围:-2n~2n-1</p>
-<p>Excess (biased) notion- 移码表示:将&#x3D;&#x3D;每一个数值加上&#x3D;&#x3D;一个偏置常数（ Excess &#x2F; bias）</p>
-<p>当编码位数为 n时，bias取 &#x3D;&#x3D;2n-1&#x3D;&#x3D;</p>
-<h4 id="用补码表示带符号整数原因"><a href="#用补码表示带符号整数原因" class="headerlink" title="用补码表示带符号整数原因"></a>用补码表示带符号整数原因</h4><p>补码运算系统是模运算系统，加、减运算统一</p>
-<p>数0的表示惟一，方便使用</p>
-<p>比原码和反码多表示一个最小负数</p>
-<p>与移码相比，其符号位和真值的符号对应关系清楚</p>
-<h3 id="浮点表示"><a href="#浮点表示" class="headerlink" title="浮点表示"></a>浮点表示</h3><p>有正零和负零之分,当阶码E为全0且尾数M也为全0时,</p>
-<p>也有+∞和-∞之分,当阶码E为全1且尾数M为全0时</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959852.png" alt="image-20230305133251206"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959853.png" alt="image-20230305133020933"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959854.png" alt="image-20230305133043783"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959855.png" alt="image-20230305133102011"></p>
-<h2 id="定点加减法"><a href="#定点加减法" class="headerlink" title="定点加减法"></a>定点加减法</h2><h3 id="补码加法"><a href="#补码加法" class="headerlink" title="补码加法"></a>补码加法</h3><p>[x+y]补&#x3D; [x]补+[y]补（mod 2n+1）</p>
-<p>在模2n+1意义下，任意两数的补码之和等于该两数之和的补码。</p>
-<h3 id="补码减法"><a href="#补码减法" class="headerlink" title="补码减法"></a>补码减法</h3><p>[x-y]补&#x3D; [x]补- [y]补&#x3D; [x]补+[-y]补</p>
-<p>从 [y]补到[-y]补的变换，只需要把[y]补连带符号位取反，末位再加1即可。</p>
-<h3 id="溢出的检测"><a href="#溢出的检测" class="headerlink" title="溢出的检测"></a>溢出的检测</h3><p>左右为两个例子:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303051959856.png" alt="image-20230305135525878"></p>
+        <h1 id="上下文无关文法与下推自动机"><a href="#上下文无关文法与下推自动机" class="headerlink" title="上下文无关文法与下推自动机"></a>上下文无关文法与下推自动机</h1><p>产生式形如A→a，A∈N,α∈(NUT)*所描述的语言称为上下文无关语言。</p>
+<p>PDA下推自动机</p>
+<h2 id="推导树"><a href="#推导树" class="headerlink" title="推导树"></a>推导树</h2><h3 id="归约与推导"><a href="#归约与推导" class="headerlink" title="归约与推导"></a>归约与推导</h3><p><code>归约</code>：一种是自下而上的方法，称为递归推理(recursive inference）</p>
+<p><code>推导</code>：一种是自上而下的方法，称为推导（derivation）.</p>
+<p>归约过程   将产生式的右部（body）替换为产生式的左部（ head ）.</p>
+<p>推导过程   将产生式的左部（ head ）替换为产生式的右部（ body ）.</p>
+<p><code>最左推导</code>：</p>
+<p>若推导过程的每一步总是替换出现在最左边的<code>非终结符</code>，则这样的推导称为最左推导. 为方便，最左推导关系用&#x3D;&gt;lm表示，其传递闭包用&#x3D;&gt;*lm表示.</p>
+<p><code>最右推导</code>:(以上例子)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157862.png" alt="image-20230504110835071"></p>
+<p><code>推导树</code>：</p>
+<p>用图的方法表示一个句型的推导。推导树是对文法G中一个特定句子形式的派生过程所做的一种自然描述。</p>
+<p>定义方法：<br>文法的起始符为根，树的枝结点标记是非终结符，叶结点标记为终结符或E。<br>若枝结点有直接子孙x1, x2,…, xk，则文法中有生成式A→x1 x2…xk.</p>
+<p>直接上例子：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157864.png" alt="image-20230504111145247"></p>
+<p><code>叶子</code>从左向右组成的字符串称为推导树的<code>边缘</code>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157865.png" alt="image-20230504111954490"></p>
+<p>证明略</p>
+<h3 id="二义性"><a href="#二义性" class="headerlink" title="二义性"></a>二义性</h3><p>简言之就是两个推导过程，两个推导树</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157866.png" alt="image-20230504112051349"></p>
+<p>没有一般算法来消除二义性</p>
+<h2 id="上下文无关文法变换"><a href="#上下文无关文法变换" class="headerlink" title="上下文无关文法变换"></a>上下文无关文法变换</h2><h4 id="CFG简化"><a href="#CFG简化" class="headerlink" title="CFG简化"></a>CFG简化</h4><h5 id="消去无用符号"><a href="#消去无用符号" class="headerlink" title="消去无用符号"></a>消去无用符号</h5><p>什么是有用符号（从开始能到这个符号还能走到结尾）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157867.png" alt="image-20230504112548898"></p>
+<p><code>计算生成符号集</code> 终结符是；所有能生成终结符的是；所有能生成【能生成终结符的】是；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157868.png" alt="image-20230504112818781"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157869.png" alt="image-20230504112832894"></p>
+<p><code>计算可达符号集</code>同理从左边再说一遍</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157870.png" alt="image-20230504113028897"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157871.png" alt="image-20230504113053108"></p>
+<p><code>先用算法1，再用算法二</code>，即可消去所有无用符号</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157872.png" alt="image-20230504113235339"></p>
+<h5 id="消E产生式"><a href="#消E产生式" class="headerlink" title="消E产生式"></a>消E产生式</h5><p><code>可致空符号</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157873.png" alt="image-20230504113336618"></p>
+<p>对应算法三：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157874.png" alt="image-20230504113359962"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157875.png" alt="image-20230504113432488"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157876.png" alt="image-20230504113440322"></p>
+<h5 id="消单生成式"><a href="#消单生成式" class="headerlink" title="消单生成式"></a>消单生成式</h5><p><code>单元偶对</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157877.png" alt="image-20230504113535625"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157878.png" alt="image-20230504113555107"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157879.png" alt="image-20230504113605602"></p>
+<hr>
+<p>总结:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157880.png" alt="image-20230504113754611"></p>
+<p>所以是<code>算法3412</code>，顺序不要搞乱了</p>
+<hr>
+<h4 id="对生成式的形式进行标准化"><a href="#对生成式的形式进行标准化" class="headerlink" title="对生成式的形式进行标准化"></a>对生成式的形式进行标准化</h4><p>也就是消除左递归</p>
+<p>先来看看什么是递归：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157881.png" alt="image-20230504114232994"></p>
+<p>消除左递归过程中要用的：<code>生成式代换</code>：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157882.png" alt="image-20230504114400374"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157883.png" alt="image-20230504114414783"></p>
+<p>最终算法：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157884.png" alt="image-20230504114543575"></p>
+<p>这里就不举例子了，太多不好粘贴，自己查PPT4.2最后</p>
+<h2 id="Chomsky范式和Greibach范式"><a href="#Chomsky范式和Greibach范式" class="headerlink" title="Chomsky范式和Greibach范式"></a>Chomsky范式和Greibach范式</h2><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157885.png" alt="image-20230504115440362"></p>
+<h3 id="CNF"><a href="#CNF" class="headerlink" title="CNF"></a>CNF</h3><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157886.png" alt="image-20230504114713578"></p>
+<p>构成步骤：</p>
+<p>第一步就是CFG化简，第二步是新的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157887.png" alt="image-20230504114816936"></p>
+<h3 id="GNF"><a href="#GNF" class="headerlink" title="GNF"></a>GNF</h3><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157888.png" alt="image-20230504114954191"></p>
+<p>构成步骤：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157889.png" alt="image-20230504115016167"></p>
+<p>所以生成GNF是本章的集大成者，给一道例题：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157890.png" alt="image-20230504115147445"></p>
 
     </div>
 
@@ -410,7 +352,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://gdgao.top/2023/03/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%AC%AC2%E7%AB%A0%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA/" title="运算方法和运算器">http://gdgao.top/2023/03/05/计算机组成原理第2章数据表示/</a>
+    <a href="http://gdgao.top/2023/05/04/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC4%E7%AB%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA/" title="上下文无关文法与下推自动机">http://gdgao.top/2023/05/04/形式语言与自动机第4章上下文无关文法与下推自动机/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -427,12 +369,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/03/04/C++%E7%AC%AC6%E7%AB%A0%E5%87%BD%E6%95%B0/" rel="prev" title="函数">
-      <i class="fa fa-chevron-left"></i> 函数
+    <a href="/2023/04/30/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%89%8D%E4%B8%89%E7%AB%A0%E5%8F%8A%E6%9C%9F%E4%B8%AD%E6%80%BB%E7%BB%93/" rel="prev" title="形式语言与自动机前三章及期中总结">
+      <i class="fa fa-chevron-left"></i> 形式语言与自动机前三章及期中总结
     </a></div>
       <div class="post-nav-item">
-    <a href="/2023/03/05/VHDL/" rel="next" title="VHDL">
-      VHDL <i class="fa fa-chevron-right"></i>
+    <a href="/2023/05/04/%E6%8A%8A%E8%87%AA%E5%B7%B1%E8%BF%98%E7%BB%99%E8%87%AA%E5%B7%B1/" rel="next" title="卸载王者荣耀">
+      卸载王者荣耀 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -494,7 +436,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E5%99%A8"><span class="nav-text">运算方法和运算器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%B8%8E%E6%96%87%E5%AD%97%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-text">数据与文字的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F"><span class="nav-text">数据格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#10%E8%BF%9B%E5%88%B6%E4%B8%8ER%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2"><span class="nav-text">10进制与R进制转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E6%A0%BC%E5%BC%8F"><span class="nav-text">数据表示格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E5%92%8C%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F"><span class="nav-text">数据的存储和排列顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%9A%84%E6%9C%BA%E5%99%A8%E7%A0%81%E8%A1%A8%E7%A4%BA"><span class="nav-text">数的机器码表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E7%A0%81"><span class="nav-text">原码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E7%A0%81"><span class="nav-text">反码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81"><span class="nav-text">补码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E7%A0%81"><span class="nav-text">移码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E8%A1%A5%E7%A0%81%E8%A1%A8%E7%A4%BA%E5%B8%A6%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0%E5%8E%9F%E5%9B%A0"><span class="nav-text">用补码表示带符号整数原因</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E8%A1%A8%E7%A4%BA"><span class="nav-text">浮点表示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%82%B9%E5%8A%A0%E5%87%8F%E6%B3%95"><span class="nav-text">定点加减法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81%E5%8A%A0%E6%B3%95"><span class="nav-text">补码加法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81%E5%87%8F%E6%B3%95"><span class="nav-text">补码减法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%A2%E5%87%BA%E7%9A%84%E6%A3%80%E6%B5%8B"><span class="nav-text">溢出的检测</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="nav-text">上下文无关文法与下推自动机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E5%AF%BC%E6%A0%91"><span class="nav-text">推导树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%92%E7%BA%A6%E4%B8%8E%E6%8E%A8%E5%AF%BC"><span class="nav-text">归约与推导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E4%B9%89%E6%80%A7"><span class="nav-text">二义性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E5%8F%98%E6%8D%A2"><span class="nav-text">上下文无关文法变换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CFG%E7%AE%80%E5%8C%96"><span class="nav-text">CFG简化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B6%88%E5%8E%BB%E6%97%A0%E7%94%A8%E7%AC%A6%E5%8F%B7"><span class="nav-text">消去无用符号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B6%88E%E4%BA%A7%E7%94%9F%E5%BC%8F"><span class="nav-text">消E产生式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B6%88%E5%8D%95%E7%94%9F%E6%88%90%E5%BC%8F"><span class="nav-text">消单生成式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E7%94%9F%E6%88%90%E5%BC%8F%E7%9A%84%E5%BD%A2%E5%BC%8F%E8%BF%9B%E8%A1%8C%E6%A0%87%E5%87%86%E5%8C%96"><span class="nav-text">对生成式的形式进行标准化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chomsky%E8%8C%83%E5%BC%8F%E5%92%8CGreibach%E8%8C%83%E5%BC%8F"><span class="nav-text">Chomsky范式和Greibach范式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CNF"><span class="nav-text">CNF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GNF"><span class="nav-text">GNF</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
