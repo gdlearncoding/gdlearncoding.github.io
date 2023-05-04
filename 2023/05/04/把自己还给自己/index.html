@@ -20,48 +20,19 @@
     var CONFIG = {"hostname":"gdgao.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta name="description" content="上下文无关文法与下推自动机，规约推导推导树，二义性，CFG化简，CNF，GNF生成。">
+  <meta name="description" content="明年这个时候还是夏天,但已经不是我20岁的夏天了.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="上下文无关文法与下推自动机">
-<meta property="og:url" content="http://gdgao.top/2023/05/04/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC4%E7%AB%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA/index.html">
+<meta property="og:title" content="卸载王者荣耀">
+<meta property="og:url" content="http://gdgao.top/2023/05/04/%E6%8A%8A%E8%87%AA%E5%B7%B1%E8%BF%98%E7%BB%99%E8%87%AA%E5%B7%B1/index.html">
 <meta property="og:site_name" content="果冻">
-<meta property="og:description" content="上下文无关文法与下推自动机，规约推导推导树，二义性，CFG化简，CNF，GNF生成。">
+<meta property="og:description" content="明年这个时候还是夏天,但已经不是我20岁的夏天了.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157862.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157864.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157865.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157866.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157867.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157868.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157869.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157870.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157871.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157872.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157873.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157874.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157875.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157876.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157877.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157878.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157879.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157880.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157881.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157882.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157883.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157884.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157885.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157886.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157887.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157888.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157889.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157890.png">
-<meta property="article:published_time" content="2023-05-04T02:36:16.328Z">
-<meta property="article:modified_time" content="2023-05-04T03:57:43.407Z">
+<meta property="article:published_time" content="2023-05-04T10:22:39.270Z">
+<meta property="article:modified_time" content="2023-05-04T14:12:09.032Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157862.png">
 
-<link rel="canonical" href="http://gdgao.top/2023/05/04/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC4%E7%AB%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA/">
+<link rel="canonical" href="http://gdgao.top/2023/05/04/%E6%8A%8A%E8%87%AA%E5%B7%B1%E8%BF%98%E7%BB%99%E8%87%AA%E5%B7%B1/">
 
 
 <script id="page-configurations">
@@ -74,7 +45,7 @@
   };
 </script>
 
-  <title>上下文无关文法与下推自动机 | 果冻</title>
+  <title>卸载王者荣耀 | 果冻</title>
   
 
 
@@ -202,7 +173,7 @@
     
 </div>
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://gdgao.top/2023/05/04/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC4%E7%AB%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA/">
+    <link itemprop="mainEntityOfPage" href="http://gdgao.top/2023/05/04/%E6%8A%8A%E8%87%AA%E5%B7%B1%E8%BF%98%E7%BB%99%E8%87%AA%E5%B7%B1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -215,7 +186,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          上下文无关文法与下推自动机
+          卸载王者荣耀
         </h1>
 
         <div class="post-meta">
@@ -227,7 +198,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-05-04 10:36:16 / 修改时间：11:57:43" itemprop="dateCreated datePublished" datetime="2023-05-04T10:36:16+08:00">2023-05-04</time>
+              <time title="创建时间：2023-05-04 18:22:39 / 修改时间：22:12:09" itemprop="dateCreated datePublished" datetime="2023-05-04T18:22:39+08:00">2023-05-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,7 +206,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">形式语言与自动机</span></a>
+                  <a href="/categories/%E9%97%B2%E6%83%85%E9%80%B8%E8%87%B4/" itemprop="url" rel="index"><span itemprop="name">闲情逸致</span></a>
                 </span>
             </span>
 
@@ -251,15 +222,15 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>816</span>
+              <span>3.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
-            <div class="post-description">上下文无关文法与下推自动机，规约推导推导树，二义性，CFG化简，CNF，GNF生成。</div>
+            <div class="post-description">明年这个时候还是夏天,但已经不是我20岁的夏天了.</div>
 
         </div>
       </header>
@@ -270,71 +241,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="上下文无关文法与下推自动机"><a href="#上下文无关文法与下推自动机" class="headerlink" title="上下文无关文法与下推自动机"></a>上下文无关文法与下推自动机</h1><p>产生式形如A→a，A∈N,α∈(NUT)*所描述的语言称为上下文无关语言。</p>
-<p>PDA下推自动机</p>
-<h2 id="推导树"><a href="#推导树" class="headerlink" title="推导树"></a>推导树</h2><h3 id="归约与推导"><a href="#归约与推导" class="headerlink" title="归约与推导"></a>归约与推导</h3><p><code>归约</code>：一种是自下而上的方法，称为递归推理(recursive inference）</p>
-<p><code>推导</code>：一种是自上而下的方法，称为推导（derivation）.</p>
-<p>归约过程   将产生式的右部（body）替换为产生式的左部（ head ）.</p>
-<p>推导过程   将产生式的左部（ head ）替换为产生式的右部（ body ）.</p>
-<p><code>最左推导</code>：</p>
-<p>若推导过程的每一步总是替换出现在最左边的<code>非终结符</code>，则这样的推导称为最左推导. 为方便，最左推导关系用&#x3D;&gt;lm表示，其传递闭包用&#x3D;&gt;*lm表示.</p>
-<p><code>最右推导</code>:(以上例子)</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157862.png" alt="image-20230504110835071"></p>
-<p><code>推导树</code>：</p>
-<p>用图的方法表示一个句型的推导。推导树是对文法G中一个特定句子形式的派生过程所做的一种自然描述。</p>
-<p>定义方法：<br>文法的起始符为根，树的枝结点标记是非终结符，叶结点标记为终结符或E。<br>若枝结点有直接子孙x1, x2,…, xk，则文法中有生成式A→x1 x2…xk.</p>
-<p>直接上例子：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157864.png" alt="image-20230504111145247"></p>
-<p><code>叶子</code>从左向右组成的字符串称为推导树的<code>边缘</code>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157865.png" alt="image-20230504111954490"></p>
-<p>证明略</p>
-<h3 id="二义性"><a href="#二义性" class="headerlink" title="二义性"></a>二义性</h3><p>简言之就是两个推导过程，两个推导树</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157866.png" alt="image-20230504112051349"></p>
-<p>没有一般算法来消除二义性</p>
-<h2 id="上下文无关文法变换"><a href="#上下文无关文法变换" class="headerlink" title="上下文无关文法变换"></a>上下文无关文法变换</h2><h4 id="CFG简化"><a href="#CFG简化" class="headerlink" title="CFG简化"></a>CFG简化</h4><h5 id="消去无用符号"><a href="#消去无用符号" class="headerlink" title="消去无用符号"></a>消去无用符号</h5><p>什么是有用符号（从开始能到这个符号还能走到结尾）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157867.png" alt="image-20230504112548898"></p>
-<p><code>计算生成符号集</code> 终结符是；所有能生成终结符的是；所有能生成【能生成终结符的】是；</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157868.png" alt="image-20230504112818781"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157869.png" alt="image-20230504112832894"></p>
-<p><code>计算可达符号集</code>同理从左边再说一遍</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157870.png" alt="image-20230504113028897"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157871.png" alt="image-20230504113053108"></p>
-<p><code>先用算法1，再用算法二</code>，即可消去所有无用符号</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157872.png" alt="image-20230504113235339"></p>
-<h5 id="消E产生式"><a href="#消E产生式" class="headerlink" title="消E产生式"></a>消E产生式</h5><p><code>可致空符号</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157873.png" alt="image-20230504113336618"></p>
-<p>对应算法三：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157874.png" alt="image-20230504113359962"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157875.png" alt="image-20230504113432488"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157876.png" alt="image-20230504113440322"></p>
-<h5 id="消单生成式"><a href="#消单生成式" class="headerlink" title="消单生成式"></a>消单生成式</h5><p><code>单元偶对</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157877.png" alt="image-20230504113535625"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157878.png" alt="image-20230504113555107"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157879.png" alt="image-20230504113605602"></p>
-<hr>
-<p>总结:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157880.png" alt="image-20230504113754611"></p>
-<p>所以是<code>算法3412</code>，顺序不要搞乱了</p>
-<hr>
-<h4 id="对生成式的形式进行标准化"><a href="#对生成式的形式进行标准化" class="headerlink" title="对生成式的形式进行标准化"></a>对生成式的形式进行标准化</h4><p>也就是消除左递归</p>
-<p>先来看看什么是递归：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157881.png" alt="image-20230504114232994"></p>
-<p>消除左递归过程中要用的：<code>生成式代换</code>：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157882.png" alt="image-20230504114400374"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157883.png" alt="image-20230504114414783"></p>
-<p>最终算法：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157884.png" alt="image-20230504114543575"></p>
-<p>这里就不举例子了，太多不好粘贴，自己查PPT4.2最后</p>
-<h2 id="Chomsky范式和Greibach范式"><a href="#Chomsky范式和Greibach范式" class="headerlink" title="Chomsky范式和Greibach范式"></a>Chomsky范式和Greibach范式</h2><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157885.png" alt="image-20230504115440362"></p>
-<h3 id="CNF"><a href="#CNF" class="headerlink" title="CNF"></a>CNF</h3><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157886.png" alt="image-20230504114713578"></p>
-<p>构成步骤：</p>
-<p>第一步就是CFG化简，第二步是新的</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157887.png" alt="image-20230504114816936"></p>
-<h3 id="GNF"><a href="#GNF" class="headerlink" title="GNF"></a>GNF</h3><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157888.png" alt="image-20230504114954191"></p>
-<p>构成步骤：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157889.png" alt="image-20230504115016167"></p>
-<p>所以生成GNF是本章的集大成者，给一道例题：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305041157890.png" alt="image-20230504115147445"></p>
+        <iframe src="//player.bilibili.com/player.html?bvid=BV1YV4y1K7pT&page=1&high_quality=1&danmaku=0" allowfullscreen="allowfullscreen" width="100%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+
+
+<p>​	今天是2023年4月25日,我卸载了王者荣耀</p>
+<p>​	我可能是一个比较注重仪式感的人,我想如果不来一点仪式感的话,可能不出几天我就又把王者又下回来了,故写下此篇,来反思自己通过王者习得的道理.</p>
+<p>​	</p>
+<h2 id="经过"><a href="#经过" class="headerlink" title="经过"></a>经过</h2><p>​	我是怎么打上王者的呢,好像是在高中吧,王者在我这里就是”未闻其名,先闻其声”,第一次打王者应该就是在别人宿舍床上,看别人玩,他不想玩了,我比较好奇,让后打了一把1V1,我用的是猴子,对面用的是后裔,反正最后是输了,然后就把手机还回去了,之后有我的好朋友松,周末在教室借来手机领了日常奖励?那个时候好像是夏侯惇的赛季皮肤?,之后就有一次回宿舍看到晓骋在宿舍玩,周围的人都在围观,我看了上去,看到视角逐渐抬高,技能能冷却几个,原来那个是百里守约,松最后还打了一把凯,我只记得他们喊着”开大””5秒真男人”什么的…后来,一鸣给我介绍了这个游戏,我就加入了,那是个鬼谷子还是老夫子赛季皮肤的赛季.这些都不重要了,总之,这只是一个我想融入他们的社交手段</p>
+<p>​	但是,小时候的我是个乖孩子,不想让父母知道我玩手机,所以,每次有大假期可能就把游戏下下来,然后假期结束之后就删掉,但是对于王者就根本没有瘾,不玩就不玩,我记得有一个假期,是王者周年庆来着,李小龙的皮肤,我当然可以借到手机登录就能领,但是,根本没兴趣,所以就没有领取.</p>
+<p>​	后来吧,高考结束了,留给我的时间就多了,我记得朋友们喊着我开黑我就去,私下里闲的无聊的时候也会开两把.之后能从朋友们的言语中感受到我可能有点菜…但是可能是一种莫名的自尊心?我玩游戏的时间也变长了.再到后来,一鸣在我生日的时候,送了我一个百里守约的88元的皮肤,(可恶,到现在也没有机会把人情还回去),我自己也在游戏里充了6元(嘶,这好像是在高考前?不重要了),还送了松6元,领了首充奖励赵云.有点跑题了,就是开始逐渐入坑这个游戏了.再到后来,我也会在知乎上查一些攻略,猪八戒的啊什么的.也开始关注张大仙,感觉视频有意思,还有铁根阿三,沙雕,有趣.再到后来,就是是一只鱼,逆风局不放弃,又点燃,再到后来呢,汤浩然,之后我开始练习阿珂(还可能是周年皮肤宝箱开出了阿珂的皮肤,好好看),看一些攻略之类的</p>
+<p>​	应该是某个暑假,我终于终于打上了王者,怎么上的?我的印象都有点模糊了,从那以后的赛季,我都是王者,一是有成就感,另外是看到有赛年王者皮肤,还能充能,然后就有奇奇怪怪的收集欲,就往王者上打,我记得在王者晋级赛的时候也会磕磕绊绊,越想C越上不去,离目标越来越远;当然也有一路顺风的时候,比如惩戒张飞转精装,那天一路连胜,半夜上了王者,满意睡去.这个时候我已经感受不到快乐了,感觉好累,也可能是游戏环境变差了.中间卸载过一次王者,那个时候,就是想着外面的世界更精彩,好像卸载了两个月,有一次无聊?,又下了下来,之后的卸载就是到了现在这次.但是,打王者是真的上头啊,我记得有个假期,半夜达到两三点,甚至打到天亮.有事没事也想开两把,想开一把的时候很快乐,但进了游戏,就没有快乐了,只有在游戏里一些高光的时候,比如,救了队友一名,抢到了龙,疯狂的输出的时候,才会有些许多巴胺.输了之后,更难受.啊啊啊.</p>
+<p>​	今年三月份的时候,我还在宿舍开黑,体会到了和朋友一起打游戏的快乐,也不想着练技术什么的,就是开心,把把辅助,把把MVP,胜利大于失败,也很开心,要是能再点开,宿舍关系也不至于真么僵硬,那都是题外话了…</p>
+<h2 id="态度"><a href="#态度" class="headerlink" title="态度"></a>态度</h2><p>首先,我并不后悔我在王者上浪费的时间,事实上,后悔也并没有什么用,或许只有花费过了这么多的时间进行游戏,才能达到我现在对过去的反思.</p>
+<p>从我的id开始说吧,一开始我叫什么来着?忘记了,不重要,就是随便一个名字,后来觉得名字无趣,就换成了一碗吃不饱@,应该是我的qq名,后来,听到张大仙的呼吁,改善游戏环境,在名字前面加上了X.,再到后来改成了先来反思自己,想着别人在喷我的时候,看看我的id让他们反思一下自己.可以看出来,我就是想让大家不要说那么多垃圾话,另外,不要轻易点投降,我的干得漂亮从来都是夸奖用的.</p>
+<p>但是,王者也占用了我很多时间.比如,过年的时候,虽然看春晚很无聊,我借着这个名义,在自己房间里打游戏,应该陪陪家人的,本来回家的时间就少;有时候总是反锁门再打游戏,怕父母看到我在打游戏,再被批评,虽然他们都不一定会批评我,但我是个很敏感的乖孩子(好像又跑题了);再比如,想玩游戏,但在国家公祭日所有游戏停服,我没有思考国家公祭日为什么要存在,只是觉得影响我打游戏,应该撤销,忘记历史的意义…</p>
+<p>另外,我打游戏总是在乎别人的感受,虽然我很菜,但我也不骂别人,总是在鼓励队友,鼓励别人能感受到一定的快乐,但不多.再到后来,操作和意识有了一定程度的提升,看到别人打的菜,心里真的着急,虽然我没有说出来,但是,看到他们太菜输掉比赛,真的很难过,不爽,开下一局,更不爽…我真的不想被PUA了</p>
+<p>到现在,真的感受不到快乐了.但又怕王者是一款社交游戏,朋友们都在玩,我不玩万一融不进去就麻烦了;我只是贪心游戏里的皮肤,攒了130多个皮肤碎片,总是想着换个好皮肤,想着活动,免费送的皮肤;想着王者印记.但是就是没有想过快乐.后来,我只是为了一些标,甚至想过充钱上王者或买标.我好累,我真的好累.现在是2023年4月25日22:37:00,写了一个小时,有点困,但还是决定写完.真的,玩的累.不想玩了.还有一个原因是,我想看看外面的世界,有很多很多快乐的事,学唱歌,减肥(已经减了10斤),游泳,养花,学自己想学的东西,看书,这些都是我高中时就幻想的东西,我也可以做我之前想过的生活,但是由于王者,总是占用我很多很多时间,为什么,为什么,我要鼓励别人最后还可能输游戏,最重要的,我不快乐,真的不快乐.我想甩掉这个包袱,那不妨从今天开始.</p>
+<p>今天中午的时候我就和朋友说”今天是个重要的日子,是我戒掉王者的第一天”我想借助他来戒王者,下次下王者的时候想到他的眼神,我可能会放弃下载.但是,想要戒除王者,最重要的是从内在,我不快乐!这就是理由,戒掉这个瘾!我把B站所有的王者up都取关了,我决定,以后也不点王者的视频,让大数据将我遗忘.其实戒掉一个瘾也不是那么难啦,更何况是一个让我感受不到快乐的瘾,我减肥都能取得这样的成效,为什么戒不掉一个游戏呢&#x2F;至于王者的社交属性,肯定有更好的方法取代的,肯定会有的.现在的我更想去拥抱生活.另外,并不时因为连跪我才卸掉游戏的,事实上,我还三连胜了.我只是觉得,现在的我应该去做一些更有意义的事,我更想掌握自己的时间.明年这个时候还是夏天,但已经不是我20岁的夏天了,回望过去20年,我好像没做出什么特别令自己满意的事情,我想改变自己.那就去做!!!</p>
+<h2 id="一些视频和文字"><a href="#一些视频和文字" class="headerlink" title="一些视频和文字"></a>一些视频和文字</h2><p>我看了一点点视频和评论,觉得他们说的有道理,共勉</p>
+<p>把自己还给自己.</p>
+<p>这是B站上的一个up说自己看到很有力量的书籍分享出来的:</p>
+<blockquote>
+<p>​	当我真正的开始爱自己,我睡得越来越早,也越来越喜欢锻炼,我不再纠结和焦虑,变得自信满满,去追求有意义的人和事情,并为之燃烧自己的热情.</p>
+<p>​	我发现人生才真正开始，你永远不可能真正的去了解一个人.除非你穿过他穿过的鞋子,走过他走过的路,站在他的角度思考问题,可当你走过他走过的路之后,你连路过都觉得难过。(这段没懂)</p>
+<p>​	把时间分给睡眠、分给书籍、分给运动、分给花草树木、山川湖海、分给你对这个世界的热爱而不是将自己浪费在无聊的人和事上.当你开始做时间的主人的时候,你会感受到平淡生活中喷涌而出的平静的力量,至于那些焦虑与不安,自然都会烟消云散.</p>
+<p>​	我们有限的人生为何不用有限的精力去热爱呢?去感受呢?去拥抱所有的快乐呢?</p>
+<p>​	这段时间的沉默,真的让我想通了很多道理,所见所闻皆可豁然开朗,生活已经太多的坎坷与苦难但是又充满着美好和希望,何不妨及时行乐与自己和解呢!去靠近滋养你的人而不是消耗你的人,去听你喜欢听的歌、看你想看的电影、拍你想拍的照片、约你想约的人、做你想做的事情，任性一点,好运就多一点。</p>
+</blockquote>
+<p>霍,已经2023年4月25日23:20:01,写了快两个小时,最后在王者上的两个小时.还有很多话还没又写出来,时间到了,就不写了,有的话,写出来,不如记在心,或许在未来的某个时间点,我能有新的感悟.那就到此为止吧.</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​	最后,给王者荣耀一个告别吧.</p>
+<p>​	我们该如何告别呢,这是一个我玩了应该有上千小时的游戏.思考.</p>
+<p>​	谢谢你!让我在无聊的日子里感受到了快乐,甚至觉得疫情呆在家里也不觉得无趣.</p>
+<p>​	我恨你!用ELO机制让我白白浪费了那么多时间.</p>
+<p>​	放下我的胜负欲,收集欲.不能给我带来快乐的游戏，它的存在就毫无意义.</p>
+<p>​	那就这样吧!逃离峡谷,拥抱生活,再也不见!</p>
 
     </div>
 
@@ -352,7 +292,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://gdgao.top/2023/05/04/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC4%E7%AB%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA/" title="上下文无关文法与下推自动机">http://gdgao.top/2023/05/04/形式语言与自动机第4章上下文无关文法与下推自动机/</a>
+    <a href="http://gdgao.top/2023/05/04/%E6%8A%8A%E8%87%AA%E5%B7%B1%E8%BF%98%E7%BB%99%E8%87%AA%E5%B7%B1/" title="卸载王者荣耀">http://gdgao.top/2023/05/04/把自己还给自己/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -369,13 +309,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/04/30/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%89%8D%E4%B8%89%E7%AB%A0%E5%8F%8A%E6%9C%9F%E4%B8%AD%E6%80%BB%E7%BB%93/" rel="prev" title="形式语言与自动机前三章及期中总结">
-      <i class="fa fa-chevron-left"></i> 形式语言与自动机前三章及期中总结
+    <a href="/2023/05/04/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC4%E7%AB%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA/" rel="prev" title="上下文无关文法与下推自动机">
+      <i class="fa fa-chevron-left"></i> 上下文无关文法与下推自动机
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/05/04/%E6%8A%8A%E8%87%AA%E5%B7%B1%E8%BF%98%E7%BB%99%E8%87%AA%E5%B7%B1/" rel="next" title="卸载王者荣耀">
-      卸载王者荣耀 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -436,7 +373,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="nav-text">上下文无关文法与下推自动机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E5%AF%BC%E6%A0%91"><span class="nav-text">推导树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%92%E7%BA%A6%E4%B8%8E%E6%8E%A8%E5%AF%BC"><span class="nav-text">归约与推导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E4%B9%89%E6%80%A7"><span class="nav-text">二义性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E5%8F%98%E6%8D%A2"><span class="nav-text">上下文无关文法变换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CFG%E7%AE%80%E5%8C%96"><span class="nav-text">CFG简化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B6%88%E5%8E%BB%E6%97%A0%E7%94%A8%E7%AC%A6%E5%8F%B7"><span class="nav-text">消去无用符号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B6%88E%E4%BA%A7%E7%94%9F%E5%BC%8F"><span class="nav-text">消E产生式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B6%88%E5%8D%95%E7%94%9F%E6%88%90%E5%BC%8F"><span class="nav-text">消单生成式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E7%94%9F%E6%88%90%E5%BC%8F%E7%9A%84%E5%BD%A2%E5%BC%8F%E8%BF%9B%E8%A1%8C%E6%A0%87%E5%87%86%E5%8C%96"><span class="nav-text">对生成式的形式进行标准化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chomsky%E8%8C%83%E5%BC%8F%E5%92%8CGreibach%E8%8C%83%E5%BC%8F"><span class="nav-text">Chomsky范式和Greibach范式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CNF"><span class="nav-text">CNF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GNF"><span class="nav-text">GNF</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%8F%E8%BF%87"><span class="nav-text">经过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%81%E5%BA%A6"><span class="nav-text">态度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E8%A7%86%E9%A2%91%E5%92%8C%E6%96%87%E5%AD%97"><span class="nav-text">一些视频和文字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
