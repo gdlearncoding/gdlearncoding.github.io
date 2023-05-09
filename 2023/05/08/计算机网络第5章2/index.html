@@ -20,31 +20,33 @@
     var CONFIG = {"hostname":"gdgao.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta name="description" content="Data Link Layer Switching；Bridge； 连接设备摘要，交换机和网桥；Virtual LANs；第四章小结">
+  <meta name="description" content="Qos,流量整形；分组调度，FIFO，PQ，FQ，WFQ；不同层的互联设备；隧道tunneling">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据链路层交换">
-<meta property="og:url" content="http://gdgao.top/2023/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC4%E7%AB%A03/index.html">
+<meta property="og:title" content="网络层Qos">
+<meta property="og:url" content="http://gdgao.top/2023/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC5%E7%AB%A02/index.html">
 <meta property="og:site_name" content="果冻">
-<meta property="og:description" content="Data Link Layer Switching；Bridge； 连接设备摘要，交换机和网桥；Virtual LANs；第四章小结">
+<meta property="og:description" content="Qos,流量整形；分组调度，FIFO，PQ，FQ，WFQ；不同层的互联设备；隧道tunneling">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922288.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922289.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922290.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922292.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922293.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922294.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922295.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922296.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922297.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922298.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922299.png">
-<meta property="article:published_time" content="2023-05-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-08T11:23:19.196Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744862.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744864.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744865.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744866.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744867.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744868.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091719796.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744869.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744870.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744871.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744872.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744873.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744874.png">
+<meta property="article:published_time" content="2023-05-08T14:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-09T09:42:10.000Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922288.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744862.png">
 
-<link rel="canonical" href="http://gdgao.top/2023/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC4%E7%AB%A03/">
+<link rel="canonical" href="http://gdgao.top/2023/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC5%E7%AB%A02/">
 
 
 <script id="page-configurations">
@@ -57,7 +59,7 @@
   };
 </script>
 
-  <title>数据链路层交换 | 果冻</title>
+  <title>网络层Qos | 果冻</title>
   
 
 
@@ -185,7 +187,7 @@
     
 </div>
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://gdgao.top/2023/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC4%E7%AB%A03/">
+    <link itemprop="mainEntityOfPage" href="http://gdgao.top/2023/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC5%E7%AB%A02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -198,7 +200,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          数据链路层交换
+          网络层Qos
         </h1>
 
         <div class="post-meta">
@@ -208,10 +210,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-05-08 00:00:00 / 修改时间：19:23:19" itemprop="dateCreated datePublished" datetime="2023-05-08T00:00:00+08:00">2023-05-08</time>
+              <time title="创建时间：2023-05-08 22:00:00" itemprop="dateCreated datePublished" datetime="2023-05-08T22:00:00+08:00">2023-05-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-05-09 17:42:10" itemprop="dateModified" datetime="2023-05-09T17:42:10+08:00">2023-05-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -234,7 +242,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>766</span>
+              <span>620</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -242,7 +250,7 @@
               </span>
               <span>1 分钟</span>
             </span>
-            <div class="post-description">Data Link Layer Switching；Bridge； 连接设备摘要，交换机和网桥；Virtual LANs；第四章小结</div>
+            <div class="post-description">Qos,流量整形；分组调度，FIFO，PQ，FQ，WFQ；不同层的互联设备；隧道tunneling</div>
 
         </div>
       </header>
@@ -253,56 +261,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="网桥"><a href="#网桥" class="headerlink" title="网桥"></a>网桥</h2><h3 id="初识"><a href="#初识" class="headerlink" title="初识"></a>初识</h3><p>连接不同局域网；故障隔离；建设需要；混杂模式</p>
-<p>Bridges are used to interconnect LANs at data link layer.</p>
-<p>即插即用</p>
-<p>不足：延迟增加；广播风暴。</p>
-<p>下面例子是将802.11转换为802.3：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922288.png" alt="image-20230508185203227"></p>
-<p>当然，转换不同的协议问题还是有很多的，就比如帧格式不同，网速不同，安全性同；下面是不同的帧格式：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922289.png" alt="image-20230508185422395"></p>
-<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><h4 id="后向学习"><a href="#后向学习" class="headerlink" title="后向学习"></a>后向学习</h4><p>station table：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922290.png" alt="image-20230508185811628"></p>
-<p>构建station table：</p>
-<ol>
-<li>初始化:当桥接器第一次插入时，所有的哈希表都是空的</li>
-<li>桥在promiscuous mode(混杂模式)下运行，它们可以看到在任何局域网上发送的每一个帧。</li>
-<li><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922292.png" alt="image-20230508190041756"></li>
-<li>在连接的所有（除了到达帧的）端口上输出，</li>
-</ol>
-<p>补充：交换机根据转发表将收到的帧转发到相应端口</p>
-<h4 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h4><p>解决出现环路的问题loop</p>
-<p>解决方法：断环，形成树形拓扑</p>
-<ol>
-<li>每个网桥周期性地从它的所有端口向它的邻居广播一个配置消息，并处理它从其他网桥接收到的消息，这个消息不被转发，它包括：</li>
-<li>选择ID最低的网桥作为根网桥，在交换足够多的消息后，所有网桥将在根网桥上达成一致。</li>
-<li>记住它找到的到根的最短路径，如果有多条等价路径，则选择ID最低的桥路径</li>
-<li>关闭不属于最短路径的端口</li>
-<li>算法在正常运行期间继续运行，自动检测拓扑变化并更新树</li>
-</ol>
-<p>原文如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922293.png" alt="image-20230508191112428"></p>
-<h2 id="连接设备摘要"><a href="#连接设备摘要" class="headerlink" title="连接设备摘要"></a>连接设备摘要</h2><p>Interconnection Devices（互连器件）：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922294.png" alt="image-20230508191156885"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922295.png" alt="image-20230508191257131"></p>
-<h2 id="VlANs"><a href="#VlANs" class="headerlink" title="VlANs"></a>VlANs</h2><p>Virtual LANs</p>
-<p>A building with centralized wiring using <code>hubs</code> and a <code>switch</code></p>
-<p>设计原因：</p>
-<ol>
-<li>许多部门都有他们不想传递到部门外的信息</li>
-<li>有些局域网比其他局域网重，可能需要将它们分开。</li>
-<li>广播拥挤和广播风暴</li>
-</ol>
-<p>原文如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922296.png" alt="image-20230508191659679"></p>
-<p>what is it</p>
-<p>将逻辑拓扑与物理拓扑分离</p>
-<p>禁止跨颜色多播和广播和从不同VLAN传输到目的地的数据包</p>
-<p>在网桥或交换机中，配置表告诉我们哪些VLAN可以通过哪个端口访问。</p>
-<p>原文如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922297.png" alt="image-20230508192029486"></p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922298.png" alt="image-20230508192119032"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922299.png" alt="image-20230508192125880"></p>
+        <h2 id="Qos"><a href="#Qos" class="headerlink" title="Qos"></a>Qos</h2><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744862.png" alt="image-20230509172813603"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744864.png" alt="image-20230508225447990"></p>
+<p>实例：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744865.png" alt="image-20230508225610776"></p>
+<h3 id="ATM"><a href="#ATM" class="headerlink" title="ATM"></a>ATM</h3><p>ATM网络根据其QoS需求将流量分为四大类</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744866.png" alt="image-20230508225551235"></p>
+<h3 id="业务量-x2F-流量整形"><a href="#业务量-x2F-流量整形" class="headerlink" title="业务量&#x2F;流量整形"></a>业务量&#x2F;流量整形</h3><p>Traffic Shaping</p>
+<p>问题：流量突发：主机不规则地发出数据包，可能导致网络拥塞。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744867.png" alt="image-20230508225746171"></p>
+<p><code>漏桶和令牌桶</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744868.png" alt="image-20230509170804661"></p>
+<p>漏桶:桶满则数据丢失,更适合平滑流量</p>
+<p>如果一个数据包在桶满时到达，则该数据包必须排队，直到有足够的水漏出以容纳它(主机形状为itstraffic)或被丢弃(网络策略流量)。</p>
+<p>漏桶算法一个固定的平均速率的输出模式，不管交通流量有多拥挤。</p>
+<p>令牌桶:令牌桶允许突发，但最多达到一个调节的最大长度</p>
+<p>令牌桶算法丢弃令牌但不丢弃数据包;漏桶算法丢弃分组</p>
+<h3 id="分组调度"><a href="#分组调度" class="headerlink" title="分组调度"></a>分组调度</h3><p>Packet Scheduling</p>
+<p>为不同的流预留资源:带宽,缓存,CUP周期</p>
+<h4 id="FIFO"><a href="#FIFO" class="headerlink" title="FIFO"></a>FIFO</h4><p>先进先出队列</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091719796.png" alt="image-20230509171952455"></p>
+<h4 id="Priority-Queuing"><a href="#Priority-Queuing" class="headerlink" title="Priority Queuing"></a>Priority Queuing</h4><p>优先级队列</p>
+<p>数据包首先被分配一个优先级类。每个优先级类都有自己的队列</p>
+<p>高优先级数据先发送</p>
+<p>更好的QoS，因为更高优先级的流量（如多媒体）可以以更少的延迟到达目的地</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744869.png" alt="image-20230509172113061"></p>
+<h4 id="Fair-Queue"><a href="#Fair-Queue" class="headerlink" title="Fair Queue"></a>Fair Queue</h4><p>公平队列</p>
+<p>对于给定的输入线路，路由器对每个流都有独立的队列</p>
+<p>数据包以循环的方式处理</p>
+<p>它为使用大数据包的主机提供了比使用小数据包的主机更多的带宽</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744870.png" alt="image-20230509172226934"></p>
+<h4 id="Weighted-Fair-Queuing"><a href="#Weighted-Fair-Queuing" class="headerlink" title="Weighted Fair Queuing"></a>Weighted Fair Queuing</h4><p>公平加权队列</p>
+<p>按权值轮流</p>
+<p>队列是基于优先级进行加权的；优先级越高，权重越大</p>
+<p>该系统以循环方式处理每个队列中的数据包，根据<code>相应的权重从每个队列中选择数据包的数量</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744871.png" alt="image-20230509172404319"></p>
+<p>例子:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744872.png" alt="image-20230509172650039"></p>
+<h2 id="Internetworking"><a href="#Internetworking" class="headerlink" title="Internetworking"></a>Internetworking</h2><p>网络互连</p>
+<p>不同层的互联设备:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744873.png" alt="image-20230509173500677"></p>
+<h3 id="隧道"><a href="#隧道" class="headerlink" title="隧道"></a>隧道</h3><p>Tunneling不是重点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305091744874.png" alt="image-20230509173711584"></p>
 
     </div>
 
@@ -320,7 +320,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://gdgao.top/2023/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC4%E7%AB%A03/" title="数据链路层交换">http://gdgao.top/2023/05/08/计算机网络第4章3/</a>
+    <a href="http://gdgao.top/2023/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC5%E7%AB%A02/" title="网络层Qos">http://gdgao.top/2023/05/08/计算机网络第5章2/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -340,7 +340,10 @@
     <a href="/2023/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC5%E7%AB%A01/" rel="prev" title="网络层路由算法以及拥塞控制">
       <i class="fa fa-chevron-left"></i> 网络层路由算法以及拥塞控制
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/05/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC5%E7%AB%A03/" rel="next" title="IPv4及其编址">
+      IPv4及其编址 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -401,7 +404,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E6%A1%A5"><span class="nav-text">网桥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E8%AF%86"><span class="nav-text">初识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E5%90%91%E5%AD%A6%E4%B9%A0"><span class="nav-text">后向学习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%A0%91"><span class="nav-text">生成树</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E8%AE%BE%E5%A4%87%E6%91%98%E8%A6%81"><span class="nav-text">连接设备摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VlANs"><span class="nav-text">VlANs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Qos"><span class="nav-text">Qos</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ATM"><span class="nav-text">ATM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%9A%E5%8A%A1%E9%87%8F-x2F-%E6%B5%81%E9%87%8F%E6%95%B4%E5%BD%A2"><span class="nav-text">业务量&#x2F;流量整形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E8%B0%83%E5%BA%A6"><span class="nav-text">分组调度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FIFO"><span class="nav-text">FIFO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Priority-Queuing"><span class="nav-text">Priority Queuing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fair-Queue"><span class="nav-text">Fair Queue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Weighted-Fair-Queuing"><span class="nav-text">Weighted Fair Queuing</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Internetworking"><span class="nav-text">Internetworking</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%A7%E9%81%93"><span class="nav-text">隧道</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -417,7 +420,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">55</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -481,19 +484,19 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">83k</span>
+    <span title="站点总字数">86k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:15</span>
+    <span title="站点阅读时长">1:18</span>
 </div>
   <div class="powered-by">由 <a href="https://webvpn.bupt.edu.cn/" class="theme-link" rel="noopener" target="_blank">BUPT</a> 强力驱动
   </div>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共49.1k字</span>
+  <span class="post-count">博客全站共50.9k字</span>
 </div>
 
 
