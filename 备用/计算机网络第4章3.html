@@ -20,17 +20,31 @@
     var CONFIG = {"hostname":"gdgao.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://gdgao.top/tags/index.html">
+  <meta name="description" content="Data Link Layer Switching；Bridge； 连接设备摘要，交换机和网桥；Virtual LANs；第四章小结">
+<meta property="og:type" content="website">
+<meta property="og:title" content="数据链路层交换">
+<meta property="og:url" content="http://gdgao.top/%E5%A4%87%E7%94%A8/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC4%E7%AB%A03.html">
 <meta property="og:site_name" content="果冻">
+<meta property="og:description" content="Data Link Layer Switching；Bridge； 连接设备摘要，交换机和网桥；Virtual LANs；第四章小结">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-28T14:12:57.000Z">
-<meta property="article:modified_time" content="2023-02-28T14:19:42.010Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922288.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922289.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922290.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922292.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922293.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922294.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922295.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922296.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922297.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922298.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922299.png">
+<meta property="article:published_time" content="2023-05-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-09T04:09:04.226Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922288.png">
 
-<link rel="canonical" href="http://gdgao.top/tags/">
+<link rel="canonical" href="http://gdgao.top/%E5%A4%87%E7%94%A8/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC4%E7%AB%A03">
 
 
 <script id="page-configurations">
@@ -43,7 +57,7 @@
   };
 </script>
 
-  <title>标签 | 果冻
+  <title>数据链路层交换 | 果冻
 </title>
   
 
@@ -171,10 +185,11 @@
     <div class="post-block" lang="zh-CN">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">标签
+<h1 class="post-title" itemprop="name headline">数据链路层交换
 </h1>
 
 <div class="post-meta">
+    <div class="post-description">Data Link Layer Switching；Bridge； 连接设备摘要，交换机和网桥；Virtual LANs；第四章小结</div>
   
 
 </div>
@@ -185,15 +200,57 @@
       
       
       <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              暂无标签
-            </div>
-            <div class="tag-cloud-tags">
-              
-            </div>
-          </div>
-        
+          <h2 id="网桥"><a href="#网桥" class="headerlink" title="网桥"></a>网桥</h2><h3 id="初识"><a href="#初识" class="headerlink" title="初识"></a>初识</h3><p>连接不同局域网；故障隔离；建设需要；混杂模式</p>
+<p>Bridges are used to interconnect LANs at data link layer.</p>
+<p>即插即用</p>
+<p>不足：延迟增加；广播风暴。</p>
+<p>下面例子是将802.11转换为802.3：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922288.png" alt="image-20230508185203227"></p>
+<p>当然，转换不同的协议问题还是有很多的，就比如帧格式不同，网速不同，安全性同；下面是不同的帧格式：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922289.png" alt="image-20230508185422395"></p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><h4 id="后向学习"><a href="#后向学习" class="headerlink" title="后向学习"></a>后向学习</h4><p>station table：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922290.png" alt="image-20230508185811628"></p>
+<p>构建station table：</p>
+<ol>
+<li>初始化:当桥接器第一次插入时，所有的哈希表都是空的</li>
+<li>桥在promiscuous mode(混杂模式)下运行，它们可以看到在任何局域网上发送的每一个帧。</li>
+<li><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922292.png" alt="image-20230508190041756"></li>
+<li>在连接的所有（除了到达帧的）端口上输出，</li>
+</ol>
+<p>补充：交换机根据转发表将收到的帧转发到相应端口</p>
+<h4 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h4><p>解决出现环路的问题loop</p>
+<p>解决方法：断环，形成树形拓扑</p>
+<ol>
+<li>每个网桥周期性地从它的所有端口向它的邻居广播一个配置消息，并处理它从其他网桥接收到的消息，这个消息不被转发，它包括：</li>
+<li>选择ID最低的网桥作为根网桥，在交换足够多的消息后，所有网桥将在根网桥上达成一致。</li>
+<li>记住它找到的到根的最短路径，如果有多条等价路径，则选择ID最低的桥路径</li>
+<li>关闭不属于最短路径的端口</li>
+<li>算法在正常运行期间继续运行，自动检测拓扑变化并更新树</li>
+</ol>
+<p>原文如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922293.png" alt="image-20230508191112428"></p>
+<h2 id="连接设备摘要"><a href="#连接设备摘要" class="headerlink" title="连接设备摘要"></a>连接设备摘要</h2><p>Interconnection Devices（互连器件）：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922294.png" alt="image-20230508191156885"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922295.png" alt="image-20230508191257131"></p>
+<h2 id="VlANs"><a href="#VlANs" class="headerlink" title="VlANs"></a>VlANs</h2><p>Virtual LANs</p>
+<p>A building with centralized wiring using <code>hubs</code> and a <code>switch</code></p>
+<p>设计原因：</p>
+<ol>
+<li>许多部门都有他们不想传递到部门外的信息</li>
+<li>有些局域网比其他局域网重，可能需要将它们分开。</li>
+<li>广播拥挤和广播风暴</li>
+</ol>
+<p>原文如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922296.png" alt="image-20230508191659679"></p>
+<p>what is it</p>
+<p>将逻辑拓扑与物理拓扑分离</p>
+<p>禁止跨颜色多播和广播和从不同VLAN传输到目的地的数据包</p>
+<p>在网桥或交换机中，配置表告诉我们哪些VLAN可以通过哪个端口访问。</p>
+<p>原文如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922297.png" alt="image-20230508192029486"></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922298.png" alt="image-20230508192119032"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202305081922299.png" alt="image-20230508192125880"></p>
+
       </div>
       
       
@@ -256,6 +313,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E6%A1%A5"><span class="nav-text">网桥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E8%AF%86"><span class="nav-text">初识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E5%90%91%E5%AD%A6%E4%B9%A0"><span class="nav-text">后向学习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%A0%91"><span class="nav-text">生成树</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E8%AE%BE%E5%A4%87%E6%91%98%E8%A6%81"><span class="nav-text">连接设备摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VlANs"><span class="nav-text">VlANs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

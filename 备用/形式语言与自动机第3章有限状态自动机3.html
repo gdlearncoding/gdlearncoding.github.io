@@ -20,17 +20,26 @@
     var CONFIG = {"hostname":"gdgao.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://gdgao.top/tags/index.html">
+  <meta name="description" content="形式语言与自动机的第三章有限状态自动机与右线性文法第三部分,正则集和正则式">
+<meta property="og:type" content="website">
+<meta property="og:title" content="正则集,正则式,右线性文法">
+<meta property="og:url" content="http://gdgao.top/%E5%A4%87%E7%94%A8/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA3.html">
 <meta property="og:site_name" content="果冻">
+<meta property="og:description" content="形式语言与自动机的第三章有限状态自动机与右线性文法第三部分,正则集和正则式">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-28T14:12:57.000Z">
-<meta property="article:modified_time" content="2023-02-28T14:19:42.010Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303231254771.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303231258011.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303231300402.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303231303733.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303231306806.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303231313811.png">
+<meta property="article:published_time" content="2023-09-22T08:34:54.055Z">
+<meta property="article:modified_time" content="2023-03-23T05:16:26.698Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303231254771.png">
 
-<link rel="canonical" href="http://gdgao.top/tags/">
+<link rel="canonical" href="http://gdgao.top/%E5%A4%87%E7%94%A8/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AC%AC3%E7%AB%A0%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA3">
 
 
 <script id="page-configurations">
@@ -43,7 +52,7 @@
   };
 </script>
 
-  <title>标签 | 果冻
+  <title>正则集,正则式,右线性文法 | 果冻
 </title>
   
 
@@ -171,10 +180,11 @@
     <div class="post-block" lang="zh-CN">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">标签
+<h1 class="post-title" itemprop="name headline">正则集,正则式,右线性文法
 </h1>
 
 <div class="post-meta">
+    <div class="post-description">形式语言与自动机的第三章有限状态自动机与右线性文法第三部分,正则集和正则式</div>
   
 
 </div>
@@ -185,15 +195,41 @@
       
       
       <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              暂无标签
-            </div>
-            <div class="tag-cloud-tags">
-              
-            </div>
-          </div>
-        
+          <h2 id="正则集和正则式"><a href="#正则集和正则式" class="headerlink" title="正则集和正则式"></a>正则集和正则式</h2><p>正则集：字母表上一些特殊形式的字符串的集合，是正则式所表示的集合。 </p>
+<p>正则式：用类似代数表达式的方法表示正则语言。</p>
+<p>怎么推出来的：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303231254771.png" alt="image-20230323125401665"></p>
+<h4 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h4><p>作用于语言上的三种代数运算</p>
+<ul>
+<li><p>联合（union）</p>
+</li>
+<li><p>连接（concatenation）</p>
+</li>
+<li><p>（星）闭包（closure）</p>
+</li>
+</ul>
+<p>优先级*&gt;.&gt;+</p>
+<p>三个运算所对应的语言,略</p>
+<p>开拓一下思维:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303231258011.png" alt="image-20230323125809983"></p>
+<p>再强调一下:<code>语言是集合</code>所以要用集合的运算符号</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303231300402.png" alt="image-20230323130006376"></p>
+<p>选C的都给我叉出去,都说了强调强调</p>
+<p>+.交换律结合律分配率都符合</p>
+<p>α+α＝α</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303231303733.png" alt="image-20230323130328703"></p>
+<p>特别强调第八条和第12条(任何*闭包都包括空串)</p>
+<p>证明略</p>
+<h3 id="右线性文法与正则式"><a href="#右线性文法与正则式" class="headerlink" title="右线性文法与正则式"></a>右线性文法与正则式</h3><p><code>右(左)线性文法又称为正则文法，右线性文法与正则式可以用来代表同一正则语言。</code>二者具有等效性。</p>
+<p>&#x3D;&#x3D;从右线性文法导出正则式&#x3D;&#x3D;:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303231306806.png" alt="image-20230323130615783"></p>
+<p>唯一的基础!!!!!</p>
+<p>剩下的题就靠联立喽,慢慢消,这里就不给例题了,太简单了</p>
+<h2 id="正则集和右线性文法"><a href="#正则集和右线性文法" class="headerlink" title="正则集和右线性文法"></a>正则集和右线性文法</h2><p>先来个充要条件:<code>一个语言是正则集，当且仅当该语言为右线性语言。</code></p>
+<p>证明略ppt3.6~3.8这一张章很多证明,我都略了,了解就行又不考</p>
+<p>由正则集写出右线性文法,还是按照四行前的求解规则反写,从解写等式</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gdlearncoding/blogImage@main/202303231313811.png" alt="image-20230323131317775"></p>
+
       </div>
       
       
@@ -256,6 +292,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E9%9B%86%E5%92%8C%E6%AD%A3%E5%88%99%E5%BC%8F"><span class="nav-text">正则集和正则式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E7%AE%97"><span class="nav-text">运算</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%B3%E7%BA%BF%E6%80%A7%E6%96%87%E6%B3%95%E4%B8%8E%E6%AD%A3%E5%88%99%E5%BC%8F"><span class="nav-text">右线性文法与正则式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E9%9B%86%E5%92%8C%E5%8F%B3%E7%BA%BF%E6%80%A7%E6%96%87%E6%B3%95"><span class="nav-text">正则集和右线性文法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -20,17 +20,19 @@
     var CONFIG = {"hostname":"gdgao.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://gdgao.top/tags/index.html">
+  <meta name="description" content="C++ Primer第六章函数">
+<meta property="og:type" content="website">
+<meta property="og:title" content="函数">
+<meta property="og:url" content="http://gdgao.top/%E5%A4%87%E7%94%A8/C++%E7%AC%AC6%E7%AB%A0%E5%87%BD%E6%95%B0.html">
 <meta property="og:site_name" content="果冻">
+<meta property="og:description" content="C++ Primer第六章函数">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-28T14:12:57.000Z">
-<meta property="article:modified_time" content="2023-02-28T14:19:42.010Z">
+<meta property="article:published_time" content="2023-09-22T08:34:54.073Z">
+<meta property="article:modified_time" content="2023-03-07T14:22:51.133Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://gdgao.top/tags/">
+<link rel="canonical" href="http://gdgao.top/%E5%A4%87%E7%94%A8/C++%E7%AC%AC6%E7%AB%A0%E5%87%BD%E6%95%B0">
 
 
 <script id="page-configurations">
@@ -43,7 +45,7 @@
   };
 </script>
 
-  <title>标签 | 果冻
+  <title>函数 | 果冻
 </title>
   
 
@@ -171,10 +173,11 @@
     <div class="post-block" lang="zh-CN">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">标签
+<h1 class="post-title" itemprop="name headline">函数
 </h1>
 
 <div class="post-meta">
+    <div class="post-description">C++ Primer第六章函数</div>
   
 
 </div>
@@ -185,15 +188,44 @@
       
       
       <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              暂无标签
-            </div>
-            <div class="tag-cloud-tags">
-              
-            </div>
-          </div>
-        
+          <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="局部对象"><a href="#局部对象" class="headerlink" title="局部对象"></a>局部对象</h3><p>形参和函数体内部&#x3D;&#x3D;定义的变量&#x3D;&#x3D;统称为局部变量(local variable)</p>
+<h4 id="自动对象"><a href="#自动对象" class="headerlink" title="自动对象"></a>自动对象</h4><p>我们把只存在于块执行期间的对象称为自动对象</p>
+<p>形参是一种自动对象。函数开始时为形参申请存储空间，函数终止时,形参被销毁</p>
+<h4 id="局部静态对象"><a href="#局部静态对象" class="headerlink" title="局部静态对象"></a>局部静态对象</h4><p>static</p>
+<p>局部静态对象(local static object)在程序的执行路径第一次经过对象定义语句时初始化，并且直到程序终止才被销毁，在此期间即使对象所在的函数结束执行也不会对它有影响。</p>
+<h3 id="分离式编译"><a href="#分离式编译" class="headerlink" title="分离式编译"></a>分离式编译</h3><p>例子:假设fact函数的定义位于一个名为fact.cc的文件中，它的声明位于名为Chapter6.h的头文件中.另外，main函数在名为factMain.cc的文件中main函数将调用fact函数。</p>
+<p>要生成可执行文件(executable file)</p>
+<p>编译的过程如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ CC factMain.cc fact.cc # generates factMain.exe or a.out</span><br><span class="line">$ CC factMain.cc fact.cc -o main # generates main or main.exe</span><br></pre></td></tr></table></figure>
+
+<p>其中，CC是编译器的名字，$是系统提示符，#后面是命令行下的注释语句。</p>
+<p>如果我们修改了其中一个源文件，那么只需重新编译那个改动了的文件。大多数编译器提供了分离式编译每个文件的机制，这一过程通常会产生一个后缀名是.obj(Windows)或.o(UNIX)的文件，后缀名的含义是该文件包含对象代码(object code)。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ CC -c factMain.cc # generates factMain.o</span><br><span class="line">$ CC -c fact.cc # generates fact.o</span><br><span class="line">$ CC factMain.o fact.o # generates factMain.exe or a.out</span><br><span class="line">$ CC factMain.o fact.o -o main # generates main or main.exe</span><br></pre></td></tr></table></figure>
+
+<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><p>当形参是&#x3D;&#x3D;引用&#x3D;&#x3D;类型时，我们说它对应的实参被引用传递(passed by reference)或者函数被传引用调用(called by reference)。</p>
+<p>和其他引用一样，引用形参也是它绑定的对象的别名：也就是说，引用形参是它对应的实参的别名。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">reset</span><span class="params">(<span class="type">int</span> &amp;i)</span></span>&#123;<span class="comment">//i是传给reset函数的对象的另一个名字</span></span><br><span class="line"> <span class="type">int</span> i = <span class="number">0</span>;<span class="comment">//改变了i所引对象的值</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="type">int</span> j = <span class="number">1</span>;</span><br><span class="line"> <span class="built_in">reset</span>(j);<span class="comment">//j采用传引用方式，它的值被改变</span></span><br><span class="line"> cout &lt;&lt; <span class="string">&quot;j = &quot;</span>&lt;&lt; j &lt;&lt; endl; <span class="comment">//j = 0</span></span><br></pre></td></tr></table></figure>
+
+<p>当函数无须修改引用形参的值时最好使用常量引用。</p>
+<ul>
+<li>数组引用参数</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//&amp;arr两端的括号必不可少</span></span><br><span class="line"><span class="built_in">f</span>(<span class="type">int</span> &amp;arr[<span class="number">10</span>]<span class="comment">//错误：将arr声明成了引用的数组 </span></span><br><span class="line"><span class="built_in">f</span>(<span class="built_in">int</span> (&amp;arr)[<span class="number">10</span>]<span class="comment">//正确：arr是具有10个整数的整型数组的引用</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="返回类型"><a href="#返回类型" class="headerlink" title="返回类型"></a>返回类型</h2><ul>
+<li>不要返回局部对象的引用或指针:函数完成后，它所占用的存储空间也随之被释放掉,函数终止意味着局部变量的引用将指向不再有效的内存区域</li>
+</ul>
+<h3 id="使用decltype"><a href="#使用decltype" class="headerlink" title="使用decltype"></a>使用decltype</h3><p>还有一种情况，如果我们知道函数返回的指针将指向哪个数组，就可以使用<br>decltype关键字声明返回类型。例如，下面的函数返回一个指针，该指针根据参数i的不同指向两个已知数组中的某一个：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> odd[<span class="number">1</span>=&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>&#125;i</span><br><span class="line"><span class="type">int</span> even[]=&#123;<span class="number">0</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>&#125;;</span><br><span class="line"><span class="comment">//返回一个指针，该指针指向含有5个整数的数组</span></span><br><span class="line"><span class="keyword">decltype</span>(odd)*<span class="built_in">arrptr</span>(<span class="type">int</span> i)</span><br><span class="line"><span class="keyword">return</span>(i号<span class="number">2</span>)？&amp;odd:&amp;even;<span class="comment">//返回一个指向数组的指针</span></span><br></pre></td></tr></table></figure>
+
+<p>arrPtr使用关键字decltype表示它的返回类型是个指针，并且该指针所指的对象与 odd的类型一致。因为odd是数组，所以arrPtr返回一个指向含有5个整数的数组的指针。有一个地方需要注意：decltype并不负责把数组类型转换成对应的指针，所以 decltype的结果是个数组，要想表示arrPtr返回指针还必须在函数声明时加一个*符号。</p>
+<h2 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h2><p>如果同一作用域内的几个函数名字相同但形参列表不同，我们称之为重载(overloaded)函数。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Record <span class="title">lookup</span><span class="params">(<span class="type">const</span> Account&amp;)</span></span>;<span class="comment">//根据Account查找记录</span></span><br><span class="line"><span class="function">Record <span class="title">lookup</span><span class="params">(<span class="type">const</span> Phone&amp;)</span></span>;<span class="comment">//根据Phone查找记录</span></span><br><span class="line"><span class="function">Record <span class="title">lookup</span><span class="params">(<span class="type">const</span> Name&amp;)</span></span>;<span class="comment">//根据Name查找记录</span></span><br><span class="line">Account acct</span><br><span class="line">Phone phone;</span><br><span class="line"><span class="function">Record r1 <span class="title">lookup</span><span class="params">(acct)</span></span>;<span class="comment">//调用接受Account的版本</span></span><br><span class="line"><span class="function">Record r2 <span class="title">lookup</span><span class="params">(phone)</span></span>;<span class="comment">//调用接受Phone的版本</span></span><br></pre></td></tr></table></figure>
+
+<p>不允许两个函数除了返回类型外其他所有的要素都相同。</p>
+<p>一个拥有顶层const的形参无法和另一个没有顶层const的形参区分开来</p>
+<p>另一方面，如果形参是某种类型的指针或引用，则通过区分其指向的是常量对象还是非常量对象可以实现函数重载，此时的const是底层的：</p>
+
       </div>
       
       
@@ -256,6 +288,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80"><span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%AF%B9%E8%B1%A1"><span class="nav-text">局部对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%AF%B9%E8%B1%A1"><span class="nav-text">自动对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E9%9D%99%E6%80%81%E5%AF%B9%E8%B1%A1"><span class="nav-text">局部静态对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%A6%BB%E5%BC%8F%E7%BC%96%E8%AF%91"><span class="nav-text">分离式编译</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="nav-text">参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B"><span class="nav-text">返回类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8decltype"><span class="nav-text">使用decltype</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="nav-text">函数重载</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

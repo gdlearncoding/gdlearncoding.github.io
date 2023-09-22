@@ -20,17 +20,21 @@
     var CONFIG = {"hostname":"gdgao.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://gdgao.top/tags/index.html">
+  <meta name="description" content="用法,说明">
+<meta property="og:type" content="website">
+<meta property="og:title" content="引用">
+<meta property="og:url" content="http://gdgao.top/%E5%A4%87%E7%94%A8/C++%E5%BC%95%E7%94%A8.html">
 <meta property="og:site_name" content="果冻">
+<meta property="og:description" content="用法,说明">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-28T14:12:57.000Z">
-<meta property="article:modified_time" content="2023-02-28T14:19:42.010Z">
+<meta property="og:image" content="c:/Users/Echo/AppData/Roaming/Typora/typora-user-images/image-20230411204027521.png">
+<meta property="article:published_time" content="2023-09-22T08:34:54.000Z">
+<meta property="article:modified_time" content="2023-04-11T12:40:39.899Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/Echo/AppData/Roaming/Typora/typora-user-images/image-20230411204027521.png">
 
-<link rel="canonical" href="http://gdgao.top/tags/">
+<link rel="canonical" href="http://gdgao.top/%E5%A4%87%E7%94%A8/C++%E5%BC%95%E7%94%A8">
 
 
 <script id="page-configurations">
@@ -43,7 +47,7 @@
   };
 </script>
 
-  <title>标签 | 果冻
+  <title>引用 | 果冻
 </title>
   
 
@@ -171,10 +175,11 @@
     <div class="post-block" lang="zh-CN">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">标签
+<h1 class="post-title" itemprop="name headline">引用
 </h1>
 
 <div class="post-meta">
+    <div class="post-description">用法,说明</div>
   
 
 </div>
@@ -185,15 +190,39 @@
       
       
       <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              暂无标签
-            </div>
-            <div class="tag-cloud-tags">
-              
-            </div>
-          </div>
-        
+          <h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><strong>引用</strong>（<code>reference</code>）是C++对C的一个重要扩充。变量的引用就是变量的别名，因此引用又称<strong>别名</strong>。</p>
+<p>引用与其所代表的变量共享同一内存单元<code>(不占用内存空间)</code>，系统并不为引用另外分配存储空间。实际上，编译系统使引用和其代表的变量具有相同的地址。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//类型 &amp;引用名 = 已定义的变量名</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> i = <span class="number">10</span>;</span><br><span class="line">	<span class="type">int</span> &amp;j = i;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;i = &quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot; j = &quot;</span> &lt;&lt; j &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;i的地址为 &quot;</span> &lt;&lt; &amp;i &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;j的地址为 &quot;</span> &lt;&lt; &amp;j &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//上面代码输出i和j的值相同，地址也相同。</span></span><br></pre></td></tr></table></figure>
+
+
+<p>引用并不是一种独立的数据类型，它必须与某一种类型的变量相联系。在声明引用时，必须立即对它进行初始化，不能声明完成后再赋值。</p>
+<p>为引用提供的初始值，可以是一个变量或者另一个引用。</p>
+<p>指针是通过地址间接访问某个变量，而引用则是通过别名直接访问某个变量。</p>
+<h3 id="指针与引用"><a href="#指针与引用" class="headerlink" title="指针与引用"></a>指针与引用</h3><ol>
+<li>从语法规则上讲，指针变量存储某个实例(变量或对象）的地址;<br>引用是某个实例的别名。</li>
+<li>程序为指针变量分配内存区域;而不为引用分配内存区域。</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="type">int</span>* ip = &amp;a;</span><br><span class="line">	<span class="type">int</span>&amp; b = a;  \\b是a的别名 并没有分配新的空间</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>解引用是指针使用时要在前加“*”;引用可以直接使用。</p>
+</li>
+<li><p>指针变量的值可以发生改变，存储不同实例的地址;<br>引用在定义时就被初始化，之后无法改变(不能是其他实例的引用)。</p>
+</li>
+<li><p>指针变量的值可以为空(NULL,nullptr);没有空引用。</p>
+</li>
+<li><p>指针变量作为形参时需要测试它的合法性(判空NULL)；<br>引用不需要判空。</p>
+</li>
+<li><p>对指针变量使用”sizeof”得到的是指针变量的大小；<br>对引用变量使用”sizeof”得到的是变量的大小。</p>
+</li>
+<li><p>理论上指针的级数没有限制;但引用只有一级。<br>即不存在引用的引用，但可以有指针的指针。</p>
+</li>
+<li><p>不可以对函数中的局部变量或对象以引用或指针方式返回。</p>
+<p>当变量的生存期不受函数的影响时就可以返回地址</p>
+</li>
+</ol>
+<p><img src="C:/Users/Echo/AppData/Roaming/Typora/typora-user-images/image-20230411204027521.png" alt="image-20230411204027521"></p>
+
       </div>
       
       
@@ -256,6 +285,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-text">引用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E4%B8%8E%E5%BC%95%E7%94%A8"><span class="nav-text">指针与引用</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

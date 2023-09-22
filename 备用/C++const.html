@@ -20,17 +20,19 @@
     var CONFIG = {"hostname":"gdgao.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"slideDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://gdgao.top/tags/index.html">
+  <meta name="description" content="const与指针一起">
+<meta property="og:type" content="website">
+<meta property="og:title" content="const修饰符">
+<meta property="og:url" content="http://gdgao.top/%E5%A4%87%E7%94%A8/C++const.html">
 <meta property="og:site_name" content="果冻">
+<meta property="og:description" content="const与指针一起">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-28T14:12:57.000Z">
-<meta property="article:modified_time" content="2023-02-28T14:19:42.010Z">
+<meta property="article:published_time" content="2023-09-22T08:34:54.069Z">
+<meta property="article:modified_time" content="2023-04-11T11:53:14.568Z">
 <meta property="article:author" content="programmergd">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://gdgao.top/tags/">
+<link rel="canonical" href="http://gdgao.top/%E5%A4%87%E7%94%A8/C++const">
 
 
 <script id="page-configurations">
@@ -43,7 +45,7 @@
   };
 </script>
 
-  <title>标签 | 果冻
+  <title>const修饰符 | 果冻
 </title>
   
 
@@ -171,10 +173,11 @@
     <div class="post-block" lang="zh-CN">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">标签
+<h1 class="post-title" itemprop="name headline">const修饰符
 </h1>
 
 <div class="post-meta">
+    <div class="post-description">const与指针一起</div>
   
 
 </div>
@@ -185,15 +188,30 @@
       
       
       <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              暂无标签
-            </div>
-            <div class="tag-cloud-tags">
-              
-            </div>
-          </div>
-        
+          <h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>C++定义常量: 在C语言中，习惯使用<code>#define</code>来定义常量，例如<code>#define PI 3.14</code>，C++提供了一种更灵活、更安全的方式来定义常量，即使用<code>const</code>修饰符来定义常量。例如<code>const float PI = 3.14；</code></p>
+<p>const可以与指针一起使用，它们的组合情况复杂，可归纳为3种：指向常量的指针、常指针和指向常量的常指针。</p>
+<p>&#x3D;&#x3D;把类型*看为一块,const+类型就是不能改变类型(如果该类型是个指针,那就是不能改变指针的值),类型+const吗就是后面的值不能改变&#x3D;&#x3D;</p>
+<p>指向常量的指针：一个指向常量的指针变量。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">char</span>* pc = <span class="string">&quot;abcd&quot;</span>;</span><br><span class="line"><span class="comment">//该方法不允许改变指针所指的变量，即</span></span><br><span class="line">    pc[<span class="number">3</span>] = <span class="string">&#x27;x&#x27;</span>   <span class="comment">//是错误的，</span></span><br><span class="line"><span class="comment">//但是，由于pc是一个指向常量的普通指针变量，不是常指针，因此可以改变pc所指的地址，例如</span></span><br><span class="line">    pc = <span class="string">&quot;ervfs&quot;</span>;</span><br><span class="line"><span class="comment">//该语句付给了指针另一个字符串的地址，改变了pc的值。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>常指针：将指针变量所指的地址声明为常量</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span>* <span class="type">const</span> pc = <span class="string">&quot;abcd&quot;</span>;</span><br><span class="line"><span class="comment">//创建一个常指针，一个不能移动的固定指针，可更改内容，如</span></span><br><span class="line">    pc[<span class="number">3</span>] = <span class="string">&#x27;x&#x27;</span>;</span><br><span class="line"><span class="comment">//但不能改变地址，如</span></span><br><span class="line">    pc = <span class="string">&#x27;dsff&#x27;</span>;  <span class="comment">//不合法</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>指向常量的常指针：这个指针所指的地址不能改变，它所指向的地址中的内容也不能改变。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">char</span>* <span class="type">const</span> pc = <span class="string">&quot;abcd&quot;</span>;</span><br><span class="line"><span class="comment">//内容和地址均不能改变</span></span><br></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<ul>
+<li><p>如果用const定义整型常量，关键字可以省略。即 const in bufsize &#x3D; 100 与 const bufsize &#x3D; 100等价；</p>
+</li>
+<li><p>常量一旦被建立，在程序的任何地方都不能再更改。</p>
+</li>
+<li><p>与#define不同，const定义的常量可以有自己的数据类型。</p>
+</li>
+<li><p>函数参数也可以用const说明，用于保证实参在该函数内不被改动。</p>
+</li>
+</ul>
+
       </div>
       
       
@@ -256,6 +274,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#const"><span class="nav-text">const</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
